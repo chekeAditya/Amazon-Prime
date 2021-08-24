@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Prime Video</string>
+    <string name="download">Download</string>
+    <string name="no_videos_downloaded">No videos Downloaded</string>
 </resources>
