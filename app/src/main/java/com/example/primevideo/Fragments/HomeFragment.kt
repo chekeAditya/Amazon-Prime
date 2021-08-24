@@ -2,9 +2,7 @@ package com.example.primevideo.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
@@ -19,10 +17,15 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun imageSliderView() {
         val imageList: ArrayList<String> = ArrayList()
-        imageList.add("https://imageupload.io/i/MHt3QOOvyV")
-        imageList.add("https://imageupload.io/i/MHt3QOOvyV")
-        imageList.add("https://imageupload.io/i/MHt3QOOvyV")
-        imageList.add("https://imageupload.io/i/MHt3QOOvyV")
+            imageList.add("https://www.linkpicture.com/q/1_935.jpg")
+            imageList.add("https://www.linkpicture.com/q/2_479.jpg")
+            imageList.add("https://www.linkpicture.com/q/3_308.jpg")
+            imageList.add("https://www.linkpicture.com/q/4_278.jpg")
+            imageList.add("https://www.linkpicture.com/q/5_287.jpg")
+            imageList.add("https://www.linkpicture.com/q/6_233.jpg")
+            imageList.add("https://www.linkpicture.com/q/7_211.jpg")
+            imageList.add("https://www.linkpicture.com/q/8_175.jpg")
+            imageList.add("https://www.linkpicture.com/q/9_136.jpg")
         setImageInSlider(imageList, imageSlider = imageSlider)
     }
 
