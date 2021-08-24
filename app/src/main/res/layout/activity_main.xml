@@ -3,27 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#191970"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-<TextView
-    android:textColor="#f8f8ff"
-    android:layout_marginTop="20dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/download"
-    android:textSize="30sp"
-    android:textStyle="bold"
-    android:gravity="center"
-    />
-<TextView
-    android:textColor="#f8f8ff"
-    android:layout_marginTop="300dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:textSize="20sp"
-    android:text="@string/no_videos_downloaded"
-    app:drawableTopCompat="@drawable/ic_baseline_file_download_24" />
+    android:background="@color/dark_blue_grey"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/prime_hori"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:tabMode="fixed"
+        app:tabTextAppearance="@style/customTabStyle"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabInlineLabel="true"
+        android:background="@color/dark_blue_grey"
+        app:tabTextColor="@color/cyan"
+        app:tabSelectedTextColor="@color/white"
+        android:minHeight="?attr/actionBarSize" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>
