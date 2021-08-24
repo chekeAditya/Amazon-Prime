@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".CreateAccount">
     <ImageView
+        android:layout_alignParentTop="true"
         android:id="@+id/ivLogo"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_amazon"
-        />
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/tvSignIn"
@@ -18,9 +19,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivLogo"
         android:layout_marginStart="20dp"
-        android:text="Sign up with your mobile number"
+        android:text="@string/sign_up_with_your_mobile_number"
         android:textColor="@color/white"
         android:textSize="20sp" />
+
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
@@ -30,9 +32,13 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rectangle"
-        android:hint="Name"
+        android:hint="@string/name"
         android:paddingStart="10dp"
-        android:textColorHint="#a9a9a9" />
+        android:paddingEnd="10dp"
+        android:textColorHint="#a9a9a9"
+        android:autofillHints="username"
+        android:inputType="textPersonName" />
+
     <EditText
         android:id="@+id/etNumberOrEmail"
         android:layout_width="match_parent"
@@ -42,9 +48,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rectangle"
-        android:hint="Mobile number or Email"
+        android:hint="@string/mobile_number_or_email"
         android:paddingStart="10dp"
-        android:textColorHint="#a9a9a9" />
+        android:paddingEnd="10dp"
+        android:textColorHint="#a9a9a9"
+        android:autofillHints="emailAddress"
+        tools:ignore="TextFields" />
     <EditText
         android:id="@+id/etCreatePassword"
         android:layout_width="match_parent"
@@ -54,9 +63,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rectangle"
-        android:hint="Create a password"
+        android:hint="@string/create_a_password"
         android:paddingStart="10dp"
-        android:textColorHint="#a9a9a9" />
+        android:paddingEnd="10dp"
+        android:textColorHint="#a9a9a9"
+        android:autofillHints="password"
+        android:inputType="textPassword" />
     <CheckBox
         android:id="@+id/etCheckBox"
         android:layout_width="34dp"
@@ -72,8 +84,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/etCreatePassword"
         android:layout_marginTop="25dp"
-        android:layout_toRightOf="@id/etCheckBox"
-        android:text="Show Password"
+        android:layout_toEndOf="@id/etCheckBox"
+        android:text="@string/show_password"
         android:textColor="@color/white"
         android:textSize="20sp" />
     <Button
@@ -84,7 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffc252"
-        />
+        tools:ignore="HardcodedText" />
     <TextView
         android:id="@+id/tvAlreadyAccount"
         android:layout_width="match_parent"
@@ -96,7 +108,7 @@
         android:layout_marginBottom="20dp"
         android:gravity="center"
         android:textColor="#0072bb"
-        android:text="Already have an account?"
+        android:text="@string/already_have_an_account"
         android:textSize="15sp" />
     <TextView
         android:id="@+id/tvRates"
@@ -104,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvAlreadyAccount"
         android:layout_marginStart="20dp"
-        android:text="Message and Data charges may apply"
+        android:text="@string/message_and_data_charges_may_apply"
         android:textColor="@color/white"
         android:textSize="15sp" />
     <TextView
@@ -116,7 +128,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:text="By continuing,you agree to Amazon's Conditions of \n Use and Privacy NOtice."
+        android:text="@string/by_continuing_you_agree_to_amazon_s_conditions_of_n_use_and_privacy_notice"
         android:textColor="@color/white"
         android:textSize="15sp" />
 </RelativeLayout>
