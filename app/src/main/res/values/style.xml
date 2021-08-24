@@ -3,4 +3,5 @@
     <style name="customTabStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">10sp</item>
     </style>
+
 </resources>
