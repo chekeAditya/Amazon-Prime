@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2e2e2e"
+    tools:context=".SignInFragment">
+
+<ImageView
+    android:id="@+id/ivLogo"
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_amazon"
+    />
+    <TextView
+        android:id="@+id/tvSignIn"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/ivLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign-In"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSignIn"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rectangle"
+        android:hint="Email(phone for mobile Accounts"
+        android:paddingStart="10dp"
+        android:textColorHint="#a9a9a9" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEmail"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rectangle"
+        android:hint="Amazon Password"
+        android:paddingStart="10dp"
+        android:textColorHint="#a9a9a9" />
+
+    <CheckBox
+        android:id="@+id/etCheckBox"
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/etPassword"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:background="#f8f8ff" />
+
+    <TextView
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPassword"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@id/etCheckBox"
+        android:text="Show Password"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/btnSignIn"
+        android:text="Sign-In"
+        android:layout_margin="20dp"
+        android:layout_below="@id/etCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffc252"
+        />
+
+    <TextView
+        android:id="@+id/tvTerms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSignIn"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="By continuing,you agree to Amazon's Conditions of \n Use and Privacy NOtice."
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tvNewToAmazon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTerms"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="New to Amazon?"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btnCreateAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNewToAmazon"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#3d3d3d"
+        android:text="Create a new Amazon account" />
+</RelativeLayout>
