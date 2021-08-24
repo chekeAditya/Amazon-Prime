@@ -1,0 +1,135 @@
+Index: gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Project-wide Gradle settings.\r\n# IDE (e.g. Android Studio) users:\r\n# Gradle settings configured through the IDE *will override*\r\n# any settings specified in this file.\r\n# For more details on how to configure your build environment visit\r\n# http://www.gradle.org/docs/current/userguide/build_environment.html\r\n# Specifies the JVM arguments used for the daemon process.\r\n# The setting is particularly useful for tweaking memory settings.\r\norg.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8\r\n# When configured, Gradle will run in incubating parallel mode.\r\n# This option should only be used with decoupled projects. More details, visit\r\n# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects\r\n# org.gradle.parallel=true\r\n# AndroidX package structure to make it clearer which packages are bundled with the\r\n# Android operating system, and which are packaged with your app\"s APK\r\n# https://developer.android.com/topic/libraries/support-library/androidx-rn\r\nandroid.useAndroidX=true\r\n# Automatically convert third-party libraries to use AndroidX\r\nandroid.enableJetifier=true\r\n# Kotlin code style for this project: \"official\" or \"obsolete\":\r\nkotlin.code.style=official
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+diff --git a/gradle.properties b/gradle.properties
+--- a/gradle.properties	(revision 77665e6cde2deac9a70d30dc5566b0423330e877)
++++ b/gradle.properties	(date 1629810097287)
+@@ -6,7 +6,7 @@
+ # http://www.gradle.org/docs/current/userguide/build_environment.html
+ # Specifies the JVM arguments used for the daemon process.
+ # The setting is particularly useful for tweaking memory settings.
+-org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
++org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-11
+ # When configured, Gradle will run in incubating parallel mode.
+ # This option should only be used with decoupled projects. More details, visit
+ # http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
+Index: app/src/main/java/com/example/primevideo/Adapters/MySliderImageAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.primevideo.Adapters\r\n\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.ImageView\r\nimport com.example.primevideo.R\r\nimport com.smarteist.autoimageslider.SliderViewAdapter\r\nimport com.squareup.picasso.Picasso\r\n\r\nclass MySliderImageAdapter() : SliderViewAdapter<MySliderImageAdapter.SliderAdapterViewHolder>() {\r\n\r\n    private var mSliderItems = ArrayList<String>()\r\n    fun renewItems(sliderItems: ArrayList<String>) {\r\n        mSliderItems = sliderItems\r\n        notifyDataSetChanged()\r\n    }\r\n\r\n    fun addItem(sliderItems: String){\r\n        mSliderItems.add(sliderItems)\r\n        notifyDataSetChanged()\r\n    }\r\n\r\n    class SliderAdapterViewHolder(itemView: View) :\r\n        SliderViewAdapter.ViewHolder(itemView) {\r\n        var imageView : ImageView = itemView.findViewById(R.id.imageSlider)\r\n    }\r\n\r\n    override fun getCount(): Int {\r\n        return mSliderItems.size\r\n    }\r\n\r\n    override fun onCreateViewHolder(parent: ViewGroup?): SliderAdapterViewHolder {\r\n        val inflate: View = LayoutInflater.from(parent?.context).inflate(R.layout.item_layout_slider, null)\r\n        return SliderAdapterViewHolder(inflate)\r\n    }\r\n\r\n    override fun onBindViewHolder(viewHolder: SliderAdapterViewHolder?, position: Int) {\r\n        Picasso.get().load(mSliderItems[position]).fit().into(viewHolder?.imageView)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Adapters/MySliderImageAdapter.kt b/app/src/main/java/com/example/primevideo/Adapters/MySliderImageAdapter.kt
+--- a/app/src/main/java/com/example/primevideo/Adapters/MySliderImageAdapter.kt	(revision 77665e6cde2deac9a70d30dc5566b0423330e877)
++++ b/app/src/main/java/com/example/primevideo/Adapters/MySliderImageAdapter.kt	(date 1629811777038)
+@@ -8,6 +8,8 @@
+ import com.smarteist.autoimageslider.SliderViewAdapter
+ import com.squareup.picasso.Picasso
+ 
++// Holder and Adaptor are in the same file
++// Adaptor Started
+ class MySliderImageAdapter() : SliderViewAdapter<MySliderImageAdapter.SliderAdapterViewHolder>() {
+ 
+     private var mSliderItems = ArrayList<String>()
+@@ -21,6 +23,8 @@
+         notifyDataSetChanged()
+     }
+ 
++    //Holder started
++
+     class SliderAdapterViewHolder(itemView: View) :
+         SliderViewAdapter.ViewHolder(itemView) {
+         var imageView : ImageView = itemView.findViewById(R.id.imageSlider)
+@@ -30,6 +34,7 @@
+         return mSliderItems.size
+     }
+ 
++
+     override fun onCreateViewHolder(parent: ViewGroup?): SliderAdapterViewHolder {
+         val inflate: View = LayoutInflater.from(parent?.context).inflate(R.layout.item_layout_slider, null)
+         return SliderAdapterViewHolder(inflate)
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 77665e6cde2deac9a70d30dc5566b0423330e877)
++++ /dev/null	(revision 77665e6cde2deac9a70d30dc5566b0423330e877)
+@@ -1,9 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Prime_Video.iml" filepath="$PROJECT_DIR$/.idea/modules/Prime_Video.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Prime_Video.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Prime_Video.app.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"GRADLE\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 77665e6cde2deac9a70d30dc5566b0423330e877)
++++ b/.idea/gradle.xml	(date 1629810349143)
+@@ -7,6 +7,7 @@
+         <option name="testRunner" value="GRADLE" />
+         <option name="distributionType" value="DEFAULT_WRAPPED" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="11" />
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/activity_main.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_find.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_home.xml\" value=\"0.26481481481481484\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_homes.xml\" value=\"0.2604166666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_kids.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_movies.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml\" value=\"0.26481481481481484\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 77665e6cde2deac9a70d30dc5566b0423330e877)
++++ b/.idea/misc.xml	(date 1629811416907)
+@@ -17,10 +17,11 @@
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml" value="0.27447916666666666" />
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml" value="0.27447916666666666" />
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml" value="0.26481481481481484" />
++        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+       </map>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <bytecodeTargetLevel target=\"11\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 77665e6cde2deac9a70d30dc5566b0423330e877)
++++ b/.idea/compiler.xml	(date 1629809851474)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="11" />
++    <bytecodeTargetLevel target="1.8" />
+   </component>
+ </project>
+\ No newline at end of file

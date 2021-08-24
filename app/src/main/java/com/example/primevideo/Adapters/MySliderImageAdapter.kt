@@ -8,6 +8,8 @@ import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderViewAdapter
 import com.squareup.picasso.Picasso
 
+// Holder and Adaptor are in the same file
+// Adaptor Started
 class MySliderImageAdapter() : SliderViewAdapter<MySliderImageAdapter.SliderAdapterViewHolder>() {
 
     private var mSliderItems = ArrayList<String>()
@@ -21,6 +23,8 @@ class MySliderImageAdapter() : SliderViewAdapter<MySliderImageAdapter.SliderAdap
         notifyDataSetChanged()
     }
 
+    //Holder started
+
     class SliderAdapterViewHolder(itemView: View) :
         SliderViewAdapter.ViewHolder(itemView) {
         var imageView : ImageView = itemView.findViewById(R.id.imageSlider)
@@ -29,6 +33,7 @@ class MySliderImageAdapter() : SliderViewAdapter<MySliderImageAdapter.SliderAdap
     override fun getCount(): Int {
         return mSliderItems.size
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup?): SliderAdapterViewHolder {
         val inflate: View = LayoutInflater.from(parent?.context).inflate(R.layout.item_layout_slider, null)
