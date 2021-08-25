@@ -1,13 +1,17 @@
 package com.example.primevideo.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.Adapters.PopularMoviesAdapter
+import com.example.primevideo.Adapters.PopularShowsAdapter
 import com.example.primevideo.Model.PopularMoviesModel
+import com.example.primevideo.Model.PopularShows.PopularShowsModel
+import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
 import com.example.primevideo.Model.ResultModel
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
@@ -15,16 +19,48 @@ import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
+import kotlin.math.log
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var listOfPopularMovies: List<ResultModel>
+    private lateinit var listOfPopularShowsItem: List<PopularShowsModelItem>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
         PopularMovieApiCall()
+        popularShowApiCall()
+    }
+
+    private fun popularShowApiCall() {
+        val apiClient = Network.getInstance().create(ApiClient::class.java)
+        apiClient.getPopularShows().enqueue(object : Callback<List<PopularShowsModelItem>> {
+            override fun onResponse(
+                call: Call<List<PopularShowsModelItem>>,
+                response: Response<List<PopularShowsModelItem>>
+            ) {
+                response.body()?.run {
+                    listOfPopularShowsItem = response.body()!!
+                    setShowAdapter()
+                }
+            }
+
+            override fun onFailure(call: Call<List<PopularShowsModelItem>>, t: Throwable) {
+                Log.d("Aditya", "onFailure: "+t.message)
+            }
+
+        })
+    }
+
+    private fun setShowAdapter() {
+        val linearLayoutManagerShow =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val popularShowsAdapter = PopularShowsAdapter(listOfPopularShowsItem)
+        rvPopularShows.adapter = popularShowsAdapter
+        rvPopularShows.layoutManager = linearLayoutManagerShow
     }
 
     private fun imageSliderView() {
@@ -53,7 +89,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun PopularMovieApiCall() {
         var apiClient = Network.getInstance().create(ApiClient::class.java)
         apiClient.getPopularMovie2()
-            .enqueue(object : retrofit2.Callback<PopularMoviesModel> {
+            .enqueue(object : Callback<PopularMoviesModel> {
                 override fun onResponse(
                     call: Call<PopularMoviesModel>,
                     response: Response<PopularMoviesModel>
@@ -72,7 +108,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setAdapter() {
-        var linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        var linearLayoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)
         rvPopularMovies.adapter = popularMoviesAdapter
         rvPopularMovies.layoutManager = linearLayoutManager

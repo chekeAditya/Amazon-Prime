@@ -21,4 +21,5 @@
         <item name="android:layout_margin">5dp</item>
         <item name="android:layout_marginStart">15dp</item>
     </style>
+
 </resources>
