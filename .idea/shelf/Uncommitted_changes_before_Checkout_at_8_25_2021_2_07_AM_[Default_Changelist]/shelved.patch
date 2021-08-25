@@ -1,0 +1,153 @@
+Index: app/src/main/java/com/example/primevideo/SliderModelItem.kt
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/SliderModelItem.kt b/app/src/main/java/com/example/primevideo/SliderModelItem.kt
+deleted file mode 100644
+--- a/app/src/main/java/com/example/primevideo/SliderModelItem.kt	(revision f78e50afafcc5e2a3b905050aaf011b0ccfd1d75)
++++ /dev/null	(revision f78e50afafcc5e2a3b905050aaf011b0ccfd1d75)
+@@ -1,15 +0,0 @@
+-package com.example.primevideo
+-
+-import com.google.gson.annotations.SerializedName
+-
+-class SliderModelItem {
+-    private var url: String? = null
+-
+-    fun slideItemLayoutHomeActivity(url: String?) {
+-        this.url = url
+-    }
+-
+-    fun getUrl(): String? {
+-        return url
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/java/com/example/primevideo/Model/PopularMoviesModel.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Model/PopularMoviesModel.kt b/app/src/main/java/com/example/primevideo/Model/PopularMoviesModel.kt
+new file mode 100644
+--- /dev/null	(date 1629836935036)
++++ b/app/src/main/java/com/example/primevideo/Model/PopularMoviesModel.kt	(date 1629836935036)
+@@ -0,0 +1,15 @@
++package com.example.primevideo.Model
++
++
++import com.google.gson.annotations.SerializedName
++
++data class PopularMoviesModel(
++    @SerializedName("page")
++    val page: Int,
++    @SerializedName("results")
++    val results: List<Result>,
++    @SerializedName("total_pages")
++    val totalPages: Int,
++    @SerializedName("total_results")
++    val totalResults: Int
++)
+\ No newline at end of file
+Index: app/src/main/java/com/example/primevideo/Model/Result.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Model/Result.kt b/app/src/main/java/com/example/primevideo/Model/Result.kt
+new file mode 100644
+--- /dev/null	(date 1629836935061)
++++ b/app/src/main/java/com/example/primevideo/Model/Result.kt	(date 1629836935061)
+@@ -0,0 +1,35 @@
++package com.example.primevideo.Model
++
++
++import com.google.gson.annotations.SerializedName
++
++data class Result(
++    @SerializedName("adult")
++    val adult: Boolean,
++    @SerializedName("backdrop_path")
++    val backdropPath: String,
++    @SerializedName("genre_ids")
++    val genreIds: List<Int>,
++    @SerializedName("id")
++    val id: Int,
++    @SerializedName("original_language")
++    val originalLanguage: String,
++    @SerializedName("original_title")
++    val originalTitle: String,
++    @SerializedName("overview")
++    val overview: String,
++    @SerializedName("popularity")
++    val popularity: Double,
++    @SerializedName("poster_path")
++    val posterPath: String,
++    @SerializedName("release_date")
++    val releaseDate: String,
++    @SerializedName("title")
++    val title: String,
++    @SerializedName("video")
++    val video: Boolean,
++    @SerializedName("vote_average")
++    val voteAverage: Double,
++    @SerializedName("vote_count")
++    val voteCount: Int
++)
+\ No newline at end of file
+Index: app/src/main/java/com/example/primevideo/Network/ApiClient.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Network/ApiClient.kt b/app/src/main/java/com/example/primevideo/Network/ApiClient.kt
+new file mode 100644
+--- /dev/null	(date 1629837341012)
++++ b/app/src/main/java/com/example/primevideo/Network/ApiClient.kt	(date 1629837341012)
+@@ -0,0 +1,13 @@
++package com.example.primevideo.Network
++
++import com.example.primevideo.Model.PopularMoviesModel
++import retrofit2.Call
++import retrofit2.http.GET
++import retrofit2.http.Query
++
++interface ApiClient {
++
++    //    Popular Movies API :- https://api.themoviedb.org/3/movie/popular?api_key=2147294b386ecadcb05cd19bcbbdddb9
++    @GET("3/movie/popular")
++    fun getPopularMovie(@Query("apiKey") apiKey: String): Call<PopularMoviesModel>
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/primevideo/Network/Network.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Network/Network.kt b/app/src/main/java/com/example/primevideo/Network/Network.kt
+new file mode 100644
+--- /dev/null	(date 1629837162518)
++++ b/app/src/main/java/com/example/primevideo/Network/Network.kt	(date 1629837162518)
+@@ -0,0 +1,23 @@
++package com.example.primevideo.Network
++
++import okhttp3.OkHttpClient
++import okhttp3.logging.HttpLoggingInterceptor
++import retrofit2.Retrofit
++import retrofit2.converter.gson.GsonConverterFactory
++
++class Network {
++    companion object {
++        private val httpLoggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
++
++        fun getInstance(): Retrofit {
++            return  Retrofit.Builder()
++                .baseUrl("https://api.themoviedb.org/")
++                .addConverterFactory(GsonConverterFactory.create())
++                .client(OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build())
++                .build()
++        }
++    }
++}
++/*
++Popular Movies API :- https://api.themoviedb.org/3/movie/popular?api_key=2147294b386ecadcb05cd19bcbbdddb9
++ */
+\ No newline at end of file
