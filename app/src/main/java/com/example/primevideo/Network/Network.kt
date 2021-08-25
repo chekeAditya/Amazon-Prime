@@ -11,7 +11,7 @@ class Network {
 
         fun getInstance(): Retrofit {
             return  Retrofit.Builder()
-                .baseUrl("https://run.mocky.io/")
+                .baseUrl("https://api.themoviedb.org/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build())
                 .build()

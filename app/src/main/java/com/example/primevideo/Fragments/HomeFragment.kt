@@ -7,8 +7,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.Adapters.PopularMoviesAdapter
+import com.example.primevideo.Adapters.PopularSeasonAdapter
 import com.example.primevideo.Model.PopularMoviesModel
 import com.example.primevideo.Model.ResultModel
+import com.example.primevideo.Model.Shows.Shows
+import com.example.primevideo.Model.Shows.ShowsItem
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
 import com.example.primevideo.R
@@ -21,11 +24,13 @@ import retrofit2.Response
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var listOfPopularMovies: List<ResultModel>
+    private lateinit var listOfPopularShows: List<ShowsItem>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
         PopularMovieApiCall()
+//        PopularShowApiCall()
     }
 
     private fun imageSliderView() {
@@ -49,7 +54,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         imageSlider.isAutoCycle = true
         imageSlider.startAutoCycle()
     }
-
 
     private fun PopularMovieApiCall() {
         var apiClient = Network.getInstance().create(ApiClient::class.java)
@@ -79,5 +83,33 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         rvPopularMovies.layoutManager = linearLayoutManager
     }
 
+//    private fun PopularShowApiCall() {
+//        var apiClient = Network.getInstance().create(ApiClient::class.java)
+//        apiClient.getPopularShow()
+//            .enqueue(object : Callback<ShowsItem> {
+//                override fun onResponse(
+//                    call: Call<ShowsItem>,
+//                    response: Response<ShowsItem>
+//                ) {
+//                    response.body()?.run {
+//                        listOfPopularShows = response.body()!!
+//                        setAdapterPopularShows()
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<ShowsItem>, t: Throwable) {
+//                    Toast.makeText(context, "Failure" + t.message, Toast.LENGTH_SHORT).show()
+//                }
+//
+//            })
+//    }
+//
+//    private fun setAdapterPopularShows() {
+//        var linearLayoutManager1 = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+//        val popularSeasonAdapter = PopularSeasonAdapter(listOfPopularShows)
+//        rvPopularSeason.adapter = popularSeasonAdapter
+//        rvPopularSeason.layoutManager = linearLayoutManager1
+//
+//    }
 
 }

@@ -41,6 +41,16 @@
         android:orientation="horizontal"
         style="@style/RecyclerViewPopularMovies"/>
 
+<!--        <TextView-->
+<!--            style="@style/tvRecommendedMovies"-->
+<!--            android:id="@+id/tvPopularSeason"-->
+<!--            android:text="@string/popular_season"/>-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rvPopularSeason"-->
+<!--            android:orientation="horizontal"-->
+<!--            style="@style/RecyclerViewPopularMovies"/>-->
+
     </LinearLayout>
 
 </ScrollView>

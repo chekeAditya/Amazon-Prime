@@ -1,6 +1,8 @@
 package com.example.primevideo.Network
 
 import com.example.primevideo.Model.PopularMoviesModel
+import com.example.primevideo.Model.Shows.Shows
+import com.example.primevideo.Model.Shows.ShowsItem
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -15,4 +17,9 @@ interface ApiClient {
 
     @GET("v3/4d8c2d78-30e1-409c-a015-99b4e7dcc85e")
     fun getPopularMovie2(): Call<PopularMoviesModel>
+
+
+    //popularshows :- https://api.tvmaze.com/shows
+    @GET("shows")
+    fun getPopularShow(): Call<ShowsItem>
 }
