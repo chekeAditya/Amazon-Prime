@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     private val fragmentFind = FragmentFind()
     private val fragmentDownloads = FragmentDownloads()
     private val fragmentMyStuff = FragmentMyStuff()
+    private val fragmentMovie = MoviesFragment()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.fragmentFind -> setupBottomNavigationBar(fragmentFind)
                 R.id.fragmentDownloads -> setupBottomNavigationBar(fragmentDownloads)
                 R.id.fragmentMyStuff -> setupBottomNavigationBar(fragmentMyStuff)
+                R.id.fragmentMovies ->setupBottomNavigationBar(fragmentMovie)
             }
             true
         }

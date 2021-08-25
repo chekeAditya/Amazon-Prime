@@ -23,4 +23,6 @@
     <string name="longpara">By continuing,you agree to Amazon\'s Conditions of \n Use and Privacy NOtice.</string>
     <string name="new_to_amazon">New to Amazon?</string>
     <string name="create_a_new_amazon_account">Create a new Amazon account</string>
+    <string name="popular_shows">Popular Shows</string>
+    <string name="top_movies">Top movies</string>
 </resources>
