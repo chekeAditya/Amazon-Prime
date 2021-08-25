@@ -45,4 +45,23 @@
         <item name="android:layout_marginStart">15dp</item>
     </style>
 
+
+    <style name="SettingButton" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="SettingTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:fontFamily">@font/allerta</item>
+        <item name="android:textSize">10sp</item>
+
+    </style>
+
 </resources>

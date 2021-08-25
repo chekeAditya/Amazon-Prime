@@ -16,7 +16,7 @@
             android:name=".Activity.SeetingActivity"
             android:exported="true" />
         <activity
-            android:name=".LogInActivity"
+            android:name=".Activity.LogInActivity"
             android:exported="true">
 
         </activity>

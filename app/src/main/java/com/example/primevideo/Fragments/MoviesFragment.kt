@@ -7,8 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.Adapters.PopularMoviesAdapter
-import com.example.primevideo.Adapters.recyclerViewAdapter
-import com.example.primevideo.ItemModel
 import com.example.primevideo.Model.PopularMoviesModel
 import com.example.primevideo.Model.ResultModel
 import com.example.primevideo.Network.ApiClient
