@@ -1,14 +1,399 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_blue_grey"
+    android:orientation="vertical"
     tools:context=".Fragments.FragmentFind">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Find Fragment" />
 
-</FrameLayout>
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/Linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:background="#040F55"
+                android:searchIcon="@drawable/ic_baseline_search_24">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="28dp"
+                    android:layout_height="37dp"
+                    android:layout_marginLeft="-34dp"
+                    android:layout_marginTop="7dp"
+                    android:backgroundTint="#040F55"
+                    android:src="@drawable/ic_baseline_mic_24" />
+            </SearchView>
+
+            <TextView
+                style="@style/HeadingFindFragment"
+                android:text="Browse by" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="2">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4"
+                    android:backgroundTint="#3A485E"
+                    android:text="Movies"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#3A485E"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_weight="0.6"
+                    android:text="Amazon Originals" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:weightSum="2">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.97"
+                    android:backgroundTint="#3A485E"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="TV" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#3A485E"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="Kids" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/HeadingFindFragment"
+                android:text="Genres" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/dark_blue_grey"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:background="#808080" />
+                    <!--        drama-->
+                    <TextView
+                        android:id="@+id/tdrama"
+                        style="@style/Ucardviewtext"
+                        android:text="Drama" />
+
+                    <ImageButton
+                        android:id="@+id/bDrama"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                        android:layout_width="wrap_content"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tdrama" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/bDrama"
+                        android:background="#808080" />
+                    <!--        action-->
+                    <TextView
+                        android:id="@+id/tAction"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/bDrama"
+                        android:text="Action and adventure" />
+
+                    <ImageButton
+                        android:id="@+id/bAction"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bDrama"
+                        android:layout_alignRight="@+id/tAction"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+                    <TextView
+                        android:id="@+id/barAction"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/tAction"
+                        android:background="#808080" />
+                    <!--        Romance-->
+
+                    <TextView
+                        android:id="@+id/tRomance"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/bAction"
+                        android:text="Romance" />
+
+                    <ImageButton
+                        android:id="@+id/bRomance"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tAction"
+                        android:layout_alignRight="@+id/tRomance"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/tRomance"
+                        android:background="#808080" />
+                    <!--        Comedy-->
+
+                    <TextView
+                        android:id="@+id/tComedy"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/tRomance"
+                        android:text="Comedy" />
+
+                    <ImageButton
+                        android:id="@+id/bComedy"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tRomance"
+                        android:layout_alignRight="@+id/tComedy"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+                    <TextView
+                        android:id="@+id/barline2"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/bComedy"
+                        android:background="#808080" />
+                    <!--        Thriller-->
+
+                    <TextView
+                        android:id="@+id/tThriller"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/barline2"
+                        android:text="Thriller" />
+
+                    <ImageButton
+                        android:id="@+id/bThriller"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bComedy"
+                        android:layout_alignRight="@+id/tThriller"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/tThriller"
+                        android:background="#808080" />
+                    <!--        Horror-->
+                    <TextView
+                        android:id="@+id/tHorror"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/tThriller"
+                        android:text="Horror" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bHorror"
+                        android:layout_below="@+id/tThriller"
+                        android:layout_alignRight="@+id/tHorror"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                style="@style/HeadingFindFragment"
+                android:text="Language" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/dark_blue_grey"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:background="#808080" />
+                    <!--        english-->
+                    <TextView
+                        android:id="@+id/tEnglish"
+                        style="@style/Ucardviewtext"
+                        android:text="English" />
+
+                    <ImageButton
+                        android:id="@+id/bEnglish"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tEnglish"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/bEnglish"
+                        android:background="#808080" />
+                    <!--        Hindi-->
+                    <TextView
+                        android:id="@+id/tHindi"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/bEnglish"
+                        android:text="Hindi" />
+
+                    <ImageButton
+                        android:id="@+id/bHindi"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bEnglish"
+                        android:layout_alignRight="@+id/tHindi"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+                    <TextView
+                        android:id="@+id/barAction1"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/tHindi"
+                        android:background="#808080" />
+                    <!--        Telugu-->
+
+                    <TextView
+                        android:id="@+id/tTelugu"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/bHindi"
+                        android:text="Telugu" />
+
+                    <ImageButton
+                        android:id="@+id/bTelugu"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tHindi"
+                        android:layout_alignRight="@+id/tTelugu"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/tTelugu"
+                        android:background="#808080" />
+                    <!--        Tamil-->
+
+                    <TextView
+                        android:id="@+id/tTamil"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/tTelugu"
+                        android:text="Tamil" />
+
+                    <ImageButton
+                        android:id="@+id/bTamil"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tTelugu"
+                        android:layout_alignRight="@+id/tTamil" />
+
+                    <TextView
+                        android:id="@+id/barline3"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/bTamil"
+                        android:background="#808080" />
+                    <!--        Thriller-->
+
+                    <TextView
+                        android:id="@+id/tKannada"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/barline3"
+                        android:text="Kannada" />
+
+                    <ImageButton
+                        android:id="@+id/bKannada"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bTamil"
+                        android:layout_alignRight="@+id/tKannada" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_below="@+id/tKannada"
+                        android:background="#808080" />
+                    <!--        Horror-->
+                    <TextView
+                        android:id="@+id/tMalayalam"
+                        style="@style/Ucardviewtext"
+                        android:layout_below="@+id/tKannada"
+                        android:text="Malayalam" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:id="@+id/bMalayalam"
+                        android:backgroundTint="@color/dark_blue_grey"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tKannada"
+                        android:layout_alignRight="@+id/tMalayalam" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

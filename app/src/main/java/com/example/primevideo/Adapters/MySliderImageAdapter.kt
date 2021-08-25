@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderViewAdapter
 import com.squareup.picasso.Picasso
@@ -13,10 +14,14 @@ import com.squareup.picasso.Picasso
 class MySliderImageAdapter() : SliderViewAdapter<MySliderImageAdapter.SliderAdapterViewHolder>() {
 
     private var mSliderItems = ArrayList<String>()
+
+
     fun renewItems(sliderItems: ArrayList<String>) {
         mSliderItems = sliderItems
         notifyDataSetChanged()
     }
+
+
 
     fun addItem(sliderItems: String){
         mSliderItems.add(sliderItems)
