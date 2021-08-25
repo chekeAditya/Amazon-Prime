@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.PrimeVideo" parent="Theme.Design.Light.NoActionBar">
+    <style name="Theme.PrimeVideo" parent="Theme.Design.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/dark_blue_grey</item>
-        <item name="colorPrimaryVariant">@color/dark_blue_grey</item>
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

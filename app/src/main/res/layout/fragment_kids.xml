@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +8,10 @@
     android:orientation="vertical"
     tools:context=".Fragments.KidsFragment">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/imageSlider"
@@ -33,38 +37,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:layout_below="@id/imageSlider"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:text="Pick Your pals"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:textStyle="bold" />
 
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:id="@+id/HorizontalScrollViewkids"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvKidsPickYou"
+            android:orientation="horizontal"
+            android:layout_below="@id/tvPick"
+            style="@style/RecyclerViewPopularMovies"/>
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="160dp"
-                android:layout_height="140dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/app_logo" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageView"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:text="Mottu"
-                android:textColor="@color/white" />
-        </RelativeLayout>
-    </HorizontalScrollView>
-</LinearLayout>
+    </RelativeLayout>
+</ScrollView>
