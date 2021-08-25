@@ -78,10 +78,10 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
     }
 
     private fun setAdapter() {
-        var linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        val linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)
-        rvPopularMovies.adapter = popularMoviesAdapter
-        rvPopularMovies.layoutManager = linearLayoutManager
+        rvTopMovies.adapter = popularMoviesAdapter
+        rvTopMovies.layoutManager = linearLayoutManager
     }
 
 }

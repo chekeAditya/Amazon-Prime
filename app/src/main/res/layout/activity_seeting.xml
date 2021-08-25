@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3a547b"
+    tools:context=".Activity.SeetingActivity">
+
+    <TextView
+        android:id="@+id/tvSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/settings"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnstream"
+        style="@style/SettingButton"
+        android:fontFamily="@font/allerta"
+        android:layout_below="@id/tvSettings"
+        android:text="Stream &amp; download" />
+
+    <TextView
+       style="@style/SettingTextView"
+        android:id="@+id/downStream"
+        android:text="Manage inernet or wifi"
+        android:layout_below="@id/btnstream" />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/view1"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/downStream"
+        android:layout_marginTop="20dp"
+        android:layout_height="1dp" />
+
+    <Button
+        android:id="@+id/ParentalControls"
+        style="@style/SettingButton"
+        android:fontFamily="@font/allerta"
+        android:layout_below="@id/view1"
+        android:text="Parental Contral" />
+
+    <TextView
+        style="@style/SettingTextView"
+        android:id="@+id/downparent"
+        android:text="Control what you can watch"
+        android:layout_below="@id/ParentalControls" />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/view2"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/downparent"
+        android:layout_marginTop="20dp"
+        android:layout_height="1dp" />
+
+
+    <Button
+        android:id="@+id/RegisterdDevice"
+        style="@style/SettingButton"
+        android:fontFamily="@font/allerta"
+        android:layout_below="@id/view2"
+        android:text="Registered Device" />
+
+    <TextView
+        style="@style/SettingTextView"
+        android:id="@+id/downRegister"
+        android:text="See all Registered device"
+        android:layout_below="@id/RegisterdDevice" />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/view3"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/downRegister"
+        android:layout_marginTop="20dp"
+        android:layout_height="1dp" />
+
+    <Button
+        android:id="@+id/ClearHistory"
+        style="@style/SettingButton"
+        android:fontFamily="@font/allerta"
+        android:layout_below="@id/view3"
+        android:text="Clear Search History" />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/view4"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/ClearHistory"
+        android:layout_marginTop="20dp"
+        android:layout_height="1dp" />
+    <Button
+        android:id="@+id/Notifiacation"
+        style="@style/SettingButton"
+        android:fontFamily="@font/allerta"
+        android:layout_below="@id/view4"
+        android:text="Notifications" />
+
+    <TextView
+        style="@style/SettingTextView"
+        android:id="@+id/downNotificaiton"
+        android:text="On"
+        android:layout_below="@id/Notifiacation" />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/view5"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/downNotificaiton"
+        android:layout_marginTop="20dp"
+        android:layout_height="1dp" />
+
+    <Button
+        android:id="@+id/AutoPlay"
+        style="@style/SettingButton"
+        android:fontFamily="@font/allerta"
+        android:layout_below="@id/view5"
+        android:text="Auto Play" />
+
+    <TextView
+        style="@style/SettingTextView"
+        android:id="@+id/downAutoplay"
+        android:text="play the next episode automatically"
+        android:layout_below="@id/AutoPlay" />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/view6"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/downAutoplay"
+        android:layout_marginTop="20dp"
+        android:layout_height="1dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="440dp"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/Laungage"
+        style="@style/SettingButton"
+        android:fontFamily="@font/allerta"
+        android:layout_below="@id/view6"
+        android:text="Language" />
+
+    <TextView
+        style="@style/SettingTextView"
+        android:id="@+id/downLanguage"
+        android:text="English"
+        android:layout_below="@id/Laungage" />
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/view7"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/downLanguage"
+        android:layout_marginTop="20dp"
+        android:layout_height="1dp" />
+
+
+</RelativeLayout>

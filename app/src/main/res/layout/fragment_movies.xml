@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/dark_blue_grey"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragmentMovies"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue_grey"
+    android:orientation="vertical"
     tools:context=".Fragments.MoviesFragment">
 
     <com.smarteist.autoimageslider.SliderView
@@ -30,39 +30,30 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-    <TextView
-        style="@style/HeadingFindFragment"
-        android:id="@+id/tTopMovie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Top movies"
-        android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/tTopMovie"
+            style="@style/HeadingFindFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Top movies"
+            android:textSize="25dp" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/tTopMovie"
             android:layout_marginTop="24dp"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+            android:layout_toEndOf="@+id/tTopMovie"
             android:background="@color/dark_blue_grey"
-            />
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
 
     </RelativeLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTopMovies"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rvTopMovies"
-        android:orientation="horizontal"
-        />
-
-
-
-
-
-
-
-
+        android:orientation="horizontal" />
 </LinearLayout>

@@ -72,7 +72,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setAdapter() {
-        var linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        val linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)
         rvPopularMovies.adapter = popularMoviesAdapter
         rvPopularMovies.layoutManager = linearLayoutManager

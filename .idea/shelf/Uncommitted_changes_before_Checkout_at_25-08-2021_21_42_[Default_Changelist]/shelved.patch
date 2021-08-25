@@ -1,0 +1,81 @@
+Index: app/src/main/res/layout/fragment_my_stuff.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Fragments.FragmentMyStuff\">\r\n\r\n    <!-- TODO: Update blank fragment layout -->\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:text=\"My Stuff Fragment\"/>\r\n\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_my_stuff.xml b/app/src/main/res/layout/fragment_my_stuff.xml
+--- a/app/src/main/res/layout/fragment_my_stuff.xml	(revision 3e79516083afca0bf509231dd3980217cd11f4f5)
++++ b/app/src/main/res/layout/fragment_my_stuff.xml	(date 1629907932455)
+@@ -1,14 +1,13 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context=".Fragments.FragmentMyStuff">
+ 
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="My Stuff Fragment"/>
+-
+-</FrameLayout>
+\ No newline at end of file
++   <androidx.cardview.widget.CardView
++       android:layout_width="wrap_content"
++       android:layout_height="wrap_content" >
++      
++   </androidx.cardview.widget.CardView>
++</RelativeLayout>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/activity_main.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_find.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_home.xml\" value=\"0.26481481481481484\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_homes.xml\" value=\"0.2604166666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_kids.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_movies.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml\" value=\"0.26481481481481484\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml\" value=\"0.2755208333333333\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml\" value=\"0.2755208333333333\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/activity_main.xml\" value=\"0.1793478260869565\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_find.xml\" value=\"0.15760869565217392\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_home.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_homes.xml\" value=\"0.25271739130434784\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_kids.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/menu/menu.xml\" value=\"0.259375\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 3e79516083afca0bf509231dd3980217cd11f4f5)
++++ b/.idea/misc.xml	(date 1629907808968)
+@@ -17,19 +17,35 @@
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml" value="0.27447916666666666" />
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml" value="0.27447916666666666" />
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml" value="0.26481481481481484" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_find_replace_24.xml" value="0.1" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_mic_none_24.xml" value="0.1" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/activity_main.xml" value="0.24592391304347827" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_downloads.xml" value="0.10462962962962963" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_find.xml" value="0.12" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_home.xml" value="0.10462962962962963" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_homes.xml" value="0.10462962962962963" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_kids.xml" value="0.10462962962962963" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_movies.xml" value="0.16077898550724637" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/item_layout_slider.xml" value="0.16077898550724637" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/item_topmovie_recycler.xml" value="0.10462962962962963" />
++        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/menu/menu.xml" value="0.10462962962962963" />
++        <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_kids.xml" value="0.1793478260869565" />
++        <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_my_stuff.xml" value="0.1793478260869565" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.2755208333333333" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.2755208333333333" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
++        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_downloads.xml" value="0.15081521739130435" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_find.xml" value="0.15760869565217392" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_home.xml" value="0.259375" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_homes.xml" value="0.25271739130434784" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_kids.xml" value="0.264" />
++        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_my_stuff.xml" value="0.24456521739130435" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/item_layout_slider.xml" value="0.259375" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/menu/menu.xml" value="0.259375" />
+       </map>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">

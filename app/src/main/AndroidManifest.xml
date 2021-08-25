@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeVideo">
         <activity
+            android:name=".Activity.SeetingActivity"
+            android:exported="true" />
+        <activity
             android:name=".LogInActivity"
             android:exported="true" />
         <activity
