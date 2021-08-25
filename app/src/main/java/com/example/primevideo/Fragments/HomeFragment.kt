@@ -1,5 +1,4 @@
 package com.example.primevideo.Fragments
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -50,7 +49,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         imageSlider.startAutoCycle()
     }
 
-
     private fun PopularMovieApiCall() {
         var apiClient = Network.getInstance().create(ApiClient::class.java)
         apiClient.getPopularMovie2()
@@ -64,11 +62,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                         setAdapter()
                     }
                 }
-
                 override fun onFailure(call: Call<PopularMoviesModel>, t: Throwable) {
                     Toast.makeText(context, "Failure" + t.message, Toast.LENGTH_SHORT).show()
                 }
-
             })
     }
 
@@ -78,6 +74,4 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         rvPopularMovies.adapter = popularMoviesAdapter
         rvPopularMovies.layoutManager = linearLayoutManager
     }
-
-
 }

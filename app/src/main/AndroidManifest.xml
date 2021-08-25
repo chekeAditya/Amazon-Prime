@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeVideo">
         <activity
-            android:name=".LogInActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Activity.MainActivity"
-            android:exported="true">
+            android:name=".Activity.LogInActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="true">
+
         </activity>
 
         <meta-data

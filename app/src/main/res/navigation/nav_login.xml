@@ -7,25 +7,28 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.primevideo.SignInFragment"
+        android:name="com.example.primevideo.Fragments.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
             android:id="@+id/action_signInFragment_to_createAccount"
             app:destination="@id/createAccount" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
     <fragment
         android:id="@+id/createAccount"
-        android:name="com.example.primevideo.CreateAccount"
+        android:name="com.example.primevideo.Fragments.CreateAccount"
         android:label="fragment_create_account"
         tools:layout="@layout/fragment_create_account" >
         <action
-            android:id="@+id/action_createAccount_to_fragmentHomes2"
-            app:destination="@id/fragmentHomes2" />
+            android:id="@+id/action_createAccount_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/fragmentHomes2"
-        android:name="com.example.primevideo.Fragments.FragmentHomes"
-        android:label="fragment_homes"
-        tools:layout="@layout/fragment_homes" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.primevideo.Activity.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>

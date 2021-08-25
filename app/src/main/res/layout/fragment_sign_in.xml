@@ -4,26 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2e2e2e"
-    tools:context=".SignInFragment">
+    tools:context=".Fragments.SignInFragment">
 
-<ImageView
-    android:id="@+id/ivLogo"
-    android:layout_marginTop="20dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:src="@drawable/ic_amazon"
-    />
-    <TextView
-        android:id="@+id/tvSignIn"
-        android:layout_marginStart="20dp"
-        android:layout_below="@+id/ivLogo"
+    <ImageView
+        android:id="@+id/ivLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_amazon" />
+
+    <TextView
+        android:id="@+id/tvSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivLogo"
+        android:layout_marginStart="20dp"
         android:text="Sign-In"
-        android:textSize="30sp"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etEmail"
@@ -56,29 +55,28 @@
         android:layout_height="35dp"
         android:layout_below="@+id/etPassword"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:background="#f8f8ff" />
+        android:layout_marginTop="24dp" />
 
     <TextView
-        android:layout_marginStart="20dp"
-        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etPassword"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:layout_toRightOf="@id/etCheckBox"
         android:text="Show Password"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnSignIn"
-        android:text="Sign-In"
-        android:layout_margin="20dp"
-        android:layout_below="@id/etCheckBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/etCheckBox"
+        android:layout_margin="20dp"
         android:background="#ffc252"
-        />
+        android:text="Sign-In" />
 
     <TextView
         android:id="@+id/tvTerms"
@@ -117,4 +115,9 @@
         android:layout_marginBottom="10dp"
         android:background="#3d3d3d"
         android:text="Create a new Amazon account" />
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 </RelativeLayout>
