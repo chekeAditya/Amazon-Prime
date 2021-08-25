@@ -80,6 +80,4 @@ class KidsFragment : Fragment(R.layout.fragment_kids) {
         rvKidsPickYou.adapter = kidsPickYouAdapter
         rvKidsPickYou.layoutManager = linearLayoutManager
     }
-
-
 }

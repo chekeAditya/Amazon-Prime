@@ -15,5 +15,6 @@
     <string name="downloads">downloads</string>
     <string name="downloadss">Downloads</string>
     <string name="popular_movies">Popular Movies</string>
-    <string name="settings">Settings</string>
+    <string name="popular_shows">Popular Shows</string>
+    <string name="top_movies">Top movies</string>
 </resources>
