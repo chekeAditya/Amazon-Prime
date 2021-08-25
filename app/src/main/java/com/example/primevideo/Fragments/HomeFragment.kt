@@ -49,7 +49,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
 
             override fun onFailure(call: Call<List<PopularShowsModelItem>>, t: Throwable) {
-                Log.d("Aditya", "onFailure: "+t.message)
+                Toast.makeText(context, "We are working on it ", Toast.LENGTH_SHORT).show()
             }
 
         })
@@ -108,8 +108,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setAdapter() {
-        var linearLayoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        var linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)
         rvPopularMovies.adapter = popularMoviesAdapter
         rvPopularMovies.layoutManager = linearLayoutManager

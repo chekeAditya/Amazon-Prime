@@ -27,41 +27,17 @@
         app:sliderIndicatorUnselectedColor="#FFF"
         app:sliderScrollTimeInSec="4" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
     <TextView
         style="@style/HeadingFindFragment"
         android:id="@+id/tTopMovie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Top movies"
-        android:textSize="25dp"/>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/tTopMovie"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-            android:background="@color/dark_blue_grey"
-            />
-
-    </RelativeLayout>
+        android:text="@string/top_movies" />
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/RecyclerViewPopularMovies"
         android:id="@+id/rvTopMovies"
         android:orientation="horizontal"
         />
-
-
-
-
-
 
 
 
