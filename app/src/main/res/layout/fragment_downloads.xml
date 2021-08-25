@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradientbackground"
     tools:context=".Fragments.FragmentDownloads">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Find Fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvDownloads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/allerta"
+        android:gravity="center"
+        android:text="@string/downloadss"
+        android:textColor="#f8f8ff"
+        android:textSize="20sp"
+        />
+
+    <ImageView
+        android:layout_marginTop="200dp"
+        android:layout_below="@+id/tvDownloads"
+        android:id="@+id/ivBox"
+        android:layout_width="199dp"
+        android:layout_height="164dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/box" />
+
+    <TextView
+        android:id="@+id/noVideos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBox"
+        android:gravity="center"
+        android:text="@string/no_videos_downloaded"
+        android:textColor="#f8f8ff"
+        android:textSize="20sp" />
+
+</RelativeLayout>
+
