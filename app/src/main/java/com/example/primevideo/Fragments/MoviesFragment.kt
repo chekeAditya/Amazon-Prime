@@ -2,36 +2,31 @@ package com.example.primevideo.Fragments
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.MySliderImageAdapter
-import com.example.primevideo.Adapters.PopularMoviesAdapter
-import com.example.primevideo.Adapters.recyclerViewAdapter
-import com.example.primevideo.ItemModel
-import com.example.primevideo.Model.PopularMoviesModel
-import com.example.primevideo.Model.ResultModel
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.imageSlider
-import kotlinx.android.synthetic.main.fragment_movies.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MoviesFragment : Fragment(R.layout.fragment_movies) {
 
-    private lateinit var listOfPopularMovies: List<ResultModel>
+
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
-        PopularMovieApiCall()
+
     }
+
 
 
     private fun imageSliderView() {
@@ -55,33 +50,8 @@ class MoviesFragment : Fragment(R.layout.fragment_movies) {
         imageSlider.isAutoCycle = true
         imageSlider.startAutoCycle()
     }
+    
 
-    private fun PopularMovieApiCall() {
-        var apiClient = Network.getInstance().create(ApiClient::class.java)
-        apiClient.getPopularMovie2()
-            .enqueue(object : Callback<PopularMoviesModel> {
-                override fun onResponse(
-                    call: Call<PopularMoviesModel>,
-                    response: Response<PopularMoviesModel>
-                ) {
-                    response.body()?.run {
-                        listOfPopularMovies = resultModels
-                        setAdapter()
-                    }
-                }
 
-                override fun onFailure(call: Call<PopularMoviesModel>, t: Throwable) {
-                    Toast.makeText(context, "Failure" + t.message, Toast.LENGTH_SHORT).show()
-                }
-
-            })
-    }
-
-    private fun setAdapter() {
-        var linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)
-        rvPopularMovies.adapter = popularMoviesAdapter
-        rvPopularMovies.layoutManager = linearLayoutManager
-    }
 
 }

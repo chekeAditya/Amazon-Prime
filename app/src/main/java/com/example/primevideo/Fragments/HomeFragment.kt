@@ -3,28 +3,19 @@ package com.example.primevideo.Fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.MySliderImageAdapter
-import com.example.primevideo.Adapters.PopularMoviesAdapter
-import com.example.primevideo.Model.PopularMoviesModel
-import com.example.primevideo.Model.ResultModel
-import com.example.primevideo.Network.ApiClient
-import com.example.primevideo.Network.Network
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_home.*
-import retrofit2.Call
-import retrofit2.Response
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private lateinit var listOfPopularMovies: List<ResultModel>
+//    private lateinit var listOfPopularMovies: List<ResultModel>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
-        PopularMovieApiCall()
+
     }
 
     private fun imageSliderView() {
@@ -50,33 +41,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
 
-    private fun PopularMovieApiCall() {
-        var apiClient = Network.getInstance().create(ApiClient::class.java)
-        apiClient.getPopularMovie2()
-            .enqueue(object : retrofit2.Callback<PopularMoviesModel> {
-                override fun onResponse(
-                    call: Call<PopularMoviesModel>,
-                    response: Response<PopularMoviesModel>
-                ) {
-                    response.body()?.run {
-                        listOfPopularMovies = resultModels
-                        setAdapter()
-                    }
-                }
-
-                override fun onFailure(call: Call<PopularMoviesModel>, t: Throwable) {
-                    Toast.makeText(context, "Failure" + t.message, Toast.LENGTH_SHORT).show()
-                }
-
-            })
-    }
-
-    private fun setAdapter() {
-        var linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)
-        rvPopularMovies.adapter = popularMoviesAdapter
-        rvPopularMovies.layoutManager = linearLayoutManager
-    }
 
 
 }

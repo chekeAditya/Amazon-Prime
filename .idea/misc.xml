@@ -17,17 +17,6 @@
         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml" value="0.26481481481481484" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.2755208333333333" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.2755208333333333" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_downloads.xml" value="0.15081521739130435" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_find.xml" value="0.15760869565217392" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_home.xml" value="0.259375" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_homes.xml" value="0.25271739130434784" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_kids.xml" value="0.264" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_my_stuff.xml" value="0.24456521739130435" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/item_layout_slider.xml" value="0.259375" />
-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/menu/menu.xml" value="0.259375" />
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_find_replace_24.xml" value="0.1" />
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_mic_none_24.xml" value="0.1" />
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/activity_main.xml" value="0.24592391304347827" />
@@ -39,6 +28,7 @@
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_movies.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/item_layout_slider.xml" value="0.16077898550724637" />
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/item_topmovie_recycler.xml" value="0.10462962962962963" />
+        <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/itemlayout_popular_movies.xml" value="0.24592391304347827" />
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/menu/menu.xml" value="0.10462962962962963" />
       </map>
     </option>
