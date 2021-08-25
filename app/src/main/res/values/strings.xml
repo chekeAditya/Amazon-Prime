@@ -12,4 +12,6 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="message_and_data_charges_may_apply">Message and Data charges may apply</string>
     <string name="by_continuing_you_agree_to_amazon_s_conditions_of_n_use_and_privacy_notice">By continuing,you agree to Amazon\'s Conditions of \n Use and Privacy NOtice.</string>
+    <string name="downloads">downloads</string>
+    <string name="downloadss">Downloads</string>
 </resources>

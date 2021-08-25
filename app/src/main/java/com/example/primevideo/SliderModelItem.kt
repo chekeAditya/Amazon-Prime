@@ -1,6 +1,5 @@
 package com.example.primevideo
 
-import com.google.gson.annotations.SerializedName
 
 class SliderModelItem {
     private var url: String? = null
