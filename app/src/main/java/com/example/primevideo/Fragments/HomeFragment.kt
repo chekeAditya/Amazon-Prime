@@ -14,7 +14,6 @@ import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.Response
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -52,7 +51,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun PopularMovieApiCall() {
         var apiClient = Network.getInstance().create(ApiClient::class.java)
         apiClient.getPopularMovie2()
-            .enqueue(object : Callback<PopularMoviesModel> {
+            .enqueue(object : retrofit2.Callback<PopularMoviesModel> {
                 override fun onResponse(
                     call: Call<PopularMoviesModel>,
                     response: Response<PopularMoviesModel>

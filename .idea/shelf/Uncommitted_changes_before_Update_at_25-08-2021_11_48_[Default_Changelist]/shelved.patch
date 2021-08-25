@@ -1,0 +1,104 @@
+Index: app/src/main/res/layout/fragment_kids.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/dark_blue_grey\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".Fragments.KidsFragment\">\r\n\r\n\r\n    <com.smarteist.autoimageslider.SliderView\r\n        android:id=\"@+id/imageSlider\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"200dp\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:sliderAnimationDuration=\"600\"\r\n        app:sliderAutoCycleDirection=\"back_and_forth\"\r\n        app:sliderIndicatorAnimationDuration=\"600\"\r\n        app:sliderIndicatorEnabled=\"true\"\r\n        app:sliderIndicatorGravity=\"center_horizontal|bottom\"\r\n        app:sliderIndicatorMargin=\"15dp\"\r\n        app:sliderIndicatorOrientation=\"horizontal\"\r\n        app:sliderIndicatorPadding=\"3dp\"\r\n        app:sliderIndicatorRadius=\"2dp\"\r\n        app:sliderIndicatorSelectedColor=\"#5A5A5A\"\r\n        app:sliderIndicatorUnselectedColor=\"#FFF\"\r\n        app:sliderScrollTimeInSec=\"1\" />\r\n\r\n\r\n    <TextView\r\n        android:id=\"@+id/tvPick\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginLeft=\"20dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginBottom=\"10dp\"\r\n        android:text=\"Pick Your pals\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"18dp\"\r\n        android:textStyle=\"bold\" />\r\n\r\n    <HorizontalScrollView\r\n        android:layout_width=\"wrap_content\"\r\n        android:id=\"@+id/HorizontalScrollViewkids\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginLeft=\"20dp\">\r\n\r\n        <RelativeLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n            <ImageView\r\n                android:id=\"@+id/imageView\"\r\n                android:layout_width=\"160dp\"\r\n                android:layout_height=\"140dp\"\r\n                android:scaleType=\"fitXY\"\r\n                android:src=\"@drawable/app_logo\" />\r\n\r\n            <TextView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_alignBottom=\"@+id/imageView\"\r\n                android:layout_marginLeft=\"10dp\"\r\n                android:layout_marginBottom=\"10dp\"\r\n                android:text=\"Mottu\"\r\n                android:textColor=\"@color/white\" />\r\n        </RelativeLayout>\r\n    </HorizontalScrollView>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_kids.xml b/app/src/main/res/layout/fragment_kids.xml
+--- a/app/src/main/res/layout/fragment_kids.xml	(revision f78e50afafcc5e2a3b905050aaf011b0ccfd1d75)
++++ b/app/src/main/res/layout/fragment_kids.xml	(date 1629872266889)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+@@ -9,6 +9,10 @@
+     tools:context=".Fragments.KidsFragment">
+ 
+ 
++    <RelativeLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent" >
++
+     <com.smarteist.autoimageslider.SliderView
+         android:id="@+id/imageSlider"
+         android:layout_width="match_parent"
+@@ -33,6 +37,7 @@
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="20dp"
++        android:layout_below="@id/imageSlider"
+         android:layout_marginTop="20dp"
+         android:layout_marginBottom="10dp"
+         android:text="Pick Your pals"
+@@ -40,31 +45,6 @@
+         android:textSize="18dp"
+         android:textStyle="bold" />
+ 
+-    <HorizontalScrollView
+-        android:layout_width="wrap_content"
+-        android:id="@+id/HorizontalScrollViewkids"
+-        android:layout_height="wrap_content"
+-        android:layout_marginLeft="20dp">
+-
+-        <RelativeLayout
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content">
+ 
+-            <ImageView
+-                android:id="@+id/imageView"
+-                android:layout_width="160dp"
+-                android:layout_height="140dp"
+-                android:scaleType="fitXY"
+-                android:src="@drawable/app_logo" />
+-
+-            <TextView
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:layout_alignBottom="@+id/imageView"
+-                android:layout_marginLeft="10dp"
+-                android:layout_marginBottom="10dp"
+-                android:text="Mottu"
+-                android:textColor="@color/white" />
+-        </RelativeLayout>
+-    </HorizontalScrollView>
+-</LinearLayout>
+\ No newline at end of file
++    </RelativeLayout>
++</ScrollView>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/activity_main.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_find.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_home.xml\" value=\"0.26481481481481484\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_homes.xml\" value=\"0.2604166666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_kids.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_movies.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml\" value=\"0.26481481481481484\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/activity_main.xml\" value=\"0.1793478260869565\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_home.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_kids.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/menu/menu.xml\" value=\"0.259375\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" default=\"true\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision f78e50afafcc5e2a3b905050aaf011b0ccfd1d75)
++++ b/.idea/misc.xml	(date 1629872267757)
+@@ -17,15 +17,19 @@
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml" value="0.27447916666666666" />
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml" value="0.27447916666666666" />
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml" value="0.26481481481481484" />
++        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.2755208333333333" />
++        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.2755208333333333" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
++        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_find.xml" value="0.15760869565217392" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_home.xml" value="0.259375" />
+-        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_kids.xml" value="0.259375" />
++        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_homes.xml" value="0.25271739130434784" />
++        <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_kids.xml" value="0.34179821551132467" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/layout/item_layout_slider.xml" value="0.259375" />
+         <entry key="..\:/unit-3-Projects/Prime Video/app/src/main/res/menu/menu.xml" value="0.259375" />
+       </map>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
