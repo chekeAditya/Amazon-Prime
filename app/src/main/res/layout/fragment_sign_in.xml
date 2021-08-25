@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:src="@drawable/ic_amazon" />
+        android:src="@drawable/ic_amazon"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/tvSignIn"
@@ -19,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivLogo"
         android:layout_marginStart="20dp"
-        android:text="Sign-In"
+        android:text="@string/sign_in"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -33,9 +34,12 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rectangle"
-        android:hint="Email(phone for mobile Accounts"
+        android:hint="@string/email_phone_for_mobile_accounts"
+        android:inputType="textEmailAddress"
         android:paddingStart="10dp"
-        android:textColorHint="#a9a9a9" />
+        android:textColorHint="#a9a9a9"
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="emailAddress" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -45,9 +49,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rectangle"
-        android:hint="Amazon Password"
+        android:hint="@string/amazon_password"
         android:paddingStart="10dp"
-        android:textColorHint="#a9a9a9" />
+        android:textColorHint="#a9a9a9"
+        android:inputType="textPassword"
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="password" />
 
     <CheckBox
         android:id="@+id/etCheckBox"
@@ -56,15 +63,21 @@
         android:layout_below="@+id/etPassword"
         android:layout_marginStart="20dp"
         android:layout_marginTop="24dp" />
-
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="300dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etPassword"
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
-        android:layout_toRightOf="@id/etCheckBox"
-        android:text="Show Password"
+        android:layout_toEndOf="@id/etCheckBox"
+        android:text="@string/show_password"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -76,7 +89,7 @@
         android:layout_below="@id/etCheckBox"
         android:layout_margin="20dp"
         android:background="#ffc252"
-        android:text="Sign-In" />
+        android:text="@string/sign_in" />
 
     <TextView
         android:id="@+id/tvTerms"
@@ -87,7 +100,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:text="By continuing,you agree to Amazon's Conditions of \n Use and Privacy NOtice."
+        android:text="@string/longpara"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
@@ -101,8 +114,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:text="New to Amazon?"
-        android:textSize="15dp" />
+        android:text="@string/new_to_amazon"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/btnCreateAccount"
@@ -114,10 +127,6 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#3d3d3d"
-        android:text="Create a new Amazon account" />
-    <ProgressBar
-        android:id="@+id/progressbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:text="@string/create_a_new_amazon_account" />
+
 </RelativeLayout>
