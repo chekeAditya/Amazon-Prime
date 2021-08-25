@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_createAccount_to_mainActivity"
             app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_createAccount_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <activity
         android:id="@+id/mainActivity"

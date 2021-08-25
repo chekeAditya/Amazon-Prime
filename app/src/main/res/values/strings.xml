@@ -8,14 +8,14 @@
     <string name="name">Name</string>
     <string name="mobile_number_or_email">Mobile number or Email</string>
     <string name="create_a_password">Create a password</string>
-    <string name="show_password">Show Password</string>
+    <string name="show_passwords">ShowPassword</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="message_and_data_charges_may_apply">Message and Data charges may apply</string>
     <string name="by_continuing_you_agree_to_amazon_s_conditions_of_n_use_and_privacy_notice">By continuing,you agree to Amazon\'s Conditions of \n Use and Privacy NOtice.</string>
     <string name="downloads">downloads</string>
     <string name="downloadss">Downloads</string>
     <string name="popular_movies">Popular Movies</string>
-    <string name="sign_in">Sign-In</string>
+    <string name="sign_ins">Sign-In</string>
     <string name="email_phone_for_mobile_accounts">Email(phone for mobile Accounts</string>
     <string name="amazon_password">Amazon Password</string>
     <string name="show_password">Show Password</string>

@@ -21,18 +21,14 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
             navController.navigate(R.id.action_signInFragment_to_createAccount)
         }
         btnSignIn.setOnClickListener {
-            navController.navigate(R.id.action_signInFragment_to_mainActivity)
+
             loginUserAccount()
 
         }
     }
 
     private fun loginUserAccount() {
-
-
-        progressbar.visibility = View.VISIBLE
-
-
+      //  progressbar.visibility = View.VISIBLE
         val email = etEmail.text.toString()
         val password = etPassword.text.toString()
 
@@ -67,8 +63,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                         Toast.LENGTH_LONG
                     )
                         .show()
-                    progressbar.visibility = View.GONE
-
+                    //progressbar.visibility = View.GONE
+                    navController.navigate(R.id.action_signInFragment_to_mainActivity)
                 } else {
 
                     Toast.makeText(
@@ -77,7 +73,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                         Toast.LENGTH_LONG
                     )
                         .show()
-                    progressbar.visibility = View.GONE
+                   // progressbar.visibility = View.GONE
                 }
             }
     }

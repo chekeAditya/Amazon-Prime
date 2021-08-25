@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="#2e2e2e"
     tools:context=".Fragments.CreateAccount">
     <ImageView
         android:layout_alignParentTop="true"
@@ -133,11 +133,11 @@
         android:text="@string/by_continuing_you_agree_to_amazon_s_conditions_of_n_use_and_privacy_notice"
         android:textColor="@color/white"
         android:textSize="15sp" />
-    <ProgressBar
-        android:id="@+id/progressbar1"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="300dp"/>
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressbar1"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="180dp"-->
+<!--        android:layout_marginTop="300dp"/>-->
 </RelativeLayout>

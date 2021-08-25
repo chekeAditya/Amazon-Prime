@@ -3,6 +3,7 @@ package com.example.primevideo.Fragments
 
 import android.os.Bundle
 import android.text.TextUtils
+import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -21,15 +22,21 @@ class CreateAccount : Fragment(R.layout.fragment_create_account) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         btnCOntinue.setOnClickListener {
-            navController.navigate(R.id.action_createAccount_to_mainActivity)
+
             registerNewUser()
         }
+        etCheckBox.setOnCheckedChangeListener { buttonView, isChecked ->
+            etCheckBox.transformationMethod = PasswordTransformationMethod.getInstance();
 
+        }
+        tvAlreadyAccount.setOnClickListener {
+            navController.navigate(R.id.action_createAccount_to_signInFragment)
+        }
 
     }
 
     private fun registerNewUser() {
-        progressbar1.visibility = View.VISIBLE
+     //   progressbar1.visibility = View.VISIBLE
 
         val email = etNumberOrEmail.text.toString()
         val password = etCreatePassword.text.toString()
@@ -62,7 +69,8 @@ class CreateAccount : Fragment(R.layout.fragment_create_account) {
                         Toast.LENGTH_LONG
                     )
                         .show()
-                    progressbar1.visibility = View.GONE
+                   // progressbar1.visibility = View.GONE
+                    navController.navigate(R.id.action_createAccount_to_mainActivity)
 
                 } else {
                     Toast.makeText(
@@ -73,7 +81,7 @@ class CreateAccount : Fragment(R.layout.fragment_create_account) {
                     )
                         .show()
 
-                    progressbar1.visibility = View.GONE
+                  //  progressbar1.visibility = View.GONE
                 }
             }
     }
