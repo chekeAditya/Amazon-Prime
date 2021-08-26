@@ -1,5 +1,6 @@
 package com.example.primevideo.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -26,6 +27,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
     private lateinit var listofkidsandfamily: List<Data>
     private lateinit var dataX: List<DataX>
     private lateinit var indianToon: List<IndianToon>
+    private lateinit var amazonOriginalKid: List<AmazonOriginalKid>
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,6 +37,36 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         kidsandfamily()
         kidsTv()
         InidanToons()
+        AmazonOriginal()
+    }
+
+    private fun AmazonOriginal() {
+
+        val apiClient4 = Network.getInstance().create(ApiClient::class.java)
+        apiClient4.getAmazonorginal().enqueue(object : Callback<AmazonOriginalKids> {
+            override fun onResponse(
+                call: Call<AmazonOriginalKids>,
+                response: Response<AmazonOriginalKids>,
+            ) {
+                response.body()?.run {
+                    amazonOriginalKid = response.body()!!.amazonOriginalKids
+                    setAmazonAdaptor()
+                }
+            }
+
+            override fun onFailure(call: Call<AmazonOriginalKids>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+    private fun setAmazonAdaptor() {
+        val linearLayoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val adapter = AmazonOrigingalAdaptor(amazonOriginalKid, this)
+        rvAmazonorginal.adapter = adapter
+        rvAmazonorginal.layoutManager = linearLayoutManager
     }
 
     private fun InidanToons() {
@@ -132,27 +164,6 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         rvkidsandfamily.layoutManager = linearLayoutManager
     }
 
-    override fun onitemclick(data: Data, position: Int) {
-
-        val fragmentManager = requireActivity().supportFragmentManager
-        val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
-        fragmenTransaction.addToBackStack(null)
-        fragmenTransaction.commit()
-
-        val bundle = Bundle();
-        bundle.putString("movieImage", listofkidsandfamily[position].image)
-        bundle.putString("movieName", listofkidsandfamily[position].movieName)
-        bundle.putString("moviedescription", listofkidsandfamily[position].description)
-        bundle.putString("movietime",
-            listofkidsandfamily[position].timing + "    " + listofkidsandfamily[position].year)
-        bundle.putString("movierating", listofkidsandfamily[position].rating)
-        bundle.putString("DirectorImage", listofkidsandfamily[position].directorImage)
-        bundle.putString("DirectorName", listofkidsandfamily[position].director)
-        parentFragmentManager.setFragmentResult("Moviename", bundle)
-
-    }
-
     private fun imageSliderView() {
         val imageList: ArrayList<String> = ArrayList()
         imageList.add("https://www.linkpicture.com/q/bugdaries.jfif")
@@ -241,6 +252,46 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         bundle.putString("DirectorImage", indianToon.directorImage)
         bundle.putString("DirectorName", indianToon.director)
         parentFragmentManager.setFragmentResult("Moviename", bundle)
+    }
+
+    override fun onAmazonOriginal(amazonOriginalKid: AmazonOriginalKid, position: Int) {
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
+
+        val bundle = Bundle();
+        bundle.putString("movieImage", amazonOriginalKid.image)
+        bundle.putString("movieName", amazonOriginalKid.movieName)
+        bundle.putString("moviedescription", amazonOriginalKid.description)
+        bundle.putString("movietime",
+            amazonOriginalKid.timing + "    " + amazonOriginalKid.year)
+        bundle.putString("movierating", amazonOriginalKid.rating)
+        bundle.putString("DirectorImage", amazonOriginalKid.directorImage)
+        bundle.putString("DirectorName", amazonOriginalKid.director)
+        parentFragmentManager.setFragmentResult("Moviename", bundle)
+    }
+
+    override fun onitemclick(data: Data, position: Int) {
+
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
+
+        val bundle = Bundle();
+        bundle.putString("movieImage", listofkidsandfamily[position].image)
+        bundle.putString("movieName", listofkidsandfamily[position].movieName)
+        bundle.putString("moviedescription", listofkidsandfamily[position].description)
+        bundle.putString("movietime",
+            listofkidsandfamily[position].timing + "    " + listofkidsandfamily[position].year)
+        bundle.putString("movierating", listofkidsandfamily[position].rating)
+        bundle.putString("DirectorImage", listofkidsandfamily[position].directorImage)
+        bundle.putString("DirectorName", listofkidsandfamily[position].director)
+        parentFragmentManager.setFragmentResult("Moviename", bundle)
+
     }
 
 }

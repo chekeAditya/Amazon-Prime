@@ -1,8 +1,6 @@
 package com.example.primevideo.Network
 
-import com.example.primevideo.Model.Kids.kidsandfamily.IndianToonsModel
-import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
-import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
+import com.example.primevideo.Model.Kids.kidsandfamily.*
 import com.example.primevideo.Model.KidsPickYouModel
 import com.example.primevideo.Model.PopularMoviesModel
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
@@ -31,7 +29,11 @@ interface ApiClient {
     @GET("v3/dd8c9ec3-6151-44d0-8b2d-55315e2bbc68")
     fun getkidsandfamilyTv(): Call<kidsandfamilyTv>
 
-    //kids and family :- https://run.mocky.io/v3/b8cbd3d1-d886-43d3-b998-915986190721
-    @GET("v3/b8cbd3d1-d886-43d3-b998-915986190721")
+    //kids and family :- https://run.mocky.io/v3/0404dd7e-c1ba-4669-b14b-3331f46741ec
+    @GET("v3/0404dd7e-c1ba-4669-b14b-3331f46741ec")
     fun getInidanToons(): Call<IndianToonsModel>
+
+    //kids and family :- https://run.mocky.io/v3/e36a25b3-e17e-4363-bc50-893f8db4528a
+    @GET("v3/e36a25b3-e17e-4363-bc50-893f8db4528a")
+    fun getAmazonorginal(): Call<AmazonOriginalKids>
 }
