@@ -89,4 +89,11 @@ dependencies {
 
     //VideoPlayer
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+
+
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+
+
+
 }
