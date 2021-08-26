@@ -2,7 +2,6 @@
     <string name="app_name">Prime Video</string>
     <string name="download">Download</string>
     <string name="no_videos_downloaded">No videos Downloaded</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sign_up_with_your_mobile_number">Sign up with your mobile number</string>
     <string name="name">Name</string>
@@ -17,4 +16,27 @@
     <string name="popular_movies">Popular Movies</string>
     <string name="popular_shows">Popular Shows</string>
     <string name="top_movies">Top movies</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="prime">prime</string>
+    <string name="included_with_prime">included with Prime</string>
+    <string name="watch_now">Watch Now</string>
+    <string name="watchlist">Watchlist</string>
+    <string name="trailer">Trailer</string>
+    <string name="movieDesc">Toofan is based on a story idea by Farhan Akhtar and Anjum Rajabali\'s screenplay. The early portions of the Amazon Prime Video release are fleet and fun, if deeply familiar. Aziz\'s encounter with Ananya leads to an old-fashioned romance, filled with idealism, tenderness and Shankar-Ehsaan-Loy songs</string>
+    <string name="language_hindi_english">Language: Hindi,English</string>
+    <string name="_2019_164min_14">2019 164min 14+</string>
+    <string name="imdb_8_4">IMDb 8.4</string>
+    <string name="related_movies">Related Movies</string>
 </resources>
+
+
+
+
+
+
+
+
+
+
+
+

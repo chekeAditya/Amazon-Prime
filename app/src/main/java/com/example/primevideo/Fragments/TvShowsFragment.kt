@@ -5,15 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentResultListener
 import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.imageSlider
+import kotlinx.android.synthetic.main.fragment_tv_shows.*
 
 class TvShowsFragment : Fragment(R.layout.fragment_tv_shows) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
+
+            parentFragmentManager.setFragmentResultListener("Moviename",this,  FragmentResultListener(){ s: String, bundle: Bundle ->
+
+                val data = bundle.getString("movieName")
+                tvChecking.setText(data)
+            })
     }
 
     private fun imageSliderView() {
