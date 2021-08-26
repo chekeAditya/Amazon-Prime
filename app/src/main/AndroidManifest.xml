@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.primevideo">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,13 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeVideo">
         <activity
+            android:name=".Activity.YoutubeVideoPlayActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.YoutubeVideoPlayerActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity.SeetingActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.LogInActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".Activity.MainActivity"
             android:exported="true">
@@ -34,5 +36,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
