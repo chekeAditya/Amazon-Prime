@@ -1,12 +1,11 @@
 package com.example.primevideo.Network
 
+import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.KidsPickYouModel
 import com.example.primevideo.Model.PopularMoviesModel
-import com.example.primevideo.Model.PopularShows.PopularShowsModel
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface ApiClient {
 
@@ -21,4 +20,8 @@ interface ApiClient {
     //Popular Shows :- https://run.mocky.io/v3/de4c3f24-d9f7-4dcc-af8a-ce4a348b3b13
     @GET("v3/de4c3f24-d9f7-4dcc-af8a-ce4a348b3b13")
     fun getPopularShows(): Call<List<PopularShowsModelItem>>
+
+    //kids and family :- https://run.mocky.io/v3/3331e1e3-cd07-4aad-a476-29954de2eec6
+    @GET("v3/3331e1e3-cd07-4aad-a476-29954de2eec6")
+    fun getkidsandfamily(): Call<kidsandfamilyModel>
 }

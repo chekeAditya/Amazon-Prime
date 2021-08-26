@@ -7,13 +7,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.KidsPickYouAdapter
 import com.example.primevideo.Adapters.MySliderImageAdapter
+import com.example.primevideo.Adapters.kidsandfamilyAdaptor
+import com.example.primevideo.Model.Kids.kidsandfamily.Data
+import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.KidsPickYouModel
 import com.example.primevideo.Model.KidsPickYouResult
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.imageSlider
 import kotlinx.android.synthetic.main.fragment_kids.*
 import retrofit2.Call
@@ -23,11 +25,41 @@ import retrofit2.Response
 class KidsFragment : Fragment(R.layout.fragment_kids) {
 
     private lateinit var listOfKidsPickYou: List<KidsPickYouResult>
+    private lateinit var listofkidsandfamily: List<Data>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
         kidsPickYou()
+        kidsandfamily()
+    }
+
+    private fun kidsandfamily() {
+
+        var apiClient1 = Network.getInstance().create(ApiClient::class.java)
+        apiClient1.getkidsandfamily()
+            .enqueue(object : Callback<kidsandfamilyModel>{
+                override fun onResponse(call: Call<kidsandfamilyModel> , response: Response<kidsandfamilyModel>) {
+
+                    response.body()?.run {
+                        listofkidsandfamily = response.body()!!.data
+                            setAdapterkidsandfamily()
+                    }
+                }
+
+                override fun onFailure(call: Call<kidsandfamilyModel>, t: Throwable) {
+                    Toast.makeText(activity, "error"+ t.message, Toast.LENGTH_LONG).show()
+                }
+
+            })
+
+    }
+
+    private fun setAdapterkidsandfamily(){
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+        val kidsandfamilyAdaptor = kidsandfamilyAdaptor(listofkidsandfamily)
+        rvkidsandfamily.adapter = kidsandfamilyAdaptor
+        rvkidsandfamily.layoutManager = linearLayoutManager
     }
 
 
