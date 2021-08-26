@@ -1,5 +1,6 @@
 package com.example.primevideo.Network
 
+import com.example.primevideo.Model.Kids.kidsandfamily.IndianToonsModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
 import com.example.primevideo.Model.KidsPickYouModel
@@ -29,4 +30,8 @@ interface ApiClient {
     //kids and family :- https://run.mocky.io/v3/dd8c9ec3-6151-44d0-8b2d-55315e2bbc68
     @GET("v3/dd8c9ec3-6151-44d0-8b2d-55315e2bbc68")
     fun getkidsandfamilyTv(): Call<kidsandfamilyTv>
+
+    //kids and family :- https://run.mocky.io/v3/b8cbd3d1-d886-43d3-b998-915986190721
+    @GET("v3/b8cbd3d1-d886-43d3-b998-915986190721")
+    fun getInidanToons(): Call<IndianToonsModel>
 }
