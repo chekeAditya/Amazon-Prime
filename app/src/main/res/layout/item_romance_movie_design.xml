@@ -12,7 +12,7 @@
         android:adjustViewBounds="true"
         android:layout_width="200dp"
         android:layout_height="120dp"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         />
 
 </androidx.cardview.widget.CardView>

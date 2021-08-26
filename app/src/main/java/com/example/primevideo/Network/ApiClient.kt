@@ -24,17 +24,17 @@ interface ApiClient {
     fun getPopularShows(): Call<List<PopularShowsModelItem>>
 
 
-    ///https://run.mocky.io/v3/2d811ba0-7dfe-4472-a554-34f2b8e05b73
-    @GET("v3/2d811ba0-7dfe-4472-a554-34f2b8e05b73")
+    ///https://run.mocky.io/v3/0b4b8e78-ff2f-4b8b-8bd3-a5f7c9bdd300
+    @GET("v3/0b4b8e78-ff2f-4b8b-8bd3-a5f7c9bdd300")
     fun getTOPMovies(): Call<DramaResponseDTO>
 
-    //https://run.mocky.io/v3/45344816-bcd2-4617-aacc-f2e3fde8901c
-    @GET("v3/45344816-bcd2-4617-aacc-f2e3fde8901c")
+    //https://run.mocky.io/v3/b09a7c22-c951-4ae3-988a-955f15102589
+    @GET("v3/b09a7c22-c951-4ae3-988a-955f15102589")
     fun getLatestMovies(): Call<List<ActionMovieListResponse>>
 
 
-    //https://run.mocky.io/v3/72c8b521-479d-44be-af63-ed73f548ded3
-    @GET("v3/72c8b521-479d-44be-af63-ed73f548ded3")
+    //https://run.mocky.io/v3/5b7ee441-85e8-4cc8-95dc-da056caccdcd
+    @GET("v3/5b7ee441-85e8-4cc8-95dc-da056caccdcd")
     fun getRomanticMovies(): Call<RomanceResponseDTO>
 
 
