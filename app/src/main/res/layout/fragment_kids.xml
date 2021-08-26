@@ -93,11 +93,11 @@
                 android:id="@+id/tvIndianToons"
                 android:layout_width="wrap_content"
                 android:textColor="@color/white"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_below="@id/rvkidsandfamilytv"
                 android:layout_height="wrap_content"
-                android:text="Kids and family Tv" />
+                android:text="@string/indian_toons" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvIndianToons"
