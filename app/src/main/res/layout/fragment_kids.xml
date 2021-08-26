@@ -89,6 +89,40 @@
                 android:layout_below="@id/tvkidsandfamilytv"
                 android:orientation="horizontal" />
 
+            <TextView
+                android:id="@+id/tvIndianToons"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/rvkidsandfamilytv"
+                android:layout_height="wrap_content"
+                android:text="Indian Toons " />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvIndianToons"
+                style="@style/RecyclerViewPopularMovies"
+                android:layout_below="@id/tvIndianToons"
+                android:orientation="horizontal" />
+
+
+            <TextView
+                android:id="@+id/tvAmazonOriginals"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/rvIndianToons"
+                android:layout_height="wrap_content"
+                android:text="Amazon Originals" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAmazonorginal"
+                style="@style/RecyclerViewPopularMovies"
+                android:layout_below="@id/tvAmazonOriginals"
+                android:orientation="horizontal" />
+
+
         </RelativeLayout>
 
     </ScrollView>

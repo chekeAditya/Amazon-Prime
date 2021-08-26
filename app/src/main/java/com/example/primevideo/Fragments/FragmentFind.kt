@@ -65,6 +65,12 @@ class FragmentFind : Fragment(R.layout.fragment_find) {
     private fun genresinit(view: View) {
         bDrama.setOnClickListener(View.OnClickListener {
 
+            val fragmentManager = requireActivity().supportFragmentManager
+            val fragmenTransaction = fragmentManager.beginTransaction()
+            fragmenTransaction.add(R.id.container, MoviesFragment())
+            fragmenTransaction.addToBackStack(null)
+            fragmenTransaction.commit()
+
         })
 
         bAction.setOnClickListener(View.OnClickListener {

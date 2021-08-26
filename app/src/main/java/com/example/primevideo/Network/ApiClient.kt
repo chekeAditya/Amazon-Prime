@@ -5,9 +5,6 @@ import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
 import com.example.primevideo.Model.KidsPickYouModel
 import com.example.primevideo.Model.PopularMoviesModel
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
-import com.example.primevideo.Model.TVShow.TopRatedTvSHow
-import com.example.primevideo.Model.TVShow.TvDramaModel
-import com.example.primevideo.ViewHolder.DramaTVShowHolder
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -25,6 +22,18 @@ interface ApiClient {
     @GET("v3/de4c3f24-d9f7-4dcc-af8a-ce4a348b3b13")
     fun getPopularShows(): Call<List<PopularShowsModelItem>>
 
+    ///https://run.mocky.io/v3/0b4b8e78-ff2f-4b8b-8bd3-a5f7c9bdd300
+    @GET("v3/0b4b8e78-ff2f-4b8b-8bd3-a5f7c9bdd300")
+    fun getTOPMovies(): Call<DramaResponseDTO>
+
+    //https://run.mocky.io/v3/b09a7c22-c951-4ae3-988a-955f15102589
+    @GET("v3/b09a7c22-c951-4ae3-988a-955f15102589")
+    fun getLatestMovies(): Call<List<ActionMovieListResponse>>
+
+    //https://run.mocky.io/v3/5b7ee441-85e8-4cc8-95dc-da056caccdcd
+    @GET("v3/5b7ee441-85e8-4cc8-95dc-da056caccdcd")
+    fun getRomanticMovies(): Call<RomanceResponseDTO>
+
     //kids and family :- https://run.mocky.io/v3/3331e1e3-cd07-4aad-a476-29954de2eec6
     @GET("v3/3331e1e3-cd07-4aad-a476-29954de2eec6")
     fun getkidsandfamily(): Call<kidsandfamilyModel>
@@ -40,4 +49,12 @@ interface ApiClient {
     //https://run.mocky.io/v3/922bacd0-b2bc-4905-a9f6-cd25bfea412a
     @GET("v3/922bacd0-b2bc-4905-a9f6-cd25bfea412a")
     fun getTopRatedTvShows(): Call<TopRatedTvSHow>
+
+    //kids and family :- https://run.mocky.io/v3/0404dd7e-c1ba-4669-b14b-3331f46741ec
+    @GET("v3/0404dd7e-c1ba-4669-b14b-3331f46741ec")
+    fun getInidanToons(): Call<IndianToonsModel>
+
+    //kids and family :- https://run.mocky.io/v3/e36a25b3-e17e-4363-bc50-893f8db4528a
+    @GET("v3/e36a25b3-e17e-4363-bc50-893f8db4528a")
+    fun getAmazonorginal(): Call<AmazonOriginalKids>
 }
