@@ -4,6 +4,8 @@ import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.KidsPickYouModel
 import com.example.primevideo.Model.PopularMoviesModel
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
+import com.example.primevideo.Model.TVShow.TvDramaModel
+import com.example.primevideo.ViewHolder.DramaTVShowHolder
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -24,4 +26,8 @@ interface ApiClient {
     //kids and family :- https://run.mocky.io/v3/3331e1e3-cd07-4aad-a476-29954de2eec6
     @GET("v3/3331e1e3-cd07-4aad-a476-29954de2eec6")
     fun getkidsandfamily(): Call<kidsandfamilyModel>
+
+    //Drama Tv Show :-https://run.mocky.io/v3/508e5537-aabb-4d07-a1c4-e04c9c777cd0
+    @GET("v3/508e5537-aabb-4d07-a1c4-e04c9c777cd0")
+    fun getDramaTvShow(): Call<TvDramaModel>
 }

@@ -130,8 +130,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
     }
 
     private fun setAdapter() {
-        val linearLayoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val kidsPickYouAdapter = KidsPickYouAdapter(listOfKidsPickYou)
         rvKidsPickYou.adapter = kidsPickYouAdapter
         rvKidsPickYou.layoutManager = linearLayoutManager

@@ -1,28 +1,58 @@
 package com.example.primevideo.Fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.FragmentResultListener
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.primevideo.Adapters.DRamaTvShowAdapter
 import com.example.primevideo.Adapters.MySliderImageAdapter
+import com.example.primevideo.Model.TVShow.DramaTvShow
+import com.example.primevideo.Model.TVShow.TvDramaModel
+import com.example.primevideo.Network.ApiClient
+import com.example.primevideo.Network.Network
+import com.example.primevideo.Network.OnItemClickListener
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.imageSlider
 import kotlinx.android.synthetic.main.fragment_tv_shows.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class TvShowsFragment : Fragment(R.layout.fragment_tv_shows) {
+class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemClickListener {
+    private lateinit var dramaTvShows: List<DramaTvShow>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
+        dramaTvSHowFun()
+    }
 
-            parentFragmentManager.setFragmentResultListener("Moviename",this,  FragmentResultListener(){ s: String, bundle: Bundle ->
+    private fun dramaTvSHowFun() {
+        var apiClient = Network.getInstance().create(ApiClient::class.java)
+        apiClient.getDramaTvShow()
+            .enqueue(object : Callback<TvDramaModel> {
+                override fun onResponse(
+                    call: Call<TvDramaModel>,
+                    response: Response<TvDramaModel>
+                ) {
+                    response.body()?.run {
+                        dramaTvShows = response.body()!!.data
+                        setAdapter()
+                    }
+                }
 
-                val data = bundle.getString("movieName")
-                tvChecking.setText(data)
+                override fun onFailure(call: Call<TvDramaModel>, t: Throwable) {
+                    Toast.makeText(context, "Failure" + t.message, Toast.LENGTH_LONG).show()
+                }
+
             })
+    }
+    private fun setAdapter() {
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val  dRamaTvShowAdapter = DRamaTvShowAdapter(dramaTvShows, this)
+        dramaTvShowRecycler.adapter = dRamaTvShowAdapter
+        dramaTvShowRecycler.layoutManager = linearLayoutManager
     }
 
     private fun imageSliderView() {
@@ -45,5 +75,22 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows) {
         imageSlider.setSliderAdapter(adapter)
         imageSlider.isAutoCycle = true
         imageSlider.startAutoCycle()
+    }
+
+    override fun onitemclick(position: Int) {
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.add(R.id.tvShowFragment, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
+
+        val bundle = Bundle();
+        bundle.putString("movieImage", dramaTvShows[position].image)
+        bundle.putString("movieName", dramaTvShows[position].movieName)
+        bundle.putString("moviedescription", dramaTvShows[position].description)
+        bundle.putString("movietime", dramaTvShows[position].timing+"    "+dramaTvShows[position].year)
+        bundle.putString("movierating", dramaTvShows[position].rating)
+        parentFragmentManager.setFragmentResult("Moviename", bundle)
+
     }
 }
