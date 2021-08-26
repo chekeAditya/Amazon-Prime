@@ -12,7 +12,9 @@
         android:theme="@style/Theme.PrimeVideo">
         <activity
             android:name=".Activity.SeetingActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
 
         <activity
             android:name=".Activity.LogInActivity"

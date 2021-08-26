@@ -28,28 +28,18 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
     }
 
     private fun loginUserAccount() {
-      //  progressbar.visibility = View.VISIBLE
+         progressbar.visibility = View.VISIBLE
         val email = etEmail.text.toString()
         val password = etPassword.text.toString()
 
 
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(
-                context,
-                "Please enter email!!",
-                Toast.LENGTH_LONG
-            )
-                .show()
+            Toast.makeText(context, "Please enter email!!", Toast.LENGTH_LONG).show()
             return
         }
 
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(
-                context,
-                "Please enter password!!",
-                Toast.LENGTH_LONG
-            )
-                .show()
+            Toast.makeText(context, "Please enter password!!", Toast.LENGTH_LONG).show()
             return
         }
 
@@ -59,21 +49,13 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                 if (it.isSuccessful) {
                     Toast.makeText(
                         context,
-                        "Login successful!!",
-                        Toast.LENGTH_LONG
-                    )
-                        .show()
-                    //progressbar.visibility = View.GONE
+                        "Login successful!!", Toast.LENGTH_LONG).show()
+                    progressbar.visibility = View.GONE
                     navController.navigate(R.id.action_signInFragment_to_mainActivity)
                 } else {
 
-                    Toast.makeText(
-                        context,
-                        "Login failed!!",
-                        Toast.LENGTH_LONG
-                    )
-                        .show()
-                   // progressbar.visibility = View.GONE
+                    Toast.makeText(context, "inValid Credentials", Toast.LENGTH_LONG).show()
+                    progressbar.visibility = View.GONE
                 }
             }
     }

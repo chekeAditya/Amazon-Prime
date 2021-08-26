@@ -15,6 +15,8 @@ import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
 import com.example.primevideo.Model.KidsPickYouModel
 import com.example.primevideo.Model.KidsPickYouResult
+import com.example.primevideo.Model.TVShow.DataTvSHowRated
+import com.example.primevideo.Model.TVShow.DramaTvShow
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
 import com.example.primevideo.Network.OnItemClickListener
@@ -103,7 +105,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         rvkidsandfamily.layoutManager = linearLayoutManager
     }
 
-    override fun onitemclick(data: Data,position: Int) {
+    override fun onitemclick(data: Data, position: Int) {
 
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmenTransaction = fragmentManager.beginTransaction()
@@ -122,6 +124,10 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         bundle.putString("DirectorName", listofkidsandfamily[position].director)
         parentFragmentManager.setFragmentResult("Moviename", bundle)
 
+    }
+
+    override fun onTvClicked(dramaTvShow: DramaTvShow, position: Int) {
+        TODO("Not yet implemented")
     }
 
     private fun imageSliderView() {
@@ -168,7 +174,8 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
     }
 
     private fun setAdapter() {
-        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val linearLayoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val kidsPickYouAdapter = KidsPickYouAdapter(listOfKidsPickYou)
         rvKidsPickYou.adapter = kidsPickYouAdapter
         rvKidsPickYou.layoutManager = linearLayoutManager
@@ -191,6 +198,10 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         bundle.putString("DirectorImage", dataX.directorImage)
         bundle.putString("DirectorName", dataX.director)
         parentFragmentManager.setFragmentResult("Moviename", bundle)
+    }
+
+    override fun onTopRatedCLicked(dataTvSHowRated: DataTvSHowRated, position: Int) {
+        TODO("Not yet implemented")
     }
 
 }

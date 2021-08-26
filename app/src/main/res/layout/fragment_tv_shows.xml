@@ -76,30 +76,30 @@
 
 
     <TextView
-        style="@style/tvRecommendedMovies"
-        android:text="Drama Tv"
         android:id="@+id/tvChecking"
-        android:layout_below="@+id/horizontalview"
+        style="@style/tvRecommendedMovies"
         android:layout_height="wrap_content"
-        />
+        android:layout_below="@+id/dramaTopRatedRecycler"
+        android:text="Drama Tv" />
+
+
+    <TextView
+        android:id="@+id/tvYouWillLike"
+        style="@style/tvRecommendedMovies"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horizontalview"
+        android:text="Tv Shows You Will Like" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dramaTopRatedRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvYouWillLike" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dramaTvShowRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvChecking" />
-    <TextView
-        style="@style/tvRecommendedMovies"
-        android:text="Tv Shows You Will Like"
-        android:id="@+id/tvYouWillLike"
-        android:layout_below="@+id/dramaTvShowRecycler"
-        android:layout_height="wrap_content"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/dramaYouWillRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvYouWillLike" />
 </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
