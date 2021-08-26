@@ -51,6 +51,7 @@
         <item name="android:layout_height">18dp</item>
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:textSize">16dp</item>
     </style>
@@ -59,9 +60,53 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/allerta</item>
         <item name="android:textSize">10sp</item>
 
+    </style>
+
+    <style name="HeadingPreviewLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">15dp</item>
+    </style>
+    <style name="ButtonWatchNow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:background">@color/buttonColorBlue</item>
+        <item name="android:drawableStart">@drawable/ic_baseline_play_arrow_24</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextviewBelowRoundButtonPreviewLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="ImageViewPreviewLayout">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/border_ic</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:contentDescription">"TODO"</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="LinearLayoutForRoundButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">100dp</item>
+        <item name="android:orientation">vertical</item>
     </style>
 
 </resources>

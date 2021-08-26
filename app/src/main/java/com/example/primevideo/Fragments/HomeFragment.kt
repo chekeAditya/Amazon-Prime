@@ -1,6 +1,5 @@
 package com.example.primevideo.Fragments
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
@@ -9,7 +8,6 @@ import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.Adapters.PopularMoviesAdapter
 import com.example.primevideo.Adapters.PopularShowsAdapter
 import com.example.primevideo.Model.PopularMoviesModel
-import com.example.primevideo.Model.PopularShows.PopularShowsModel
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
 import com.example.primevideo.Model.ResultModel
 import com.example.primevideo.Network.ApiClient
@@ -20,18 +18,22 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.math.log
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
+
     private lateinit var listOfPopularMovies: List<ResultModel>
-    private lateinit var listOfPopularShowsItem: List<PopularShowsModelItem>
+    private  var listOfPopularShowsItem: List<PopularShowsModelItem> = ArrayList()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val popularShowsAdapter: PopularShowsAdapter = PopularShowsAdapter(listOfPopularShowsItem)
+        setShowAdapter(popularShowsAdapter)
         imageSliderView()
         PopularMovieApiCall()
         popularShowApiCall()
+
     }
 
     private fun popularShowApiCall() {
@@ -43,7 +45,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             ) {
                 response.body()?.run {
                     listOfPopularShowsItem = response.body()!!
-                    setShowAdapter()
+                    val popularShowsAdapter: PopularShowsAdapter = PopularShowsAdapter(listOfPopularShowsItem)
+                    setShowAdapter(popularShowsAdapter)
+
                 }
             }
 
@@ -54,10 +58,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         })
     }
 
-    private fun setShowAdapter() {
-        val linearLayoutManagerShow =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val popularShowsAdapter = PopularShowsAdapter(listOfPopularShowsItem)
+    private fun setShowAdapter(popularShowsAdapter: PopularShowsAdapter) {
+        val linearLayoutManagerShow = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         rvPopularShows.adapter = popularShowsAdapter
         rvPopularShows.layoutManager = linearLayoutManagerShow
     }
@@ -104,7 +106,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setAdapter() {
-        var linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)
         rvPopularMovies.adapter = popularMoviesAdapter
         rvPopularMovies.layoutManager = linearLayoutManager

@@ -27,6 +27,7 @@
     <HorizontalScrollView
         android:scrollbars="none"
         android:layout_margin="20dp"
+        android:id="@+id/horizontalview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageSlider">
@@ -66,4 +67,13 @@
                 android:src="@drawable/tvimgsix"/>
         </LinearLayout>
     </HorizontalScrollView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="sudarhsan"
+        android:id="@+id/tvChecking"
+        android:textColor="@color/white"
+        android:layout_below="@+id/horizontalview"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

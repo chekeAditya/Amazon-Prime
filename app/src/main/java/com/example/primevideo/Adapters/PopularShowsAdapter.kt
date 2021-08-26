@@ -8,7 +8,7 @@ import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
 import com.example.primevideo.R
 import com.example.primevideo.ViewHolder.PopularShowViewHolder
 
-class PopularShowsAdapter(private val showsModelItem: List<PopularShowsModelItem>) :
+class PopularShowsAdapter(private var showsModelItem: List<PopularShowsModelItem>) :
     RecyclerView.Adapter<PopularShowViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularShowViewHolder {
         var view = LayoutInflater.from(parent.context).inflate(R.layout.itemlayout_popular_show,parent,false)
@@ -22,6 +22,11 @@ class PopularShowsAdapter(private val showsModelItem: List<PopularShowsModelItem
 
     override fun getItemCount(): Int {
         return showsModelItem.size
+    }
+
+    fun updateshowsadaptor(showsModelItem: List<PopularShowsModelItem>){
+        this.showsModelItem = showsModelItem
+        notifyDataSetChanged()
     }
 }
 /*

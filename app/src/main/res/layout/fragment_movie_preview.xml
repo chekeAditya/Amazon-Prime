@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.MoviePreviewFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:background="@color/dark_blue_grey"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:src="@drawable/prime_hori"
+                android:scaleType="centerCrop"
+                android:id="@+id/ivImagePreviewLayout" />
+
+            <TextView
+                style="@style/HeadingPreviewLayout"
+                android:text="Fight Club"
+                android:textSize="25sp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/MovieName"
+                android:textColor="@color/white" />
+
+            <TextView
+                style="@style/HeadingPreviewLayout"
+                android:text="@string/prime"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                android:textColor="@color/lightBlue" />
+
+            <TextView
+                style="@style/HeadingPreviewLayout"
+                android:text="@string/included_with_prime"
+                android:textSize="15sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white" />
+
+            <RelativeLayout
+                android:id="@+id/btn_play"
+                style="@style/ButtonWatchNow"
+                android:background="@color/buttonColorBlue">
+
+                <ImageView
+                    android:id="@+id/playbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@android:drawable/ic_media_play"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/playbtn"
+                    android:text="@string/watch_now"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:id="@+id/lyt_play"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        style="@style/ImageViewPreviewLayout"
+                        android:src="@drawable/play_black"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        style="@style/TextviewBelowRoundButtonPreviewLayout"
+                        android:text="@string/trailer" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyt_download"
+                    style="@style/LinearLayoutForRoundButton"
+                    android:layout_weight="1"
+                    tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        style="@style/ImageViewPreviewLayout"
+                        android:src="@drawable/download"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        style="@style/TextviewBelowRoundButtonPreviewLayout"
+                        android:text="@string/download" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyt_watchlist"
+                    style="@style/LinearLayoutForRoundButton"
+                    android:layout_weight="1"
+                    tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        style="@style/ImageViewPreviewLayout"
+                        android:id="@+id/wishlist_img"
+                        android:src="@drawable/plus"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        style="@style/TextviewBelowRoundButtonPreviewLayout"
+                        android:text="@string/watchlist" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyt_sharAll"
+                    style="@style/LinearLayoutForRoundButton"
+                    android:layout_weight="1"
+                    tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        style="@style/ImageViewPreviewLayout"
+                        android:src="@drawable/baseline_share_24"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        style="@style/TextviewBelowRoundButtonPreviewLayout"
+                        android:text="@string/download" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/HeadingPreviewLayout"
+                android:text="@string/movieDesc"
+                android:textSize="15sp"
+                android:id="@+id/movieDescriptionPreviewLayout"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/imdb_8_4"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/year_mat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/_2019_164min_14"
+                android:textColor="@color/white"
+                android:layout_marginStart="15dp"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/language_hindi_english"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_marginStart="15dp"
+                android:textStyle="normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white" />
+
+            <TextView
+                style="@style/tvRecommendedMovies"
+                android:id="@+id/tvPopularMovies"
+                android:text="@string/related_movies"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPopularMovies"
+                android:orientation="horizontal"
+                style="@style/RecyclerViewPopularMovies"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>
