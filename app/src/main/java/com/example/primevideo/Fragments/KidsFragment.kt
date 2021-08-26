@@ -81,7 +81,6 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
                         setTVARecyler()
                     }
                 }
-
                 override fun onFailure(call: Call<kidsandfamilyTv>, t: Throwable) {
                     TODO("Not yet implemented")
                 }
@@ -233,6 +232,8 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
         val bundle = Bundle();
         bundle.putString("movieImage", indianToon.image)
+        bundle.putString("movieUrl",indianToon.movieTrailerLink)
+        Toast.makeText(context, "movieLink${indianToon.movieTrailerLink}", Toast.LENGTH_LONG).show()
         bundle.putString("movieName", indianToon.movieName)
         bundle.putString("moviedescription", indianToon.description)
         bundle.putString("movietime",
