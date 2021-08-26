@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/kidsFragment"
     android:background="@color/dark_blue_grey"
     android:orientation="vertical"
     tools:context=".Fragments.KidsFragment">
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -69,7 +73,14 @@
             android:layout_below="@id/tvkidsandfamily"
             android:orientation="horizontal" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_below="@id/rvkidsandfamily"
+            android:id="@+id/btntofragment"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 
-
 </ScrollView>
+
+
+</RelativeLayout>

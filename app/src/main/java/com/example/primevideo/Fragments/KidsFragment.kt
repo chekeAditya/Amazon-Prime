@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.KidsPickYouAdapter
 import com.example.primevideo.Adapters.MySliderImageAdapter
@@ -14,6 +15,7 @@ import com.example.primevideo.Model.KidsPickYouModel
 import com.example.primevideo.Model.KidsPickYouResult
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
+import com.example.primevideo.Network.OnItemClickListener
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_home.imageSlider
@@ -22,7 +24,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class KidsFragment : Fragment(R.layout.fragment_kids) {
+class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
     private lateinit var listOfKidsPickYou: List<KidsPickYouResult>
     private lateinit var listofkidsandfamily: List<Data>
@@ -32,36 +34,60 @@ class KidsFragment : Fragment(R.layout.fragment_kids) {
         imageSliderView()
         kidsPickYou()
         kidsandfamily()
+        btntofragment.setOnClickListener {
+            val fragmentManager = requireActivity().supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.kidsFragment, MoviePreviewFragment())
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
     }
+
 
     private fun kidsandfamily() {
 
         var apiClient1 = Network.getInstance().create(ApiClient::class.java)
         apiClient1.getkidsandfamily()
-            .enqueue(object : Callback<kidsandfamilyModel>{
-                override fun onResponse(call: Call<kidsandfamilyModel> , response: Response<kidsandfamilyModel>) {
+            .enqueue(object : Callback<kidsandfamilyModel> {
+                override fun onResponse(
+                    call: Call<kidsandfamilyModel>,
+                    response: Response<kidsandfamilyModel>,
+                ) {
 
                     response.body()?.run {
                         listofkidsandfamily = response.body()!!.data
-                            setAdapterkidsandfamily()
+                        setAdapterkidsandfamily()
                     }
                 }
 
                 override fun onFailure(call: Call<kidsandfamilyModel>, t: Throwable) {
-                    Toast.makeText(activity, "error"+ t.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, "error" + t.message, Toast.LENGTH_LONG).show()
                 }
 
             })
 
     }
 
-    private fun setAdapterkidsandfamily(){
-        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-        val kidsandfamilyAdaptor = kidsandfamilyAdaptor(listofkidsandfamily)
+    private fun setAdapterkidsandfamily() {
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val kidsandfamilyAdaptor = kidsandfamilyAdaptor(listofkidsandfamily, this)
         rvkidsandfamily.adapter = kidsandfamilyAdaptor
         rvkidsandfamily.layoutManager = linearLayoutManager
     }
 
+    override fun onitemclick(position: Int) {
+
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.replace(R.id.kidsFragment, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
+
+        val bundle = Bundle();
+        bundle.putString("movieName", listofkidsandfamily[position].movieName)
+        parentFragmentManager.setFragmentResult("Moviename", bundle)
+
+    }
 
     private fun imageSliderView() {
         val imageList: ArrayList<String> = ArrayList()
@@ -91,7 +117,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids) {
             .enqueue(object : Callback<KidsPickYouModel> {
                 override fun onResponse(
                     call: Call<KidsPickYouModel>,
-                    response: Response<KidsPickYouModel>
+                    response: Response<KidsPickYouModel>,
                 ) {
                     response.body()?.run {
                         listOfKidsPickYou = kidsPickYouResults
@@ -107,9 +133,11 @@ class KidsFragment : Fragment(R.layout.fragment_kids) {
     }
 
     private fun setAdapter() {
-        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+        val linearLayoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val kidsPickYouAdapter = KidsPickYouAdapter(listOfKidsPickYou)
         rvKidsPickYou.adapter = kidsPickYouAdapter
         rvKidsPickYou.layoutManager = linearLayoutManager
     }
+
 }
