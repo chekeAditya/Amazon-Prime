@@ -1,0 +1,305 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n    id 'kotlin-android-extensions'\r\n    id 'kotlin-android'\r\n    id 'com.google.gms.google-services'\r\n}\r\n\r\nandroid {\r\n    compileSdk 30\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.primevideo\"\r\n        minSdk 21\r\n        targetSdk 30\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n    kotlinOptions {\r\n        jvmTarget = '1.8'\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.core:core-ktx:1.6.0'\r\n    implementation 'androidx.appcompat:appcompat:1.3.1'\r\n    implementation 'com.google.android.material:material:1.4.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'\r\n    implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'\r\n    implementation platform('com.google.firebase:firebase-bom:28.4.0')\r\n    implementation 'com.google.firebase:firebase-analytics-ktx'\r\n    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'\r\n    implementation 'androidx.legacy:legacy-support-v4:1.0.0'\r\n    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'\r\n    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'\r\n    implementation 'androidx.navigation:navigation-runtime-ktx:2.3.5'\r\n    implementation 'org.chromium.net:cronet-embedded:76.3809.111'\r\n    testImplementation 'junit:junit:4.+'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n    implementation 'com.google.android.gms:play-services-auth:19.2.0'\r\n    def nav_version = \"2.3.5\"\r\n    implementation \"androidx.navigation:navigation-fragment-ktx:$nav_version\"\r\n    implementation \"androidx.navigation:navigation-ui-ktx:$nav_version\"\r\n    //Glide\r\n    implementation 'com.github.bumptech.glide:glide:4.12.0'\r\n    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'\r\n    //Notification Badge\r\n    implementation 'com.nex3z:notification-badge:1.0.4'\r\n    //EventBus\r\n    implementation 'org.greenrobot:eventbus:3.2.0'\r\n\r\n    //slider\r\n    implementation 'com.github.smarteist:autoimageslider:1.4.0'\r\n    implementation 'com.squareup.picasso:picasso:2.71828'\r\n\r\n    //retrofit\r\n    implementation 'com.squareup.retrofit2:retrofit:2.9.0'\r\n    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'\r\n    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'\r\n    implementation 'com.google.android.material:material:1.4.0'\r\n\r\n\r\n    //Glide\r\n    implementation 'com.github.bumptech.glide:glide:4.12.0'\r\n    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'\r\n    //Notification Badge\r\n    implementation 'com.nex3z:notification-badge:1.0.4'\r\n    //EventBus\r\n    implementation 'org.greenrobot:eventbus:3.2.0'\r\n\r\n    //slider\r\n    implementation 'com.github.smarteist:autoimageslider:1.4.0'\r\n    implementation 'com.squareup.picasso:picasso:2.71828'\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision c5bcd6742cd4e9cdc32567fa97a15cb05930ef0f)
++++ b/app/build.gradle	(date 1630001922767)
+@@ -47,7 +47,8 @@
+     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+     implementation 'androidx.navigation:navigation-runtime-ktx:2.3.5'
+-    implementation 'org.chromium.net:cronet-embedded:76.3809.111'
++    implementation 'org.chromium.net:cronet-embedded:92.4515.131'
++    implementation files('../.idea/libs/YouTubeAndroidPlayerApi.jar')
+     testImplementation 'junit:junit:4.+'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+@@ -85,4 +86,7 @@
+     //slider
+     implementation 'com.github.smarteist:autoimageslider:1.4.0'
+     implementation 'com.squareup.picasso:picasso:2.71828'
++
++    //VideoPlayer
++    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+ }
+\ No newline at end of file
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\nbuildscript {\r\n        repositories {\r\n        google()\r\n        mavenCentral()\r\n\r\n        maven { url 'https://jitpack.io' }\r\n    }\r\n    dependencies {\r\n        classpath \"com.android.tools.build:gradle:7.0.0\"\r\n        classpath \"org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21\"\r\n        classpath 'com.google.gms:google-services:4.3.10'\r\n        // NOTE: Do not place your application dependencies here; they belong\r\n        // in the individual module build.gradle files\r\n    }\r\n}\r\n\r\ntask clean(type: Delete) {\r\n    delete rootProject.buildDir\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision c5bcd6742cd4e9cdc32567fa97a15cb05930ef0f)
++++ b/build.gradle	(date 1630002040991)
+@@ -8,7 +8,7 @@
+     }
+     dependencies {
+         classpath "com.android.tools.build:gradle:7.0.0"
+-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
++        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30'
+         classpath 'com.google.gms:google-services:4.3.10'
+         // NOTE: Do not place your application dependencies here; they belong
+         // in the individual module build.gradle files
+Index: app/src/main/java/com/example/primevideo/Fragments/MoviePreviewFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.primevideo.Fragments\r\n\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport androidx.fragment.app.FragmentResultListener\r\nimport com.bumptech.glide.Glide\r\nimport com.example.primevideo.R\r\nimport kotlinx.android.synthetic.main.fragment_movie_preview.*\r\nimport kotlinx.android.synthetic.main.fragment_tv_shows.*\r\nimport kotlinx.android.synthetic.main.fragment_tv_shows.tvChecking\r\n\r\n\r\nclass MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {\r\n\r\n    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {\r\n        super.onViewCreated(view, savedInstanceState)\r\n        parentFragmentManager.setFragmentResultListener(\"Moviename\",this,  FragmentResultListener(){ s: String, bundle: Bundle ->\r\n\r\n            val data = bundle.getString(\"movieImage\")\r\n            Glide.with(ivImagePreviewLayout).load(data).into(ivImagePreviewLayout)\r\n            val moviename = bundle.getString(\"movieName\")\r\n            MovieName.setText(moviename)\r\n            val moviedescription = bundle.getString(\"moviedescription\")\r\n            movieDescriptionPreviewLayout.setText(moviedescription)\r\n            val movietime = bundle.getString(\"movietime\")\r\n            year_mat.setText(movietime)\r\n            val movierating = bundle.getString(\"movierating\")\r\n            rating.setText(movierating)\r\n        })\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Fragments/MoviePreviewFragment.kt b/app/src/main/java/com/example/primevideo/Fragments/MoviePreviewFragment.kt
+--- a/app/src/main/java/com/example/primevideo/Fragments/MoviePreviewFragment.kt	(revision c5bcd6742cd4e9cdc32567fa97a15cb05930ef0f)
++++ b/app/src/main/java/com/example/primevideo/Fragments/MoviePreviewFragment.kt	(date 1630002715197)
+@@ -1,5 +1,6 @@
+ package com.example.primevideo.Fragments
+ 
++import android.content.Intent
+ import android.os.Bundle
+ import androidx.fragment.app.Fragment
+ import android.view.LayoutInflater
+@@ -11,24 +12,34 @@
+ import kotlinx.android.synthetic.main.fragment_movie_preview.*
+ import kotlinx.android.synthetic.main.fragment_tv_shows.*
+ import kotlinx.android.synthetic.main.fragment_tv_shows.tvChecking
++import com.example.primevideo.Activity.MainActivity
++import com.example.primevideo.Activity.YoutubeVideoPlayActivity
+ 
+ 
+ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
+ 
+     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+         super.onViewCreated(view, savedInstanceState)
+-        parentFragmentManager.setFragmentResultListener("Moviename",this,  FragmentResultListener(){ s: String, bundle: Bundle ->
++        parentFragmentManager.setFragmentResultListener(
++            "Moviename",
++            this,
++            FragmentResultListener() { s: String, bundle: Bundle ->
+ 
+-            val data = bundle.getString("movieImage")
+-            Glide.with(ivImagePreviewLayout).load(data).into(ivImagePreviewLayout)
+-            val moviename = bundle.getString("movieName")
+-            MovieName.setText(moviename)
+-            val moviedescription = bundle.getString("moviedescription")
+-            movieDescriptionPreviewLayout.setText(moviedescription)
+-            val movietime = bundle.getString("movietime")
+-            year_mat.setText(movietime)
+-            val movierating = bundle.getString("movierating")
+-            rating.setText(movierating)
+-        })
++                val data = bundle.getString("movieImage")
++                Glide.with(ivImagePreviewLayout).load(data).into(ivImagePreviewLayout)
++                val moviename = bundle.getString("movieName")
++                MovieName.setText(moviename)
++                val moviedescription = bundle.getString("moviedescription")
++                movieDescriptionPreviewLayout.setText(moviedescription)
++                val movietime = bundle.getString("movietime")
++                year_mat.setText(movietime)
++                val movierating = bundle.getString("movierating")
++                rating.setText(movierating)
++            })
++
++        lyt_play.setOnClickListener {
++            val intent = Intent(context, YoutubeVideoPlayActivity::class.java)
++            startActivity(intent)
++        }
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Prime Video</string>\r\n    <string name=\"download\">Download</string>\r\n    <string name=\"no_videos_downloaded\">No videos Downloaded</string>\r\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\r\n    <string name=\"sign_up_with_your_mobile_number\">Sign up with your mobile number</string>\r\n    <string name=\"name\">Name</string>\r\n    <string name=\"mobile_number_or_email\">Mobile number or Email</string>\r\n    <string name=\"create_a_password\">Create a password</string>\r\n    <string name=\"show_password\">Show Password</string>\r\n    <string name=\"already_have_an_account\">Already have an account?</string>\r\n    <string name=\"message_and_data_charges_may_apply\">Message and Data charges may apply</string>\r\n    <string name=\"by_continuing_you_agree_to_amazon_s_conditions_of_n_use_and_privacy_notice\">By continuing,you agree to Amazon\\'s Conditions of \\n Use and Privacy NOtice.</string>\r\n    <string name=\"downloads\">downloads</string>\r\n    <string name=\"downloadss\">Downloads</string>\r\n    <string name=\"popular_movies\">Popular Movies</string>\r\n    <string name=\"popular_shows\">Popular Shows</string>\r\n    <string name=\"top_movies\">Top movies</string>\r\n    <string name=\"top_rated\">Top Rated</string>\r\n    <string name=\"prime\">prime</string>\r\n    <string name=\"included_with_prime\">included with Prime</string>\r\n    <string name=\"watch_now\">Watch Now</string>\r\n    <string name=\"watchlist\">Watchlist</string>\r\n    <string name=\"trailer\">Trailer</string>\r\n    <string name=\"movieDesc\">Toofan is based on a story idea by Farhan Akhtar and Anjum Rajabali\\'s screenplay. The early portions of the Amazon Prime Video release are fleet and fun, if deeply familiar. Aziz\\'s encounter with Ananya leads to an old-fashioned romance, filled with idealism, tenderness and Shankar-Ehsaan-Loy songs</string>\r\n    <string name=\"language_hindi_english\">Language: Hindi,English</string>\r\n    <string name=\"_2019_164min_14\">2019 164min 14+</string>\r\n    <string name=\"imdb_8_4\">IMDb 8.4</string>\r\n    <string name=\"related_movies\">Related Movies</string>\r\n</resources>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision c5bcd6742cd4e9cdc32567fa97a15cb05930ef0f)
++++ b/app/src/main/res/values/strings.xml	(date 1630002040676)
+@@ -27,6 +27,7 @@
+     <string name="_2019_164min_14">2019 164min 14+</string>
+     <string name="imdb_8_4">IMDb 8.4</string>
+     <string name="related_movies">Related Movies</string>
++    <string name="video_id">0m4BNIPB7WU</string>
+ </resources>
+ 
+ 
+Index: app/src/main/res/layout/activity_youtube_video_play.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_youtube_video_play.xml b/app/src/main/res/layout/activity_youtube_video_play.xml
+new file mode 100644
+--- /dev/null	(date 1630002331727)
++++ b/app/src/main/res/layout/activity_youtube_video_play.xml	(date 1630002331727)
+@@ -0,0 +1,27 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:tools="http://schemas.android.com/tools"
++    tools:context=".Activity.YoutubeVideoPlayActivity"
++    android:orientation="vertical">
++
++    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
++        android:id="@+id/youtubePlayerView"
++        android:layout_width="match_parent"
++        android:layout_height="300dp"
++        app:videoId="@string/video_id"
++        app:autoPlay="true"
++        app:showVideoDuration="true"
++        app:enableLiveVideoUi="true"
++        app:useWebUi="true"
++        app:showFullScreenButton="true" />
++
++    <View
++        android:visibility="gone"
++        android:id="@+id/emptyView"
++        android:layout_width="match_parent"
++        android:layout_height="250dp"/>
++
++</RelativeLayout>
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.primevideo\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\"/>\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:requestLegacyExternalStorage=\"true\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.PrimeVideo\">\r\n        <activity\r\n            android:name=\".Activity.SeetingActivity\"\r\n            android:exported=\"true\" />\r\n        <activity\r\n            android:name=\".Activity.LogInActivity\"\r\n            android:exported=\"true\">\r\n\r\n        </activity>\r\n        <activity\r\n            android:name=\".Activity.MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n\r\n        <meta-data\r\n            android:name=\"preloaded_fonts\"\r\n            android:resource=\"@array/preloaded_fonts\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision c5bcd6742cd4e9cdc32567fa97a15cb05930ef0f)
++++ b/app/src/main/AndroidManifest.xml	(date 1630002041068)
+@@ -2,8 +2,6 @@
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     package="com.example.primevideo">
+ 
+-    <uses-permission android:name="android.permission.INTERNET"/>
+-
+     <application
+         android:allowBackup="true"
+         android:icon="@mipmap/ic_launcher"
+@@ -13,13 +11,17 @@
+         android:supportsRtl="true"
+         android:theme="@style/Theme.PrimeVideo">
+         <activity
++            android:name=".Activity.YoutubeVideoPlayActivity"
++            android:exported="true" />
++        <activity
++            android:name=".Activity.YoutubeVideoPlayerActivity"
++            android:exported="true" />
++        <activity
+             android:name=".Activity.SeetingActivity"
+             android:exported="true" />
+         <activity
+             android:name=".Activity.LogInActivity"
+-            android:exported="true">
+-
+-        </activity>
++            android:exported="true" />
+         <activity
+             android:name=".Activity.MainActivity"
+             android:exported="true">
+@@ -35,4 +37,6 @@
+             android:resource="@array/preloaded_fonts" />
+     </application>
+ 
++    <uses-permission android:name="android.permission.INTERNET" />
++
+ </manifest>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/activity_main.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_find.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_home.xml\" value=\"0.26481481481481484\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_homes.xml\" value=\"0.2604166666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_kids.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_movies.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml\" value=\"0.26481481481481484\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_find_replace_24.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_mic_none_24.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/activity_main.xml\" value=\"0.24592391304347827\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_find.xml\" value=\"0.12\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_home.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_homes.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_kids.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_movies.xml\" value=\"0.16077898550724637\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.16077898550724637\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/item_topmovie_recycler.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/menu/menu.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/drawable/border_ic.xml\" value=\"0.2755208333333333\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/activity_log_in.xml\" value=\"0.176\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/activity_seeting.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_home.xml\" value=\"0.23278985507246377\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_kids.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_movie_preview.xml\" value=\"0.3549536707056308\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_movies.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_sign_in.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.23278985507246377\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/item_topmovie_recycler.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/itemlayout_popular_movies.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/itemlayout_popular_show.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml\" value=\"0.2755208333333333\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml\" value=\"0.2755208333333333\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/activity_main.xml\" value=\"0.1793478260869565\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.15081521739130435\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_find.xml\" value=\"0.15760869565217392\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_home.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_homes.xml\" value=\"0.25271739130434784\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_kids.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.24456521739130435\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/menu/menu.xml\" value=\"0.259375\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision c5bcd6742cd4e9cdc32567fa97a15cb05930ef0f)
++++ b/.idea/misc.xml	(date 1630002523284)
+@@ -17,6 +17,11 @@
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml" value="0.27447916666666666" />
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml" value="0.27447916666666666" />
+         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml" value="0.26481481481481484" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon CLone/app/src/main/res/layout/activity_seeting.xml" value="0.22447916666666667" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon CLone/app/src/main/res/layout/activity_youtube_video_play.xml" value="0.21041666666666667" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon CLone/app/src/main/res/layout/activity_youtube_video_player.xml" value="0.21041666666666667" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon CLone/app/src/main/res/layout/fragment_home.xml" value="0.22447916666666667" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon CLone/app/src/main/res/layout/fragment_movie_preview.xml" value="0.19074074074074074" />
+         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_find_replace_24.xml" value="0.1" />
+         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_mic_none_24.xml" value="0.1" />
+         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/activity_main.xml" value="0.24592391304347827" />
+@@ -34,7 +39,7 @@
+         <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/activity_seeting.xml" value="0.23731884057971014" />
+         <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_home.xml" value="0.23278985507246377" />
+         <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_kids.xml" value="0.264" />
+-        <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_movie_preview.xml" value="0.3549536707056308" />
++        <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_movie_preview.xml" value="0.23278985507246377" />
+         <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_movies.xml" value="0.23731884057971014" />
+         <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_my_stuff.xml" value="0.264" />
+         <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_sign_in.xml" value="0.23731884057971014" />
+Index: app/src/main/java/com/example/primevideo/Activity/YoutubeVideoPlayActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Activity/YoutubeVideoPlayActivity.kt b/app/src/main/java/com/example/primevideo/Activity/YoutubeVideoPlayActivity.kt
+new file mode 100644
+--- /dev/null	(date 1630002522761)
++++ b/app/src/main/java/com/example/primevideo/Activity/YoutubeVideoPlayActivity.kt	(date 1630002522761)
+@@ -0,0 +1,47 @@
++package com.example.primevideo.Activity
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.view.KeyEvent
++import android.widget.Toast
++import com.example.primevideo.R
++import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
++import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
++import kotlinx.android.synthetic.main.activity_youtube_video_play.*
++
++class YoutubeVideoPlayActivity : AppCompatActivity() {
++
++    var mYouTubePlayer: YouTubePlayer? = null
++    var currentVolume = 0
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_youtube_video_play)
++
++        youtubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
++            override fun onReady(youTubePlayer: YouTubePlayer) {
++                mYouTubePlayer = youTubePlayer
++                val videoId = getString(R.string.video_id)
++                youTubePlayer.loadVideo(videoId, 0f)
++                youTubePlayer.setVolume(currentVolume)
++            }
++        })
++    }
++
++    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
++        if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
++            if(currentVolume>=10) {
++                currentVolume = currentVolume - 10
++                mYouTubePlayer?.setVolume(currentVolume)
++            }
++        }else  if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
++            if(currentVolume<=90) {
++                currentVolume = currentVolume + 10
++                mYouTubePlayer?.setVolume(currentVolume)
++            }
++        } else if(keyCode == KeyEvent.KEYCODE_BACK){
++            finish()
++        }
++        return true
++    }
++}
+\ No newline at end of file

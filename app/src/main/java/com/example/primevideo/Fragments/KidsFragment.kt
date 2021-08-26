@@ -5,14 +5,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.primevideo.Adapters.KidsPickYouAdapter
-import com.example.primevideo.Adapters.MySliderImageAdapter
-import com.example.primevideo.Adapters.kidsandfamilyAdaptor
-import com.example.primevideo.Adapters.kidsandfamilyTvAdaptor
-import com.example.primevideo.Model.Kids.kidsandfamily.Data
-import com.example.primevideo.Model.Kids.kidsandfamily.DataX
-import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
-import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
+import com.example.primevideo.Adapters.*
+import com.example.primevideo.Model.Kids.kidsandfamily.*
 import com.example.primevideo.Model.KidsPickYouModel
 import com.example.primevideo.Model.KidsPickYouResult
 import com.example.primevideo.Network.ApiClient
@@ -31,6 +25,8 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
     private lateinit var listOfKidsPickYou: List<KidsPickYouResult>
     private lateinit var listofkidsandfamily: List<Data>
     private lateinit var dataX: List<DataX>
+    private lateinit var indianToon: List<IndianToon>
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,12 +34,44 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         kidsPickYou()
         kidsandfamily()
         kidsTv()
+        InidanToons()
+    }
+
+    private fun InidanToons() {
+
+        val apiClient4 = Network.getInstance().create(ApiClient::class.java)
+        apiClient4.getInidanToons().enqueue(
+            object : Callback<IndianToonsModel> {
+                override fun onResponse(
+                    call: Call<IndianToonsModel>,
+                    response: Response<IndianToonsModel>,
+                ) {
+                    response.body()?.run {
+                        indianToon = response.body()!!.indianToons
+                        setInidanToonsRecycler()
+                    }
+                }
+
+                override fun onFailure(call: Call<IndianToonsModel>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+            }
+        )
+    }
+
+    private fun setInidanToonsRecycler() {
+        val linearLayoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val indianToon = InidanToonsAdaptor(indianToon, this)
+        rvIndianToons.adapter = indianToon
+        rvIndianToons.layoutManager = linearLayoutManager
     }
 
     private fun kidsTv() {
         var apiClient3 = Network.getInstance().create(ApiClient::class.java)
         apiClient3.getkidsandfamilyTv().enqueue(
-            object : Callback<kidsandfamilyTv>{
+            object : Callback<kidsandfamilyTv> {
                 override fun onResponse(
                     call: Call<kidsandfamilyTv>,
                     response: Response<kidsandfamilyTv>,
@@ -64,8 +92,9 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
     private fun setTVARecyler() {
 
-        val linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        val dataX = kidsandfamilyTvAdaptor(dataX,this)
+        val linearLayoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val dataX = kidsandfamilyTvAdaptor(dataX, this)
         rvkidsandfamilytv.adapter = dataX
         rvkidsandfamilytv.layoutManager = linearLayoutManager
     }
@@ -103,7 +132,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         rvkidsandfamily.layoutManager = linearLayoutManager
     }
 
-    override fun onitemclick(data: Data,position: Int) {
+    override fun onitemclick(data: Data, position: Int) {
 
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmenTransaction = fragmentManager.beginTransaction()
@@ -185,12 +214,32 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         val bundle = Bundle();
         bundle.putString("movieImage", dataX.image)
         bundle.putString("movieName", dataX.movieName)
-        bundle.putString("moviedescription",dataX.description)
+        bundle.putString("moviedescription", dataX.description)
         bundle.putString("movietime",
             dataX.timing + "    " + dataX.year)
         bundle.putString("movierating", dataX.rating)
         bundle.putString("DirectorImage", dataX.directorImage)
         bundle.putString("DirectorName", dataX.director)
+        parentFragmentManager.setFragmentResult("Moviename", bundle)
+    }
+
+    override fun onInidanToonClick(indianToon: IndianToon, position: Int) {
+
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
+
+        val bundle = Bundle();
+        bundle.putString("movieImage", indianToon.image)
+        bundle.putString("movieName", indianToon.movieName)
+        bundle.putString("moviedescription", indianToon.description)
+        bundle.putString("movietime",
+            indianToon.timing + "    " + indianToon.year)
+        bundle.putString("movierating", indianToon.rating)
+        bundle.putString("DirectorImage", indianToon.directorImage)
+        bundle.putString("DirectorName", indianToon.director)
         parentFragmentManager.setFragmentResult("Moviename", bundle)
     }
 
