@@ -29,6 +29,11 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
             year_mat.setText(movietime)
             val movierating = bundle.getString("movierating")
             rating.setText(movierating)
+            val directorImage = bundle.getString("DirectorImage")
+            Glide.with(ivDirectorImage).load(directorImage).into(ivDirectorImage)
+            val directorName = bundle.getString("DirectorName")
+            tvDirectorName.setText(directorName)
+
         })
     }
 }

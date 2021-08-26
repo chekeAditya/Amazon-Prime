@@ -2,85 +2,96 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kidsFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/kidsFragment"
     android:background="@color/dark_blue_grey"
     android:orientation="vertical"
     tools:context=".Fragments.KidsFragment">
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.smarteist.autoimageslider.SliderView
-            android:id="@+id/imageSlider"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:sliderAnimationDuration="600"
-            app:sliderAutoCycleDirection="back_and_forth"
-            app:sliderIndicatorAnimationDuration="600"
-            app:sliderIndicatorEnabled="true"
-            app:sliderIndicatorGravity="center_horizontal|bottom"
-            app:sliderIndicatorMargin="15dp"
-            app:sliderIndicatorOrientation="horizontal"
-            app:sliderIndicatorPadding="3dp"
-            app:sliderIndicatorRadius="2dp"
-            app:sliderIndicatorSelectedColor="#5A5A5A"
-            app:sliderIndicatorUnselectedColor="#FFF"
-            app:sliderScrollTimeInSec="1" />
+            android:layout_height="match_parent">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorEnabled="true"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1" />
 
 
-        <TextView
-            android:id="@+id/tvPick"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imageSlider"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="Pick Your pals"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvPick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageSlider"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="Pick Your pals"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvKidsPickYou"
-            style="@style/RecyclerViewPopularMovies"
-            android:layout_below="@id/tvPick"
-            android:orientation="horizontal" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvKidsPickYou"
+                style="@style/RecyclerViewPopularMovies"
+                android:layout_below="@id/tvPick"
+                android:orientation="horizontal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rvKidsPickYou"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/tvkidsandfamily"
-            android:text="Kids and family movies"
-            android:textColor="@color/white" />
+            <TextView
+                android:id="@+id/tvkidsandfamily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvKidsPickYou"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="Kids and family movies"
+                android:textColor="@color/white" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvkidsandfamily"
-            style="@style/RecyclerViewPopularMovies"
-            android:layout_below="@id/tvkidsandfamily"
-            android:orientation="horizontal" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvkidsandfamily"
+                style="@style/RecyclerViewPopularMovies"
+                android:layout_below="@id/tvkidsandfamily"
+                android:orientation="horizontal" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_below="@id/rvkidsandfamily"
-            android:id="@+id/btntofragment"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tvkidsandfamilytv"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/rvkidsandfamily"
+                android:layout_height="wrap_content"
+                android:text="Kids and family Tv" />
 
-</ScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvkidsandfamilytv"
+                style="@style/RecyclerViewPopularMovies"
+                android:layout_below="@id/tvkidsandfamilytv"
+                android:orientation="horizontal" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 
 </RelativeLayout>

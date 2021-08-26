@@ -7,42 +7,42 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:background="@color/dark_blue_grey"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/dark_blue_grey">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/ivImagePreviewLayout"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
-                android:src="@drawable/prime_hori"
                 android:scaleType="centerCrop"
-                android:id="@+id/ivImagePreviewLayout" />
+                android:src="@drawable/prime_hori" />
 
             <TextView
-                style="@style/HeadingPreviewLayout"
-                android:text="Fight Club"
-                android:textSize="25sp"
-                android:layout_marginTop="15dp"
                 android:id="@+id/MovieName"
-                android:textColor="@color/white" />
+                style="@style/HeadingPreviewLayout"
+                android:layout_marginTop="15dp"
+                android:text="Fight Club"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
 
             <TextView
                 style="@style/HeadingPreviewLayout"
-                android:text="@string/prime"
                 android:layout_marginTop="8dp"
-                android:textSize="20sp"
-                android:textColor="@color/lightBlue" />
+                android:text="@string/prime"
+                android:textColor="@color/lightBlue"
+                android:textSize="20sp" />
 
             <TextView
                 style="@style/HeadingPreviewLayout"
-                android:text="@string/included_with_prime"
-                android:textSize="15sp"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/white" />
+                android:text="@string/included_with_prime"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
             <RelativeLayout
                 android:id="@+id/btn_play"
@@ -105,6 +105,7 @@
                     style="@style/LinearLayoutForRoundButton"
                     android:layout_weight="1"
                     tools:ignore="UseCompoundDrawables">
+
                     <ImageView
                         style="@style/ImageViewPreviewLayout"
                         android:src="@drawable/download"
@@ -121,9 +122,10 @@
                     style="@style/LinearLayoutForRoundButton"
                     android:layout_weight="1"
                     tools:ignore="UseCompoundDrawables">
+
                     <ImageView
-                        style="@style/ImageViewPreviewLayout"
                         android:id="@+id/wishlist_img"
+                        style="@style/ImageViewPreviewLayout"
                         android:src="@drawable/plus"
                         tools:ignore="ContentDescription" />
 
@@ -138,6 +140,7 @@
                     style="@style/LinearLayoutForRoundButton"
                     android:layout_weight="1"
                     tools:ignore="UseCompoundDrawables">
+
                     <ImageView
                         style="@style/ImageViewPreviewLayout"
                         android:src="@drawable/baseline_share_24"
@@ -152,21 +155,21 @@
             </LinearLayout>
 
             <TextView
-                style="@style/HeadingPreviewLayout"
-                android:text="@string/movieDesc"
-                android:textSize="15sp"
                 android:id="@+id/movieDescriptionPreviewLayout"
+                style="@style/HeadingPreviewLayout"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/white" />
+                android:text="@string/movieDesc"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
 
             <TextView
                 android:id="@+id/rating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif"
                 android:text="@string/imdb_8_4"
                 android:textColor="@color/white"
@@ -177,24 +180,39 @@
                 android:id="@+id/year_mat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif"
                 android:text="@string/_2019_164min_14"
                 android:textColor="@color/white"
-                android:layout_marginStart="15dp"
                 android:textSize="12sp"
                 android:textStyle="normal" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif"
                 android:text="@string/language_hindi_english"
                 android:textColor="@color/white"
                 android:textSize="12sp"
-                android:layout_marginStart="15dp"
                 android:textStyle="normal" />
+
+
+            <ImageView
+                android:id="@+id/ivDirectorImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/tvDirectorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/white" />
 
             <View
                 android:layout_width="match_parent"
@@ -205,14 +223,14 @@
                 android:background="@color/white" />
 
             <TextView
-                style="@style/tvRecommendedMovies"
                 android:id="@+id/tvPopularMovies"
-                android:text="@string/related_movies"/>
+                style="@style/tvRecommendedMovies"
+                android:text="@string/related_movies" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPopularMovies"
-                android:orientation="horizontal"
-                style="@style/RecyclerViewPopularMovies"/>
+                style="@style/RecyclerViewPopularMovies"
+                android:orientation="horizontal" />
 
         </LinearLayout>
 
