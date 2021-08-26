@@ -20,8 +20,8 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows) {
 
             parentFragmentManager.setFragmentResultListener("Moviename",this,  FragmentResultListener(){ s: String, bundle: Bundle ->
 
-                val data = bundle.getInt("movieName")
-                tvChecking.setImageResource(data)
+                val data = bundle.getString("movieName")
+                tvChecking.setText(data)
             })
     }
 

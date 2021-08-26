@@ -34,13 +34,6 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         imageSliderView()
         kidsPickYou()
         kidsandfamily()
-        btntofragment.setOnClickListener {
-            val fragmentManager = requireActivity().supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.kidsFragment, MoviePreviewFragment())
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-        }
     }
 
 
@@ -79,12 +72,16 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.replace(R.id.kidsFragment, MoviePreviewFragment())
+        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
         fragmenTransaction.addToBackStack(null)
         fragmenTransaction.commit()
 
         val bundle = Bundle();
+        bundle.putString("movieImage", listofkidsandfamily[position].image)
         bundle.putString("movieName", listofkidsandfamily[position].movieName)
+        bundle.putString("moviedescription", listofkidsandfamily[position].description)
+        bundle.putString("movietime", listofkidsandfamily[position].timing+"    "+listofkidsandfamily[position].year)
+        bundle.putString("movierating", listofkidsandfamily[position].rating)
         parentFragmentManager.setFragmentResult("Moviename", bundle)
 
     }
