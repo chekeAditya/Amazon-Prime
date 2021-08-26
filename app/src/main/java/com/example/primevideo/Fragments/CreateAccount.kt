@@ -4,6 +4,7 @@ package com.example.primevideo.Fragments
 import android.os.Bundle
 import android.text.TextUtils
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -12,6 +13,9 @@ import androidx.navigation.Navigation
 import com.example.primevideo.R
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.actionCodeSettings
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_create_account.*
 
 
@@ -82,6 +86,24 @@ class CreateAccount : Fragment(R.layout.fragment_create_account) {
                         .show()
 
                   //  progressbar1.visibility = View.GONE
+                }
+            }
+        val actionCodeSettings = actionCodeSettings {
+            // URL you want to redirect back to. The domain (www.example.com) for this
+            // URL must be whitelisted in the Firebase Console.
+            url = "https://www.gmail.com/finishSignUp?cartId=1234"
+            // This must be true
+            handleCodeInApp = true
+            setIOSBundleId("com.example.ios")
+            setAndroidPackageName(
+                "com.example.primevideo.Fragments",
+                true, /* installIfNotAvailable */
+                "12" /* minimumVersion */)
+        }
+        Firebase.auth.sendSignInLinkToEmail(email, actionCodeSettings)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d("Prachi", "Email sent.")
                 }
             }
     }
