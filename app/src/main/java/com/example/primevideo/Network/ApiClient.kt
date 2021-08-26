@@ -1,12 +1,9 @@
 package com.example.primevideo.Network
 
-import com.example.primevideo.Model.KidsPickYouModel
-import com.example.primevideo.Model.PopularMoviesModel
-import com.example.primevideo.Model.PopularShows.PopularShowsModel
+import com.example.primevideo.Model.*
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface ApiClient {
 
@@ -21,4 +18,20 @@ interface ApiClient {
     //Popular Shows :- https://run.mocky.io/v3/de4c3f24-d9f7-4dcc-af8a-ce4a348b3b13
     @GET("v3/de4c3f24-d9f7-4dcc-af8a-ce4a348b3b13")
     fun getPopularShows(): Call<List<PopularShowsModelItem>>
+
+
+    ///https://run.mocky.io/v3/2d811ba0-7dfe-4472-a554-34f2b8e05b73
+    @GET("v3/2d811ba0-7dfe-4472-a554-34f2b8e05b73")
+    fun getTOPMovies(): Call<DramaResponseDTO>
+
+    //https://run.mocky.io/v3/45344816-bcd2-4617-aacc-f2e3fde8901c
+    @GET("v3/45344816-bcd2-4617-aacc-f2e3fde8901c")
+    fun getLatestMovies(): Call<List<ActionMovieListResponse>>
+
+
+    //https://run.mocky.io/v3/72c8b521-479d-44be-af63-ed73f548ded3
+    @GET("v3/72c8b521-479d-44be-af63-ed73f548ded3")
+    fun getRomanticMovies(): Call<RomanceResponseDTO>
+
+
 }
