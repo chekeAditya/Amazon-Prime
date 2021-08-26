@@ -251,7 +251,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
             indianToon.timing + "    " + indianToon.year)
         bundle.putString("movierating", indianToon.rating)
         bundle.putString("DirectorImage", indianToon.directorImage)
-        bundle.putString("DirectorName", indianToon.director)
+        bundle.putString("DirectorName", indianToon.movieTrailerLink)
         parentFragmentManager.setFragmentResult("Moviename", bundle)
     }
 
