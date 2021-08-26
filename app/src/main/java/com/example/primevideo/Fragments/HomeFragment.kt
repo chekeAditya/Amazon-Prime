@@ -56,8 +56,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setShowAdapter() {
-        val linearLayoutManagerShow =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val linearLayoutManagerShow = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val popularShowsAdapter = PopularShowsAdapter(listOfPopularShowsItem)
         rvPopularShows.adapter = popularShowsAdapter
         rvPopularShows.layoutManager = linearLayoutManagerShow

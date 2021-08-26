@@ -25,6 +25,7 @@
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.AppCompat.Spinner.DropDown"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/profileImage">
@@ -32,6 +33,7 @@
         <AutoCompleteTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:inputType="none"
             android:text="Login Name" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -49,6 +51,7 @@
         android:id="@+id/tvWatchlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_below="@id/profileImage"
         android:layout_centerHorizontal="true"
         android:text="WatchList"
@@ -65,6 +68,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:textSize="20dp"
+        android:textColor="@color/white"
         android:text="You dont have any watchlist"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content" />
