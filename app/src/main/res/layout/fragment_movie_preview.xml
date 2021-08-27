@@ -203,6 +203,7 @@
             <ImageView
                 android:id="@+id/ivDirectorImage"
                 android:layout_width="150dp"
+                android:src="@drawable/chris"
                 android:layout_height="150dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp" />
