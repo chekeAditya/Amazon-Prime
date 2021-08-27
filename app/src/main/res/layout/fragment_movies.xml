@@ -87,7 +87,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:text="Action and adventure"
+                android:text="Romantic Movie"
                 android:textColor="@color/white"
                 android:textSize="15dp"
                 android:textStyle="bold" />
