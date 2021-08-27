@@ -10,13 +10,13 @@ import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.Adapters.TopRatedAdapter
 import com.example.primevideo.Model.Kids.kidsandfamily.Data
 import com.example.primevideo.Model.Kids.kidsandfamily.DataX
-import com.example.primevideo.Model.TVShow.DataTvSHowRated
 import com.example.primevideo.Model.TVShow.DramaTvShow
 import com.example.primevideo.Model.TVShow.TopRatedTvSHow
 import com.example.primevideo.Model.TVShow.TvDramaModel
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
 import com.example.primevideo.Network.OnItemClickListener
+import com.example.primevideo.Network.OnItemListener
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_home.imageSlider
@@ -24,10 +24,11 @@ import kotlinx.android.synthetic.main.fragment_tv_shows.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.example.primevideo.Model.TVShow.DataTvSHowRated as DataTvSHowRated1
 
-class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemClickListener {
+class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
     private lateinit var dramaTvShows: List<DramaTvShow>
-    private lateinit var dataTvSHowRated: List<DataTvSHowRated>
+    private lateinit var dataTvSHowRated: List<DataTvSHowRated1>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
@@ -109,40 +110,47 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemClickListene
         imageSlider.startAutoCycle()
     }
 
-    override fun onitemclick(data: Data, position: Int) {
-        TODO("Not yet implemented")
-    }
+
 
     override fun onTvClicked(dramaTvShow: DramaTvShow, position: Int) {
-        TODO("Not yet implemented")
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.add(R.id.tvShowFragment, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
+
+        val bundle = Bundle()
+        bundle.putString("movieImage", dramaTvShow.image)
+        bundle.putString("movieName", dramaTvShow.movieName)
+        bundle.putString("moviedescription", dramaTvShow.description)
+        bundle.putString("movietime",
+            dramaTvShow.timing + "    " + dramaTvShow.year)
+        bundle.putString("movierating", dramaTvShow.rating)
+        bundle.putString("DirectorImage", dramaTvShow.directorImage)
+        bundle.putString("DirectorName", dramaTvShow.director)
+        parentFragmentManager.setFragmentResult("Moviename", bundle)
     }
 
-    override fun onkidsTvclick(dataX: DataX, position: Int) {
-        TODO("Not yet implemented")
-    }
 
-    override fun onTopRatedCLicked(dataTvSHowRated: DataTvSHowRated, position: Int) {
-        TODO("Not yet implemented")
-    }
 
-//    override fun onTopRatedCLicked(dataTvSHowRated: DataTvSHowRated, position: Int) {
-//        val fragmentManager = requireActivity().supportFragmentManager
-//        val fragmenTransaction = fragmentManager.beginTransaction()
-//        fragmenTransaction.add(R.id.tvShowFragment, MoviePreviewFragment())
-//        fragmenTransaction.addToBackStack(null)
-//        fragmenTransaction.commit()
-//
-//        val bundle = Bundle()
-//        bundle.putString("movieImage", dataTvSHowRated[position].image)
-//        bundle.putString("movieName", dataTvSHowRated[position].movieName)
-//        bundle.putString("moviedescription", dataTvSHowRated[position].description)
-//        bundle.putString("movietime",
-//            dataTvSHowRated[position].timing + "    " + dataTvSHowRated[position].year)
-//        bundle.putString("movierating", dataTvSHowRated[position].rating)
-//        bundle.putString("DirectorImage", dataTvSHowRated[position].directorImage)
-//        bundle.putString("DirectorName", dataTvSHowRated[position].director)
-//        parentFragmentManager.setFragmentResult("Moviename", bundle)
-//    }
+    override fun onTopRatedCLicked(dataTvSHowRated: DataTvSHowRated1, position: Int) {
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.add(R.id.tvShowFragment, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
+
+        val bundle = Bundle()
+        bundle.putString("movieImage", dataTvSHowRated.image)
+        bundle.putString("movieName", dataTvSHowRated.movieName)
+        bundle.putString("moviedescription", dataTvSHowRated.description)
+        bundle.putString("movietime",
+            dataTvSHowRated.timing + "    " + dataTvSHowRated.year)
+        bundle.putString("movierating", dataTvSHowRated.rating)
+        bundle.putString("DirectorImage", dataTvSHowRated.directorImage)
+       bundle.putString("DirectorName", dataTvSHowRated.director)
+       parentFragmentManager.setFragmentResult("Moviename", bundle)
+    }
 
 
 

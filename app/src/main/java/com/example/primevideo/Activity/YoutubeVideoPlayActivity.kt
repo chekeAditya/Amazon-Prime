@@ -1,6 +1,5 @@
 package com.example.primevideo.Activity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
@@ -9,6 +8,7 @@ import com.example.primevideo.R
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.android.synthetic.main.activity_youtube_video_play.*
+
 
 class YoutubeVideoPlayActivity : AppCompatActivity() {
 

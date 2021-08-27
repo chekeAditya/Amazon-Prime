@@ -6,14 +6,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.primevideo.Adapters.KidsPickYouAdapter
-import com.example.primevideo.Adapters.MySliderImageAdapter
-import com.example.primevideo.Adapters.kidsandfamilyAdaptor
-import com.example.primevideo.Adapters.kidsandfamilyTvAdaptor
-import com.example.primevideo.Model.Kids.kidsandfamily.Data
-import com.example.primevideo.Model.Kids.kidsandfamily.DataX
-import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
-import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
+import com.example.primevideo.Adapters.*
+import com.example.primevideo.Model.Kids.kidsandfamily.*
 import com.example.primevideo.Model.KidsPickYouModel
 import com.example.primevideo.Model.KidsPickYouResult
 import com.example.primevideo.Model.TVShow.DataTvSHowRated
@@ -172,30 +166,8 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         rvkidsandfamily.layoutManager = linearLayoutManager
     }
 
-    override fun onitemclick(data: Data, position: Int) {
 
-        val fragmentManager = requireActivity().supportFragmentManager
-        val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
-        fragmenTransaction.addToBackStack(null)
-        fragmenTransaction.commit()
 
-        val bundle = Bundle();
-        bundle.putString("movieImage", listofkidsandfamily[position].image)
-        bundle.putString("movieName", listofkidsandfamily[position].movieName)
-        bundle.putString("moviedescription", listofkidsandfamily[position].description)
-        bundle.putString("movietime",
-            listofkidsandfamily[position].timing + "    " + listofkidsandfamily[position].year)
-        bundle.putString("movierating", listofkidsandfamily[position].rating)
-        bundle.putString("DirectorImage", listofkidsandfamily[position].directorImage)
-        bundle.putString("DirectorName", listofkidsandfamily[position].director)
-        parentFragmentManager.setFragmentResult("Moviename", bundle)
-
-    }
-
-    override fun onTvClicked(dramaTvShow: DramaTvShow, position: Int) {
-        TODO("Not yet implemented")
-    }
 
     private fun imageSliderView() {
         val imageList: ArrayList<String> = ArrayList()
@@ -329,8 +301,6 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
     }
 
-    override fun onTopRatedCLicked(dataTvSHowRated: DataTvSHowRated, position: Int) {
-        TODO("Not yet implemented")
-    }
+
 
 }

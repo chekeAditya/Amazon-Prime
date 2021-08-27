@@ -1,10 +1,13 @@
 package com.example.primevideo.Network
 
+import com.example.primevideo.Model.*
+import com.example.primevideo.Model.Kids.kidsandfamily.AmazonOriginalKids
+import com.example.primevideo.Model.Kids.kidsandfamily.IndianToonsModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
-import com.example.primevideo.Model.KidsPickYouModel
-import com.example.primevideo.Model.PopularMoviesModel
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
+import com.example.primevideo.Model.TVShow.TopRatedTvSHow
+import com.example.primevideo.Model.TVShow.TvDramaModel
 import retrofit2.Call
 import retrofit2.http.GET
 

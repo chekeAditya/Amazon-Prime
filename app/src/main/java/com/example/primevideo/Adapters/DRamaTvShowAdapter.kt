@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.primevideo.Model.TVShow.DramaTvShow
 import com.example.primevideo.Network.OnItemClickListener
+import com.example.primevideo.Network.OnItemListener
 import com.example.primevideo.R
 import com.example.primevideo.ViewHolder.DramaTVShowHolder
 
-class DRamaTvShowAdapter (var dramaTvShow: List<DramaTvShow>, private val listener: OnItemClickListener) :
+class DRamaTvShowAdapter (var dramaTvShow: List<DramaTvShow>, private val listener: OnItemListener) :
 
     RecyclerView.Adapter<DramaTVShowHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DramaTVShowHolder {
