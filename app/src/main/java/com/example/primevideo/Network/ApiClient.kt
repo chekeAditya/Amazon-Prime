@@ -6,6 +6,7 @@ import com.example.primevideo.Model.Kids.kidsandfamily.IndianToonsModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
+import com.example.primevideo.Model.SearchFragmentModel.SearchModelFindFragment
 import com.example.primevideo.Model.TVShow.KidaTvShowModel
 import com.example.primevideo.Model.TVShow.ThrillerTvModel
 import com.example.primevideo.Model.TVShow.TopRatedTvSHow
