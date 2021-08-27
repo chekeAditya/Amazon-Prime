@@ -81,7 +81,6 @@
     <TextView
         android:id="@+id/tvChecking"
         style="@style/tvRecommendedMovies"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/dramaTopRatedRecycler"
         android:text="Drama Tv" />
 
@@ -89,7 +88,6 @@
     <TextView
         android:id="@+id/tvYouWillLike"
         style="@style/tvRecommendedMovies"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/horizontalview"
         android:text="Tv Shows You Will Like" />
 
@@ -107,7 +105,6 @@
         <TextView
             android:id="@+id/tvKidsTvShow"
             style="@style/tvRecommendedMovies"
-            android:layout_height="wrap_content"
             android:layout_below="@+id/dramaTvShowRecycler"
             android:text="Kids And Family Tv Show" />
 
@@ -116,6 +113,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvKidsTvShow" />
+        <TextView
+            android:id="@+id/tvThriller"
+            style="@style/tvRecommendedMovies"
+            android:layout_below="@+id/kidsTvShow"
+            android:text="Kids And Family Tv Show" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ThrillerTvShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvThriller" />
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

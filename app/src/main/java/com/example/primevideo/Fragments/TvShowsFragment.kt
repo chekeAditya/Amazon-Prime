@@ -5,10 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.primevideo.Adapters.DRamaTvShowAdapter
-import com.example.primevideo.Adapters.KidsTvShowAdapter
-import com.example.primevideo.Adapters.MySliderImageAdapter
-import com.example.primevideo.Adapters.TopRatedAdapter
+import com.example.primevideo.Adapters.*
 import com.example.primevideo.Model.TVShow.*
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
@@ -26,16 +23,37 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
     private lateinit var dramaTvShows: List<DramaTvShow>
     private lateinit var dataTvSHowRated: List<DataTvSHowRated1>
     private lateinit var kidsTvShowData: List<KidsTvShowData>
+    private lateinit var thrillerTvData: List<ThrillerTvData>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
         dramaTvSHowFun()
         TopRatedShowsFun()
         kidsTvShowFun()
+        thrillerTVShowFun()
+    }
+
+    private fun thrillerTVShowFun() {
+        val apiClient=Network.getInstance().create(ApiClient::class.java)
+        apiClient.getThrillerTvShow().enqueue(object : Callback<ThrillerTvModel>{
+            override fun onResponse(
+                call: Call<ThrillerTvModel>,
+                response: Response<ThrillerTvModel>
+            ) {
+                response.body()?.run {
+                    thrillerTvData = response.body()!!.data
+                    SetThrillerAdapter()
+                }
+            }
+            override fun onFailure(call: Call<ThrillerTvModel>, t: Throwable) {
+                Toast.makeText(context, "Failure" + t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
 
     private fun TopRatedShowsFun() {
-        var apiClient2 =Network.getInstance().create(ApiClient::class.java)
+        val apiClient2 =Network.getInstance().create(ApiClient::class.java)
         apiClient2.getTopRatedTvShows().enqueue(object : Callback<TopRatedTvSHow>{
             override fun onResponse(
                 call: Call<TopRatedTvSHow>,
@@ -93,7 +111,12 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
         })
 
     }
-
+    private fun SetThrillerAdapter(){
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val thrillerAdapter = ThrillerAdapter(thrillerTvData,this)
+        ThrillerTvShow.adapter = thrillerAdapter
+        ThrillerTvShow.layoutManager = linearLayoutManager
+    }
     private fun setKidsShow(){
         val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val kidsTvShowAdapter =KidsTvShowAdapter(kidsTvShowData,this)
@@ -112,6 +135,7 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
         dramaTopRatedRecycler.adapter = topRatedAdapter
         dramaTopRatedRecycler.layoutManager = linearLayoutManager
     }
+
     private fun imageSliderView() {
         val imageList: ArrayList<String> = ArrayList()
         imageList.add("https://www.linkpicture.com/q/1_935.jpg")
@@ -195,7 +219,24 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
         parentFragmentManager.setFragmentResult("Moviename", bundle)
     }
 
+    override fun onThrillerTV(thrillerTvData: ThrillerTvData, position: Int) {
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.add(R.id.tvShowFragment, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
 
+        val bundle = Bundle()
+        bundle.putString("movieImage",thrillerTvData.image)
+        bundle.putString("movieName", thrillerTvData.movieName)
+        bundle.putString("moviedescription", thrillerTvData.description)
+        bundle.putString("movietime",
+            thrillerTvData.timing + "    " + thrillerTvData.year)
+        bundle.putString("movierating", thrillerTvData.rating)
+        bundle.putString("DirectorImage", thrillerTvData.directorImage)
+        bundle.putString("DirectorName", thrillerTvData.director)
+        parentFragmentManager.setFragmentResult("Moviename", bundle)
+    }
 
 
 }

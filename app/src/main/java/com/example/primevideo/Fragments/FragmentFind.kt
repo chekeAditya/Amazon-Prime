@@ -24,8 +24,6 @@ class FragmentFind : Fragment(R.layout.fragment_find) {
 
         initview(view)
 
-
-
     }
 
     private fun initview(view: View) {

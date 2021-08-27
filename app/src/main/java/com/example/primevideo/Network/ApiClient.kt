@@ -7,6 +7,7 @@ import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
 import com.example.primevideo.Model.TVShow.KidaTvShowModel
+import com.example.primevideo.Model.TVShow.ThrillerTvModel
 import com.example.primevideo.Model.TVShow.TopRatedTvSHow
 import com.example.primevideo.Model.TVShow.TvDramaModel
 import retrofit2.Call
@@ -65,4 +66,8 @@ interface ApiClient {
     //kids tv show:- https://run.mocky.io/v3/d113146a-d7a9-440a-ba31-c3239203ebc9
     @GET("v3/d113146a-d7a9-440a-ba31-c3239203ebc9")
     fun getKidsTvShow(): Call<KidaTvShowModel>
+
+    //Thriller tv :-https://run.mocky.io/v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d
+    @GET("v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d")
+    fun getThrillerTvShow(): Call<ThrillerTvModel>
 }

@@ -134,6 +134,8 @@
         android:textColor="@color/white"
         android:textSize="15sp" />
     <ProgressBar
+        android:indeterminate="true"
+        android:layout_centerInParent="true"
         android:id="@+id/progressbar1"
         android:visibility="gone"
         android:layout_width="wrap_content"

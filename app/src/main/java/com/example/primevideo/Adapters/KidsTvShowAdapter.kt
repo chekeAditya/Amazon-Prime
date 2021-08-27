@@ -11,7 +11,7 @@ class KidsTvShowAdapter (var kidsTvShowData: List<KidsTvShowData>, private val l
 
     RecyclerView.Adapter<KidsTVShowViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KidsTVShowViewHolder {
-        var view = LayoutInflater.from(parent.context)
+        val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.itemlayout_popular_movies, parent, false)
         return KidsTVShowViewHolder(view,listener)
     }

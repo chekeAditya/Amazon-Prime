@@ -10,6 +10,7 @@ import com.example.primevideo.Model.RomanceData
 import com.example.primevideo.Model.TVShow.DataTvSHowRated
 import com.example.primevideo.Model.TVShow.DramaTvShow
 import com.example.primevideo.Model.TVShow.KidsTvShowData
+import com.example.primevideo.Model.TVShow.ThrillerTvData
 
 interface OnItemClickListener {
 
@@ -28,14 +29,10 @@ interface OnItemMovieClick{
     fun onActionClick(action: ActionMovieListResponse, position: Int)
     fun onRomanceClick(romance: RomanceData, position: Int)
 
-
-
-
-
-
 }
 interface OnItemListener{
     fun onTvClicked(dramaTvShow: DramaTvShow, position: Int)
     fun onTopRatedCLicked(dataTvSHowRated: DataTvSHowRated, position: Int)
     fun onKidsTvShow(kidsTvShowData: KidsTvShowData, position: Int)
+    fun onThrillerTV(thrillerTvData: ThrillerTvData,position: Int)
 }
