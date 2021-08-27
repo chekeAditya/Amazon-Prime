@@ -94,7 +94,7 @@ class DramaGridLayout: Fragment(R.layout.item_grid_layout), OnItemMovieClick {
 
     private fun RomanceMsetAdapter() {
 
-        var romanceMovieAdapter = RomanceMovieAdapter(listofRomanceData1,this)
+        val romanceMovieAdapter = RomanceMovieAdapter(listofRomanceData1,this)
         recGrid.adapter = romanceMovieAdapter
         recGrid.layoutManager = GridLayoutManager(activity,2)
     }

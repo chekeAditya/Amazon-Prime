@@ -37,6 +37,14 @@
     <string name="related_movies">Related Movies</string>
     <string name="video_id">0m4BNIPB7WU</string>
     <string name="indian_toons">Indian Toons</string>
+    <string name="search">Search</string>
+    <string name="browse_by">Browse by</string>
+    <string name="movies">Movies</string>
+    <string name="amazon_originals">Amazon Originals</string>
+    <string name="tv">TV</string>
+    <string name="kids">Kids</string>
+    <string name="genres">Genres</string>
+    <string name="searched_movies">Searched Movies</string>
 </resources>
 
 

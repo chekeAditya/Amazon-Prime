@@ -12,6 +12,7 @@ import com.example.primevideo.Model.TVShow.TopRatedTvSHow
 import com.example.primevideo.Model.TVShow.TvDramaModel
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface ApiClient {
 
@@ -66,6 +67,10 @@ interface ApiClient {
     //kids tv show:- https://run.mocky.io/v3/d113146a-d7a9-440a-ba31-c3239203ebc9
     @GET("v3/d113146a-d7a9-440a-ba31-c3239203ebc9")
     fun getKidsTvShow(): Call<KidaTvShowModel>
+
+    //search option :- https://api.themoviedb.org/3/search/movie?apiKey=2147294b386ecadcb05cd19bcbbdddb9&movieName=mimi
+    @GET("3/search/movie")
+    fun getSearchedMovie(@Query("api_key") api_key: String, @Query("query") query: String):Call<SearchModelFindFragment>
 
     //Thriller tv :-https://run.mocky.io/v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d
     @GET("v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d")

@@ -40,6 +40,20 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         kidsTv()
         InidanToons()
         AmazonOriginal()
+
+
+
+        btntone.setOnClickListener{
+            val fragmentManager = requireActivity().supportFragmentManager
+            val fragmenTransaction = fragmentManager.beginTransaction()
+            fragmenTransaction.replace(R.id.kidsFragment, kidsandexpand())
+            fragmenTransaction.addToBackStack(null)
+            fragmenTransaction.commit()
+
+            val bundle = Bundle()
+            parentFragmentManager.setFragmentResult("kidsandfamilytv", bundle)
+
+        }
     }
 
     private fun AmazonOriginal() {
@@ -304,3 +318,47 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
 
 }
+
+/*
+ parentFragmentManager.setFragmentResultListener(
+            "kidsandfamilytv",
+            this,
+            FragmentResultListener() { s: String, bundle: Bundle ->
+
+
+                kidsTv()
+
+            })
+    }
+
+    private fun kidsTv() {
+        val apiClient4 = Network.getInstance().create(ApiClient::class.java)
+        apiClient4.getInidanToons().enqueue(
+            object : Callback<IndianToonsModel> {
+                override fun onResponse(
+                    call: Call<IndianToonsModel>,
+                    response: Response<IndianToonsModel>,
+                ) {
+                    response.body()?.run {
+                        indianToon = response.body()!!.indianToons
+                        setInidanToonsRecycler()
+                    }
+                }
+
+                override fun onFailure(call: Call<IndianToonsModel>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+            }
+        )
+    }
+
+    private fun setInidanToonsRecycler() {
+        val linearLayoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val indianToon = kidsandfamilytvexpansionAdaptor(indianToon)
+        rvkidsexpand.adapter = indianToon
+        rvkidsexpand.layoutManager = linearLayoutManager
+    }
+}
+ */

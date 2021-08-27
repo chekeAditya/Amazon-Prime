@@ -11,6 +11,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.primevideo.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserInfo
 import kotlinx.android.synthetic.main.fragment_create_account.*
 
 
@@ -37,8 +38,14 @@ class CreateAccount : Fragment(R.layout.fragment_create_account) {
     private fun registerNewUser() {
         progressbar1.visibility = View.VISIBLE
 
+        val name = etName.text.toString()
         val email = etNumberOrEmail.text.toString()
         val password = etCreatePassword.text.toString()
+
+        if (TextUtils.isEmpty(name)) {
+            Toast.makeText(context, "Please enter Name!!", Toast.LENGTH_LONG).show()
+            return
+        }
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(context, "Please enter email!!", Toast.LENGTH_LONG).show()
@@ -57,7 +64,7 @@ class CreateAccount : Fragment(R.layout.fragment_create_account) {
                             if (mAuth.currentUser!!.isEmailVerified) {
                                 Toast.makeText(
                                     context,
-                                    "Registration successful!", Toast.LENGTH_LONG
+                                    "Registration successful!" + mAuth.currentUser!!.displayName , Toast.LENGTH_LONG
                                 ).show()
                                 navController.navigate(R.id.action_createAccount_to_mainActivity)
                             }
