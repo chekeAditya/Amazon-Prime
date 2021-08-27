@@ -6,11 +6,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.DRamaTvShowAdapter
+import com.example.primevideo.Adapters.KidsTvShowAdapter
 import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.Adapters.TopRatedAdapter
-import com.example.primevideo.Model.TVShow.DramaTvShow
-import com.example.primevideo.Model.TVShow.TopRatedTvSHow
-import com.example.primevideo.Model.TVShow.TvDramaModel
+import com.example.primevideo.Model.TVShow.*
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
 import com.example.primevideo.Network.OnItemListener
@@ -26,11 +25,13 @@ import com.example.primevideo.Model.TVShow.DataTvSHowRated as DataTvSHowRated1
 class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
     private lateinit var dramaTvShows: List<DramaTvShow>
     private lateinit var dataTvSHowRated: List<DataTvSHowRated1>
+    private lateinit var kidsTvShowData: List<KidsTvShowData>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageSliderView()
         dramaTvSHowFun()
         TopRatedShowsFun()
+        kidsTvShowFun()
     }
 
     private fun TopRatedShowsFun() {
@@ -72,6 +73,32 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
                 }
 
             })
+    }
+    private fun kidsTvShowFun() {
+        var apiClient = Network.getInstance().create(ApiClient::class.java)
+        apiClient.getKidsTvShow().enqueue(object : Callback<KidaTvShowModel>{
+            override fun onResponse(
+                call: Call<KidaTvShowModel>,
+                response: Response<KidaTvShowModel>
+            ) {
+                response.body()?.run {
+                    kidsTvShowData = response.body()!!.data
+                    setKidsShow()
+                }
+            }
+            override fun onFailure(call: Call<KidaTvShowModel>, t: Throwable) {
+                Toast.makeText(context, "Failure" + t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
+
+    }
+
+    private fun setKidsShow(){
+        val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val kidsTvShowAdapter =KidsTvShowAdapter(kidsTvShowData,this)
+        kidsTvShow.adapter = kidsTvShowAdapter
+        kidsTvShow.layoutManager = linearLayoutManager
     }
     private fun setAdapter() {
         val linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -148,6 +175,26 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
        bundle.putString("DirectorName", dataTvSHowRated.director)
        parentFragmentManager.setFragmentResult("Moviename", bundle)
     }
+
+    override fun onKidsTvShow(kidsTvShowData: KidsTvShowData, position: Int) {
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.add(R.id.tvShowFragment, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
+
+        val bundle = Bundle()
+        bundle.putString("movieImage",kidsTvShowData.image)
+        bundle.putString("movieName", kidsTvShowData.movieName)
+        bundle.putString("moviedescription", kidsTvShowData.description)
+        bundle.putString("movietime",
+            kidsTvShowData.timing + "    " + kidsTvShowData.year)
+        bundle.putString("movierating", kidsTvShowData.rating)
+        bundle.putString("DirectorImage", kidsTvShowData.directorImage)
+        bundle.putString("DirectorName", kidsTvShowData.director)
+        parentFragmentManager.setFragmentResult("Moviename", bundle)
+    }
+
 
 
 
