@@ -40,6 +40,20 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         kidsTv()
         InidanToons()
         AmazonOriginal()
+
+
+
+        btntone.setOnClickListener{
+            val fragmentManager = requireActivity().supportFragmentManager
+            val fragmenTransaction = fragmentManager.beginTransaction()
+            fragmenTransaction.replace(R.id.kidsFragment, KidsExpandFragment())
+            fragmenTransaction.addToBackStack(null)
+            fragmenTransaction.commit()
+
+            val bundle = Bundle()
+            parentFragmentManager.setFragmentResult("kidsandfamilytv", bundle)
+
+        }
     }
 
     private fun AmazonOriginal() {

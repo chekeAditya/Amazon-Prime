@@ -17,6 +17,7 @@
         <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:id="@+id/loginimage"
             android:background="#216bd6"
             android:src="@drawable/ic_baseline_person_24" />
 
@@ -30,11 +31,12 @@
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/profileImage">
 
-        <AutoCompleteTextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:inputType="none"
+            android:id="@+id/LoginName"
             android:text="Login Name" />
     </com.google.android.material.textfield.TextInputLayout>
 

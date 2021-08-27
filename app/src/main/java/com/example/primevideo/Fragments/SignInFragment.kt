@@ -9,7 +9,9 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.primevideo.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserInfo
 import kotlinx.android.synthetic.main.fragment_sign_in.*
+import okhttp3.internal.userAgent
 
 class SignInFragment : Fragment(R.layout.fragment_sign_in) {
     private lateinit var navController: NavController
@@ -33,6 +35,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         val password = etPassword.text.toString()
 
 
+
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(context, "Please enter email!!", Toast.LENGTH_LONG).show()
             return
@@ -49,12 +52,12 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                 if (it.isSuccessful) {
                     Toast.makeText(
                         context,
-                        "Login successful!!", Toast.LENGTH_LONG).show()
+                        "Login successful!!" + mAuth.currentUser!!.email, Toast.LENGTH_LONG).show()
                     progressbar.visibility = View.GONE
                     navController.navigate(R.id.action_signInFragment_to_mainActivity)
                 } else {
 
-                    Toast.makeText(context, "inValid Credentials", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "inValid Credentials ", Toast.LENGTH_LONG).show()
                     progressbar.visibility = View.GONE
                 }
             }

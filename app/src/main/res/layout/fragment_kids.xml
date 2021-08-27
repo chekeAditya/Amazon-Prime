@@ -67,6 +67,17 @@
                 android:text="Kids and family movies"
                 android:textColor="@color/white" />
 
+            <Button
+                android:id="@+id/btntone"
+                android:layout_width="30dp"
+                android:layout_height="13dp"
+                android:layout_alignTop="@id/tvkidsandfamily"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/tvkidsandfamily"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvkidsandfamily"
                 style="@style/RecyclerViewPopularMovies"
@@ -76,12 +87,12 @@
             <TextView
                 android:id="@+id/tvkidsandfamilytv"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvkidsandfamily"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_below="@id/rvkidsandfamily"
-                android:layout_height="wrap_content"
-                android:text="Kids and family Tv" />
+                android:text="Kids and family Tv"
+                android:textColor="@color/white" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvkidsandfamilytv"
@@ -92,12 +103,23 @@
             <TextView
                 android:id="@+id/tvIndianToons"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvkidsandfamilytv"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_below="@id/rvkidsandfamilytv"
-                android:layout_height="wrap_content"
-                android:text="Indian Toons " />
+                android:text="Indian Toons "
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btntwo"
+                android:layout_width="30dp"
+                android:layout_height="13dp"
+                android:layout_alignTop="@id/tvIndianToons"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/tvIndianToons"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_baseline_arrow_forward_ios_24" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvIndianToons"
@@ -109,12 +131,12 @@
             <TextView
                 android:id="@+id/tvAmazonOriginals"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvIndianToons"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_below="@id/rvIndianToons"
-                android:layout_height="wrap_content"
-                android:text="Amazon Originals" />
+                android:text="Amazon Originals"
+                android:textColor="@color/white" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvAmazonorginal"
