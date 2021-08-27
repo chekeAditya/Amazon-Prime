@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/dark_blue_grey"
+    android:id="@+id/GridL"
+    tools:context=".Fragments.FindView.DramaGridLayout">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sample"
+        android:id="@+id/itext1"
+        android:textStyle="bold"
+        android:textSize="26dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/recGrid"
+        android:layout_below="@+id/itext1"
+        />
+
+
+
+
+</RelativeLayout>
