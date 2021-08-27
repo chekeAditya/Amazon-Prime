@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
@@ -22,28 +21,38 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <SearchView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:background="#E2162030"
-                android:searchIcon="@drawable/ic_baseline_search_24">
+                android:layout_height="wrap_content">
 
+                <EditText
+                    android:id="@+id/etSearchMovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rectangle_bg_transparent"
+                    android:drawableStart="@drawable/ic_baseline_search_24"
+                    android:drawablePadding="20dp"
+                    android:hint="@string/search"
+                    android:padding="10dp"
+                    android:textColorHint="@color/white" />
+                <Button
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="30dp"
+                    android:id="@+id/btnSearchMovie"
+                    android:background="@drawable/ic_baseline_mic_24"/>
+            </RelativeLayout>
 
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="28dp"
-                    android:layout_height="37dp"
-                    android:layout_marginLeft="-34dp"
-                    android:layout_marginTop="7dp"
-                    android:backgroundTint="#E2162030"
-                    android:src="@drawable/ic_baseline_mic_24" />
-            </SearchView>
 
             <TextView
                 style="@style/HeadingFindFragment"
-                android:textSize="18dp"
-                android:text="Browse by" />
+                android:textSize="18sp"
+                android:text="@string/browse_by" />
 
 
             <LinearLayout
@@ -60,7 +69,7 @@
                     android:id="@+id/MainMovie"
                     android:layout_weight="1.47"
                     android:backgroundTint="#3A485E"
-                    android:text="Movies"
+                    android:text="@string/movies"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
@@ -70,7 +79,7 @@
                     android:layout_weight="0.47"
                     android:id="@+id/MainOriginal"
                     android:backgroundTint="#3A485E"
-                    android:text="Amazon Originals"
+                    android:text="@string/amazon_originals"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -87,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.97"
                     android:backgroundTint="#3A485E"
-                    android:text="TV"
+                    android:text="@string/tv"
                     android:id="@+id/MainTv"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
@@ -97,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="#3A485E"
-                    android:text="Kids"
+                    android:text="@string/kids"
                     android:id="@+id/MainKids"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
@@ -105,8 +114,8 @@
 
             <TextView
                 style="@style/HeadingFindFragment"
-                android:text="Genres"
-                android:textSize="18dp"
+                android:text="@string/genres"
+                android:textSize="18sp"
                 />
 
             <androidx.cardview.widget.CardView
@@ -120,7 +129,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:background="#808080" />
@@ -141,7 +150,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:layout_below="@+id/bDrama"
@@ -166,7 +175,7 @@
                     <TextView
                         android:id="@+id/barAction"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:layout_below="@+id/tAction"
@@ -191,7 +200,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:layout_below="@+id/tRomance"
@@ -217,7 +226,7 @@
                     <TextView
                         android:id="@+id/barline2"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:layout_below="@+id/bComedy"
@@ -242,7 +251,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:layout_below="@+id/tThriller"
@@ -260,7 +269,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tThriller"
-                        android:layout_alignRight="@+id/tHorror"
+                        android:layout_alignEnd="@+id/tHorror"
                         android:backgroundTint="@color/dark_blue_grey"
                         android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
 
@@ -285,7 +294,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:background="#808080" />
@@ -306,18 +315,18 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/bEnglish"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
-                        android:layout_below="@+id/bEnglish"
                         android:background="#808080" />
                     <!--        Hindi-->
                     <TextView
                         android:id="@+id/tHindi"
                         style="@style/Ucardviewtext"
-                        android:textStyle="normal"
                         android:layout_below="@+id/bEnglish"
-                        android:text="Hindi" />
+                        android:text="Hindi"
+                        android:textStyle="normal" />
 
                     <ImageButton
                         android:id="@+id/bHindi"
@@ -331,7 +340,7 @@
                     <TextView
                         android:id="@+id/barAction1"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:layout_below="@+id/tHindi"
@@ -356,7 +365,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:layout_below="@+id/tTelugu"
@@ -382,7 +391,7 @@
                     <TextView
                         android:id="@+id/barline3"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:layout_below="@+id/bTamil"
@@ -407,7 +416,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="1dp"
                         android:layout_marginStart="7dp"
                         android:layout_marginEnd="17dp"
                         android:layout_below="@+id/tKannada"
