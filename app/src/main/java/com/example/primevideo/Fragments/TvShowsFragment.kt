@@ -8,14 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.DRamaTvShowAdapter
 import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.Adapters.TopRatedAdapter
-import com.example.primevideo.Model.Kids.kidsandfamily.Data
-import com.example.primevideo.Model.Kids.kidsandfamily.DataX
 import com.example.primevideo.Model.TVShow.DramaTvShow
 import com.example.primevideo.Model.TVShow.TopRatedTvSHow
 import com.example.primevideo.Model.TVShow.TvDramaModel
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
-import com.example.primevideo.Network.OnItemClickListener
 import com.example.primevideo.Network.OnItemListener
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
