@@ -14,6 +14,7 @@
     <string name="downloads">downloads</string>
     <string name="downloadss">Downloads</string>
     <string name="popular_movies">Popular Movies</string>
+    <string name="popular_season">Popular Season</string>
     <string name="sign_ins">Sign-In</string>
     <string name="email_phone_for_mobile_accounts">Email(phone for mobile Accounts</string>
     <string name="amazon_password">Amazon Password</string>
@@ -46,15 +47,3 @@
     <string name="genres">Genres</string>
     <string name="searched_movies">Searched Movies</string>
 </resources>
-
-
-
-
-
-
-
-
-
-
-
-

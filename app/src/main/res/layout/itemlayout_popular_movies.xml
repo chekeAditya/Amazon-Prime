@@ -12,5 +12,4 @@
         android:scaleType="centerCrop"
         android:id="@+id/ivPopularMovies"/>
 
-
 </androidx.cardview.widget.CardView>
