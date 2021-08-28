@@ -24,8 +24,5 @@ class RomanceMovieHolder(itemView: View,val listener:OnItemMovieClick) : Recycle
         itemView.setOnClickListener{
             listener.onRomanceClick(romanceData,adapterPosition)
         }
-
     }
-
-
 }

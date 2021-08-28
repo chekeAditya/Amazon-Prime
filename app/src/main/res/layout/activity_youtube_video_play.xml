@@ -5,16 +5,18 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Activity.YoutubeVideoPlayActivity"
+    android:background="@color/dark_blue_grey"
     android:orientation="vertical">
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/youtubePlayerView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="match_parent"
         app:videoId="@string/video_id"
         app:autoPlay="true"
         app:showVideoDuration="true"
         app:enableLiveVideoUi="true"
+        android:layout_centerInParent="true"
         app:useWebUi="true"
         app:showFullScreenButton="true" />
 

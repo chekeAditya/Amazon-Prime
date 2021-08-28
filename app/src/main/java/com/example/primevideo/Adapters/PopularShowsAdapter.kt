@@ -29,23 +29,3 @@ class PopularShowsAdapter(private var showsModelItem: List<PopularShowsModelItem
         notifyDataSetChanged()
     }
 }
-/*
-(var resultModelList: List<ResultModel>) :
-
-    RecyclerView.Adapter<PopularMoviesViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularMoviesViewHolder {
-        var view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.itemlayout_popular_movies, parent, false)
-        return PopularMoviesViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: PopularMoviesViewHolder, position: Int) {
-        val resultModel: ResultModel = resultModelList[position]
-        holder.setData(resultModel)
-    }
-
-    override fun getItemCount(): Int {
-        return resultModelList.size
-    }
-}
- */

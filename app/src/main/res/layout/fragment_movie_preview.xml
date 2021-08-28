@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,7 +27,7 @@
                 android:id="@+id/MovieName"
                 style="@style/HeadingPreviewLayout"
                 android:layout_marginTop="15dp"
-                android:text="Fight Club"
+                android:text="@string/fight_club"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
 
@@ -148,7 +149,7 @@
 
                     <TextView
                         style="@style/TextviewBelowRoundButtonPreviewLayout"
-                        android:text="@string/download" />
+                        android:text="@string/share" />
 
                 </LinearLayout>
 
@@ -159,7 +160,7 @@
                 style="@style/HeadingPreviewLayout"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
-                android:text="@string/movieDesc"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -210,10 +211,10 @@
 
             <TextView
                 android:id="@+id/tvDirectorName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/white" />
+                style="@style/tvRecommendedMovies"
+                android:textSize="15sp"
+                android:text="@string/director_name"
+                app:drawableEndCompat="@android:color/transparent" />
 
             <View
                 android:layout_width="match_parent"
@@ -226,12 +227,51 @@
             <TextView
                 android:id="@+id/tvPopularMovies"
                 style="@style/tvRecommendedMovies"
-                android:text="@string/related_movies" />
+                android:text="@string/more_options" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvPopularMovies"
-                style="@style/RecyclerViewPopularMovies"
-                android:orientation="horizontal" />
+            <HorizontalScrollView
+                android:scrollbars="none"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgone"/>
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvsimgtwo"
+                        tools:ignore="ContentDescription" />
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgthree"/>
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgfour"/>
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgfive"/>
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgsix"/>
+                </LinearLayout>
+            </HorizontalScrollView>
 
         </LinearLayout>
 

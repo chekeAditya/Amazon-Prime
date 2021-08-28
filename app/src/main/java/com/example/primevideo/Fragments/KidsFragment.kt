@@ -43,7 +43,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
 
 
-        btntone.setOnClickListener{
+        tvkidsandfamily.setOnClickListener{
             val fragmentManager = requireActivity().supportFragmentManager
             val fragmenTransaction = fragmentManager.beginTransaction()
             fragmenTransaction.replace(R.id.kidsFragment, kidsandexpand())
@@ -264,14 +264,13 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         val bundle = Bundle();
         bundle.putString("movieImage", indianToon.image)
         bundle.putString("movieUrl",indianToon.movieTrailerLink)
-        Toast.makeText(context, "movieLink${indianToon.movieTrailerLink}", Toast.LENGTH_LONG).show()
         bundle.putString("movieName", indianToon.movieName)
         bundle.putString("moviedescription", indianToon.description)
         bundle.putString("movietime",
             indianToon.timing + "    " + indianToon.year)
         bundle.putString("movierating", indianToon.rating)
         bundle.putString("DirectorImage", indianToon.directorImage)
-        bundle.putString("DirectorName", indianToon.movieTrailerLink)
+        bundle.putString("DirectorName", indianToon.director)
         parentFragmentManager.setFragmentResult("Moviename", bundle)
     }
 
@@ -314,51 +313,4 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         parentFragmentManager.setFragmentResult("Moviename", bundle)
 
     }
-
-
-
 }
-
-/*
- parentFragmentManager.setFragmentResultListener(
-            "kidsandfamilytv",
-            this,
-            FragmentResultListener() { s: String, bundle: Bundle ->
-
-
-                kidsTv()
-
-            })
-    }
-
-    private fun kidsTv() {
-        val apiClient4 = Network.getInstance().create(ApiClient::class.java)
-        apiClient4.getInidanToons().enqueue(
-            object : Callback<IndianToonsModel> {
-                override fun onResponse(
-                    call: Call<IndianToonsModel>,
-                    response: Response<IndianToonsModel>,
-                ) {
-                    response.body()?.run {
-                        indianToon = response.body()!!.indianToons
-                        setInidanToonsRecycler()
-                    }
-                }
-
-                override fun onFailure(call: Call<IndianToonsModel>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-
-            }
-        )
-    }
-
-    private fun setInidanToonsRecycler() {
-        val linearLayoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val indianToon = kidsandfamilytvexpansionAdaptor(indianToon)
-        rvkidsexpand.adapter = indianToon
-        rvkidsexpand.layoutManager = linearLayoutManager
-    }
-}
- */

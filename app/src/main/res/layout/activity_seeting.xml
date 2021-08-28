@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3a547b"
+    android:background="@drawable/gradient"
     tools:context=".Activity.SeetingActivity">
 
     <TextView
@@ -13,52 +13,57 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:textColor="@color/white"
-        android:text="Settings"
-        android:textSize="20sp"
         android:layout_marginBottom="20dp"
+        android:text="@string/settings"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnstream"
         style="@style/SettingButton"
-        android:textColor="@color/white"
-        android:fontFamily="@font/allerta"
         android:layout_below="@id/tvSettings"
-        android:text="Stream &amp; download" />
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/allerta"
+        android:text="@string/stream_amp_download"
+        android:textColor="@color/white" />
 
     <TextView
-       style="@style/SettingTextView"
         android:id="@+id/downStream"
-        android:text="Manage inernet or wifi"
-        android:layout_below="@id/btnstream" />
+        style="@style/SettingTextView"
+        android:layout_marginStart="30dp"
+        android:layout_below="@id/btnstream"
+        android:text="@string/manage_internet_or_wifi" />
 
     <View
-        android:layout_width="match_parent"
         android:id="@+id/view1"
-        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_below="@id/downStream"
         android:layout_marginTop="20dp"
-        android:layout_height="1dp" />
+        android:background="@android:color/darker_gray" />
 
     <Button
         android:id="@+id/ParentalControls"
         style="@style/SettingButton"
         android:fontFamily="@font/allerta"
         android:layout_below="@id/view1"
-        android:text="Parental Contral" />
+        android:layout_marginStart="30dp"
+        android:text="@string/parental_control" />
 
     <TextView
-        style="@style/SettingTextView"
         android:id="@+id/downparent"
-        android:text="Control what you can watch"
-        android:layout_below="@id/ParentalControls" />
+        style="@style/SettingTextView"
+        android:layout_marginStart="30dp"
+        android:layout_below="@id/ParentalControls"
+        android:text="@string/control_what_you_can_watch" />
 
     <View
         android:layout_width="match_parent"
         android:id="@+id/view2"
         android:background="@android:color/darker_gray"
         android:layout_below="@id/downparent"
+
         android:layout_marginTop="20dp"
         android:layout_height="1dp" />
 
@@ -66,14 +71,16 @@
     <Button
         android:id="@+id/RegisterdDevice"
         style="@style/SettingButton"
+        android:layout_marginStart="30dp"
         android:fontFamily="@font/allerta"
         android:layout_below="@id/view2"
-        android:text="Registered Device" />
+        android:text="@string/registered_device" />
 
     <TextView
         style="@style/SettingTextView"
+        android:layout_marginStart="30dp"
         android:id="@+id/downRegister"
-        android:text="See all Registered device"
+        android:text="@string/see_all_registered_device"
         android:layout_below="@id/RegisterdDevice" />
 
     <View
@@ -88,8 +95,9 @@
         android:id="@+id/ClearHistory"
         style="@style/SettingButton"
         android:fontFamily="@font/allerta"
+        android:layout_marginStart="30dp"
         android:layout_below="@id/view3"
-        android:text="Clear Search History" />
+        android:text="@string/clear_search_history" />
 
     <View
         android:layout_width="match_parent"
@@ -103,13 +111,15 @@
         style="@style/SettingButton"
         android:fontFamily="@font/allerta"
         android:layout_below="@id/view4"
-        android:text="Notifications" />
+        android:layout_marginStart="30dp"
+        android:text="@string/notifications" />
 
     <TextView
-        style="@style/SettingTextView"
         android:id="@+id/downNotificaiton"
-        android:text="On"
-        android:layout_below="@id/Notifiacation" />
+        style="@style/SettingTextView"
+        android:layout_marginStart="30dp"
+        android:layout_below="@id/Notifiacation"
+        android:text="@string/on" />
 
     <View
         android:layout_width="match_parent"
@@ -122,15 +132,16 @@
     <Button
         android:id="@+id/AutoPlay"
         style="@style/SettingButton"
-        android:fontFamily="@font/allerta"
         android:layout_below="@id/view5"
-        android:text="Auto Play" />
+        android:fontFamily="@font/allerta"
+        android:text="@string/auto_play" />
 
     <TextView
-        style="@style/SettingTextView"
         android:id="@+id/downAutoplay"
-        android:text="play the next episode automatically"
-        android:layout_below="@id/AutoPlay" />
+        style="@style/SettingTextView"
+        android:layout_below="@id/AutoPlay"
+        android:layout_marginStart="30dp"
+        android:text="@string/play_the_next_episode_automatically" />
 
     <View
         android:layout_width="match_parent"
@@ -144,29 +155,30 @@
         android:layout_width="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="440dp"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="wrap_content"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
         android:id="@+id/Laungage"
         style="@style/SettingButton"
-        android:fontFamily="@font/allerta"
         android:layout_below="@id/view6"
-        android:text="Language" />
+        android:fontFamily="@font/allerta"
+        android:text="@string/language"
+        android:textColor="@color/white" />
 
     <TextView
-        style="@style/SettingTextView"
         android:id="@+id/downLanguage"
-        android:text="English"
-        android:layout_below="@id/Laungage" />
+        style="@style/SettingTextView"
+        android:layout_below="@id/Laungage"
+        android:layout_marginStart="30dp"
+        android:text="@string/english" />
 
     <View
-        android:layout_width="match_parent"
         android:id="@+id/view7"
-        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_below="@id/downLanguage"
         android:layout_marginTop="20dp"
-        android:layout_height="1dp" />
-
+        android:background="@android:color/darker_gray" />
 
 </RelativeLayout>

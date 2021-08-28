@@ -23,12 +23,8 @@ class YoutubeVideoPlayActivity : AppCompatActivity() {
 
         val i = intent
         moviePlayLink = i.getStringExtra("movieUrl")!!
-        Toast.makeText(this, "movieLink$moviePlayLink", Toast.LENGTH_LONG).show()
-
         youtubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                mYouTubePlayer = youTubePlayer
-                moviePlayLink = getString(R.string.video_id)
                 youTubePlayer.loadVideo(moviePlayLink, 0f)
                 youTubePlayer.setVolume(currentVolume)
             }

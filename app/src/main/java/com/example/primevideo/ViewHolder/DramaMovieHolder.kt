@@ -21,7 +21,5 @@ class DramaMovieHolder(itemView: View, val listener: OnItemMovieClick) : Recycle
         itemView.setOnClickListener {
             listener.onDramaClick(dramaDataList,adapterPosition)
         }
-
     }
-
 }

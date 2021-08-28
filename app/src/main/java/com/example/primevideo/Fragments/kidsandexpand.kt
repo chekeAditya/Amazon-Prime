@@ -30,8 +30,6 @@ class kidsandexpand : Fragment(R.layout.fragment_kidsandexpand) {
             "kidsandfamilytv",
             this,
             FragmentResultListener() { s: String, bundle: Bundle ->
-
-
                 kidsTv()
 
             })

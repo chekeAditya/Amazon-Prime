@@ -21,9 +21,6 @@ class ActionMovieHolder(itemView: View,val listener: OnItemMovieClick) : Recycle
         itemView.setOnClickListener {
             listener.onActionClick(action,adapterPosition)
         }
-
-
-
     }
 
 }

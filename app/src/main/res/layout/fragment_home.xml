@@ -88,12 +88,23 @@
     <TextView
         style="@style/tvRecommendedMovies"
         android:id="@+id/tvPopularShows"
-        android:text="@string/popular_shows"/>
+        android:text="@string/perfect_movies"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPopularShows"
-        style="@style/RecyclerViewPopularMovies"
-        android:orientation="horizontal"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPopularSeason"
+            style="@style/RecyclerViewPopularMovies"
+            android:orientation="horizontal"/>
+
+
+        <TextView
+            style="@style/tvRecommendedMovies"
+            android:id="@+id/tvPopularShows1"
+            android:text="@string/popular_shows"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPopularShows"
+            style="@style/RecyclerViewPopularMovies"
+            android:orientation="horizontal"/>
 
     </LinearLayout>
 

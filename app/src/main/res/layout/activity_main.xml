@@ -16,42 +16,15 @@
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:id="@+id/bottomNavBar"
         android:layout_alignParentBottom="true"
-        app:itemIconTint="@color/lightBlue"
-        app:itemTextColor="@color/cyan"
+        android:layout_gravity="bottom"
         android:background="@color/black"
+        app:itemIconTint="@color/cyan"
+        app:itemTextColor="@color/cyan"
         app:menu="@menu/menu" />
 
 
 </RelativeLayout>
-
-    <!--
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/prime_hori"/>
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:tabMode="fixed"
-            app:tabTextAppearance="@style/customTabStyle"
-            app:tabGravity="fill"
-            app:tabIndicatorColor="@android:color/white"
-            app:tabInlineLabel="true"
-            android:background="@color/dark_blue_grey"
-            app:tabTextColor="@color/cyan"
-            app:tabSelectedTextColor="@color/white"
-            android:minHeight="?attr/actionBarSize" />
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-            -->

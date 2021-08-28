@@ -3,11 +3,12 @@ package com.example.primevideo.Adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.primevideo.Model.Perfect.PerfectResult
 import com.example.primevideo.Model.Shows.ShowsItem
 import com.example.primevideo.R
 import com.example.primevideo.ViewHolder.PopularSeasonViewHolder
 
-class PopularSeasonAdapter(var popularSeasonModelList: List<ShowsItem>) :
+class PopularSeasonAdapter(var popularSeasonModelList: List<PerfectResult>) :
 
     RecyclerView.Adapter<PopularSeasonViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularSeasonViewHolder {
@@ -17,8 +18,8 @@ class PopularSeasonAdapter(var popularSeasonModelList: List<ShowsItem>) :
     }
 
     override fun onBindViewHolder(holder: PopularSeasonViewHolder, position: Int) {
-        val popularSeasonItem: ShowsItem = popularSeasonModelList[position]
-        holder.setData(popularSeasonItem)
+        val perfectResult: PerfectResult = popularSeasonModelList[position]
+        holder.setData(perfectResult)
     }
 
     override fun getItemCount(): Int {

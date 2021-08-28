@@ -95,13 +95,13 @@ class FragmentFind : Fragment(R.layout.fragment_find) {
         MainOriginal.setOnClickListener(View.OnClickListener {
             TODO("Not yet implemented fill amazon original fragment")
         })
-        MainKids.setOnClickListener(View.OnClickListener {
+        MainKids.setOnClickListener {
             val fragmentManager = requireActivity().supportFragmentManager
             val fragmenTransaction = fragmentManager.beginTransaction()
             fragmenTransaction.add(R.id.container, KidsFragment())
             fragmenTransaction.addToBackStack(null)
             fragmenTransaction.commit()
-        })
+        }
 
 
     }
@@ -109,27 +109,27 @@ class FragmentFind : Fragment(R.layout.fragment_find) {
     private fun Langinit(view: View) {
 
         bEnglish.setOnClickListener {
-            TODO("Not yet implemented")
+            Toast.makeText(context, "Available Soon", Toast.LENGTH_SHORT).show()
         }
 
         bHindi.setOnClickListener {
-            TODO("Not yet implemented")
+            Toast.makeText(context, "Available Soon", Toast.LENGTH_SHORT).show()
         }
 
         bTelugu.setOnClickListener {
-            TODO("Not yet implemented")
+            Toast.makeText(context, "Available Soon", Toast.LENGTH_SHORT).show()
         }
 
         bTamil.setOnClickListener {
-            TODO("Not yet implemented")
+            Toast.makeText(context, "Available Soon", Toast.LENGTH_SHORT).show()
         }
 
         bKannada.setOnClickListener {
-            TODO("Not yet implemented")
+            Toast.makeText(context, "Available Soon", Toast.LENGTH_SHORT).show()
         }
 
         bMalayalam.setOnClickListener {
-            TODO("Not yet implemented")
+            Toast.makeText(context, "Available Soon", Toast.LENGTH_SHORT).show()
         }
 
 
@@ -175,15 +175,15 @@ class FragmentFind : Fragment(R.layout.fragment_find) {
         }
 
         bComedy.setOnClickListener {
-            TODO("Not yet implemented")
+            Toast.makeText(context, "Available Soon", Toast.LENGTH_SHORT).show()
         }
 
         bThriller.setOnClickListener {
-            TODO("Not yet implemented")
+            Toast.makeText(context, "Available Soon", Toast.LENGTH_SHORT).show()
         }
 
         bHorror.setOnClickListener {
-            TODO("Not yet implemented")
+            Toast.makeText(context, "Available Soon", Toast.LENGTH_SHORT).show()
         }
 
     }

@@ -98,8 +98,8 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
                     response: Response<List<ActionMovieListResponse>>
                 ) {
 
-                        listofActionMovieListResponse = response.body()!!
-                        LatestMsetAdapter()
+                    listofActionMovieListResponse = response.body()!!
+                    LatestMsetAdapter()
 
                 }
                 override fun onFailure(call: Call<List<ActionMovieListResponse>>, t: Throwable) {
@@ -142,8 +142,8 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
     private fun RomanceMsetAdapter() {
         var linearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
         var romanceMovieAdapter = RomanceMovieAdapter(listofRomanceData1,this)
-       ivRomanticMovierecycler.adapter = romanceMovieAdapter
-       ivRomanticMovierecycler.layoutManager = linearLayoutManager
+        ivRomanticMovierecycler.adapter = romanceMovieAdapter
+        ivRomanticMovierecycler.layoutManager = linearLayoutManager
     }
 
     override fun onDramaClick(drama: DramaDataList, position: Int) {
@@ -156,7 +156,6 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
         val bundle = Bundle();
         bundle.putString("DramaImage", drama.image)
         bundle.putString("DramaUrl",drama.movieTrailerLink)
-        Toast.makeText(context, "movieLink${drama.movieTrailerLink}", Toast.LENGTH_LONG).show()
         bundle.putString("DramaName", drama.movieName)
         bundle.putString("Dramadescription", drama.description)
         bundle.putString("Dramatime",
@@ -177,7 +176,6 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
         val bundle = Bundle();
         bundle.putString("ActionImage", action.image)
         bundle.putString("ActionUrl",action.movieTrailerLink)
-        Toast.makeText(context, "ActionLink${action.movieTrailerLink}", Toast.LENGTH_LONG).show()
         bundle.putString("ActionName", action.movieName)
         bundle.putString("Actiondescription", action.description)
         bundle.putString("ActionDirectorName", action.director)
