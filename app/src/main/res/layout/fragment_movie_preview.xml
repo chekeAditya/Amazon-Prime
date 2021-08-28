@@ -148,7 +148,7 @@
 
                     <TextView
                         style="@style/TextviewBelowRoundButtonPreviewLayout"
-                        android:text="@string/download" />
+                        android:text="@string/share" />
 
                 </LinearLayout>
 
@@ -226,12 +226,51 @@
             <TextView
                 android:id="@+id/tvPopularMovies"
                 style="@style/tvRecommendedMovies"
-                android:text="@string/related_movies" />
+                android:text="More Options" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvPopularMovies"
-                style="@style/RecyclerViewPopularMovies"
-                android:orientation="horizontal" />
+            <HorizontalScrollView
+                android:scrollbars="none"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgone"/>
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvsimgtwo"
+                        tools:ignore="ContentDescription" />
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgthree"/>
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgfour"/>
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgfive"/>
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tvimgsix"/>
+                </LinearLayout>
+            </HorizontalScrollView>
 
         </LinearLayout>
 

@@ -17,20 +17,40 @@
         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml" value="0.26481481481481484" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/drawable/border_ic.xml" value="0.1578125" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/drawable/gradient.xml" value="0.23692307692307693" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1578125" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/drawable/ic_download_svg.xml" value="0.1578125" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/drawable/ic_home.xml" value="0.1578125" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/drawable/rectangle_bg_transparent.xml" value="0.28615384615384615" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/activity_log_in.xml" value="0.20277777777777778" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/activity_main.xml" value="0.20277777777777778" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/activity_seeting.xml" value="0.176" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/activity_youtube_video_play.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_create_account.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_display_search_gird.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_find.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_my_stuff.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_downloads.xml" value="0.152" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_find.xml" value="0.2" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_homes.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_kids.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_kids_expand.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_movie_preview.xml" value="0.14166666666666666" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_movies.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_my_stuff.xml" value="0.2" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_search_movie.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_sign_in.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_tv_shows.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_video_view.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/gradient_layout.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/item_grid_layout.xml" value="0.26296296296296295" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/item_latestmovie_design.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/item_layout_slider.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/item_layout_top_movie.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/item_romance_movie_design.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/itemlayout_popular_movies.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/itemlayout_popular_show.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/menu/menu.xml" value="0.14166666666666666" />
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_find_replace_24.xml" value="0.1" />
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_mic_none_24.xml" value="0.1" />
         <entry key="..\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/activity_main.xml" value="0.24592391304347827" />

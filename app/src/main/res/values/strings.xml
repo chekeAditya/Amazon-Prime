@@ -45,6 +45,25 @@
     <string name="kids">Kids</string>
     <string name="genres">Genres</string>
     <string name="searched_movies">Searched Movies</string>
+    <string name="you_don_t_have_any_watchlist">You don\'t have any watchlist</string>
+    <string name="login_name">Login Name</string>
+    <string name="aditya">Aditya</string>
+    <string name="settings">Settings</string>
+    <string name="stream_amp_download"><![CDATA[Stream & download]]></string>
+    <string name="manage_internet_or_wifi">Manage internet or Wifi</string>
+    <string name="parental_control">Parental Control</string>
+    <string name="control_what_you_can_watch">Control what you can watch</string>
+    <string name="registered_device">Registered Device</string>
+    <string name="see_all_registered_device">See all Registered device</string>
+    <string name="clear_search_history">Clear Search History</string>
+    <string name="notifications">Notifications</string>
+    <string name="on">On</string>
+    <string name="auto_play">Auto Play</string>
+    <string name="play_the_next_episode_automatically">play the next episode automatically</string>
+    <string name="language">Language</string>
+    <string name="english">English</string>
+    <string name="share">Share</string>
+    <string name="action_and_adventure">Action and adventure</string>
 </resources>
 
 

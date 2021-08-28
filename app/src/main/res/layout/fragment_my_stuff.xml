@@ -4,74 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3a547b"
+    android:background="@drawable/gradient"
     tools:context=".Fragments.FragmentMyStuff">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/profileImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         app:cardCornerRadius="60dp">
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:id="@+id/loginimage"
             android:background="#216bd6"
             android:src="@drawable/ic_baseline_person_24" />
 
     </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.AppCompat.Spinner.DropDown"
+    <TextView
+        android:id="@+id/LoginName"
         android:layout_width="wrap_content"
-        android:textColor="@color/white"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/profileImage">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:inputType="none"
-            android:id="@+id/LoginName"
-            android:text="Login Name" />
-    </com.google.android.material.textfield.TextInputLayout>
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@+id/profileImage"
+        android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+        android:drawablePadding="20dp"
+        android:text="@string/aditya"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_width="40dp"
         android:id="@+id/Btntosettings"
-        android:layout_height="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/ic_baseline_settings_24" />
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/ic_baseline_settings_24"
+        android:padding="10dp" />
 
     <TextView
         android:id="@+id/tvWatchlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
         android:layout_below="@id/profileImage"
         android:layout_centerHorizontal="true"
-        android:text="WatchList"
-        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/watchlist"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:layout_below="@id/tvWatchlist"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@android:color/darker_gray" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:text="You dont have any watchlist"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_height="wrap_content" />
+        android:text="@string/you_don_t_have_any_watchlist"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
 </RelativeLayout>

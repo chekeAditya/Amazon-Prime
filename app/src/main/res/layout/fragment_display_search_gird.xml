@@ -8,7 +8,7 @@
     tools:context=".Fragments.DisplaySearchGirdFragment">
 
     <TextView
-      style="@style/HeadingPreviewLayout"
+      style="@style/HeadingFindFragment"
         android:layout_marginTop="20dp"
         android:text="@string/searched_movies" />
 

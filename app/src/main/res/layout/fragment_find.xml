@@ -12,13 +12,14 @@
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
 
         <LinearLayout
             android:id="@+id/Linear"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -26,6 +27,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:textColor="@color/cyan"
                     android:id="@+id/etSearchMovie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -64,21 +66,21 @@
                 android:weightSum="2">
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/MainMovie"
-                    android:layout_weight="1.47"
-                    android:backgroundTint="#3A485E"
+                    android:layout_weight="1"
+                    android:backgroundTint="#152C53"
                     android:text="@string/movies"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.47"
+                    android:layout_weight="1"
                     android:id="@+id/MainOriginal"
-                    android:backgroundTint="#3A485E"
+                    android:backgroundTint="#152C53"
                     android:text="@string/amazon_originals"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
@@ -92,20 +94,20 @@
                 android:weightSum="2">
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.97"
-                    android:backgroundTint="#3A485E"
+                    android:layout_weight="1"
+                    android:backgroundTint="#152C53"
                     android:text="@string/tv"
                     android:id="@+id/MainTv"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#3A485E"
+                    android:backgroundTint="#152C53"
                     android:text="@string/kids"
                     android:id="@+id/MainKids"
                     android:textColor="@color/white"
@@ -118,10 +120,6 @@
                 android:textSize="18sp"
                 />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/dark_blue_grey">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -137,8 +135,8 @@
                     <TextView
                         android:id="@+id/tdrama"
                         style="@style/Ucardviewtext"
-                        android:textStyle="normal"
-                        android:text="Drama" />
+                        android:text="Drama"
+                        android:textStyle="normal" />
 
                     <ImageButton
                         android:id="@+id/bDrama"
@@ -159,16 +157,16 @@
                     <TextView
                         android:id="@+id/tAction"
                         style="@style/Ucardviewtext"
-                        android:textStyle="normal"
                         android:layout_below="@+id/bDrama"
-                        android:text="Action and adventure" />
+                        android:text="@string/action_and_adventure"
+                        android:textStyle="normal" />
 
                     <ImageButton
                         android:id="@+id/bAction"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/bDrama"
-                        android:layout_alignRight="@+id/tAction"
+                        android:layout_alignEnd="@+id/tAction"
                         android:backgroundTint="@color/dark_blue_grey"
                         android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />
 
@@ -276,8 +274,12 @@
                 </RelativeLayout>
 
 
-            </androidx.cardview.widget.CardView>
-
+<View
+    android:layout_width="match_parent"
+    android:layout_height="1.5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="#0E1435"/>
 
             <TextView
                 style="@style/HeadingFindFragment"

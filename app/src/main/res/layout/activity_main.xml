@@ -16,14 +16,14 @@
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:id="@+id/bottomNavBar"
         android:layout_alignParentBottom="true"
-        app:itemIconTint="@color/lightBlue"
-        app:itemTextColor="@color/cyan"
+        android:layout_gravity="bottom"
         android:background="@color/black"
+        app:itemIconTint="@color/cyan"
+        app:itemTextColor="@color/cyan"
         app:menu="@menu/menu" />
 
 
