@@ -3,11 +3,15 @@ package com.example.primevideo.Fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.HorizontalScrollView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.primevideo.Adapters.ImageAdapter
 import com.example.primevideo.Adapters.MySliderImageAdapter
 import com.example.primevideo.Adapters.PopularMoviesAdapter
 import com.example.primevideo.Adapters.PopularSeasonAdapter
+import com.example.primevideo.Model.LanguageApiHomeFragment.LanguageData
+import com.example.primevideo.Model.LanguageApiHomeFragment.LanuguageResponeModel
 import com.example.primevideo.Model.Perfect.PerfectResponseModel
 import com.example.primevideo.Model.Perfect.PerfectResult
 import com.example.primevideo.Model.PopularMoviesModel
@@ -26,7 +30,7 @@ import retrofit2.Response
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var listOfPopularMovies: List<ResultModel>
-    private lateinit var listOfPopularShows: List<ShowsItem>
+    private lateinit var listOfLanguageData: List<LanguageData>
     private lateinit var listOfPerfectItem: List<PerfectResult>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,9 +38,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         imageSliderView()
         PopularMovieApiCall()
         PopularShowApiCall()
+        LanguageApiCall()
     }
 
     private fun imageSliderView() {
+
         val imageList: ArrayList<String> = ArrayList()
         imageList.add("https://www.linkpicture.com/q/1_935.jpg")
         imageList.add("https://www.linkpicture.com/q/2_479.jpg")
@@ -90,7 +96,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun PopularShowApiCall() {
         var apiClient = Network.getInstance().create(ApiClient::class.java)
         apiClient.getPerfectShow().enqueue(object : Callback<PerfectResponseModel> {
-            override fun onResponse(call: Call<PerfectResponseModel>, response: Response<PerfectResponseModel>) {
+            override fun onResponse(
+                call: Call<PerfectResponseModel>,
+                response: Response<PerfectResponseModel>
+            ) {
                 response.body()?.run {
                     listOfPerfectItem = perfectResults
                     setAdapterPopularShows()
@@ -108,11 +117,39 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setAdapterPopularShows() {
-        var linearLayoutManager1 =
+        val linearLayoutManager1 =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val popularSeasonAdapter = PopularSeasonAdapter(listOfPerfectItem)
         rvPopularSeason.adapter = popularSeasonAdapter
         rvPopularSeason.layoutManager = linearLayoutManager1
     }
 
+
+    private fun LanguageApiCall() {
+        val apiClient = Network.getInstance().create(ApiClient::class.java)
+        apiClient.getLanguageImage().enqueue(object : Callback<LanuguageResponeModel> {
+            override fun onResponse(
+                call: Call<LanuguageResponeModel>,
+                response: Response<LanuguageResponeModel>
+            ) {
+                response.body()?.run {
+                    listOfLanguageData = languageData
+                    setAdapterLanguageImage()
+
+                }
+            }
+
+            override fun onFailure(call: Call<LanuguageResponeModel>, t: Throwable) {
+                Toast.makeText(context, "Language Api Fragment Error", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+    }
+
+    private fun setAdapterLanguageImage() {
+        val linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        val imageAdapter = ImageAdapter(listOfLanguageData)
+        rvWatchYourLanguage.adapter = imageAdapter
+        rvWatchYourLanguage.layoutManager = linearLayoutManager
+    }
 }

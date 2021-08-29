@@ -7,6 +7,7 @@ import com.example.primevideo.Model.Kids.kidsandfamily.Data
 import com.example.primevideo.Model.Kids.kidsandfamily.DataX
 import com.example.primevideo.Model.Kids.kidsandfamily.IndianToon
 import com.example.primevideo.Model.RomanceData
+import com.example.primevideo.Model.SearchFragmentModel.SearchResult
 import com.example.primevideo.Model.TVShow.DataTvSHowRated
 import com.example.primevideo.Model.TVShow.DramaTvShow
 import com.example.primevideo.Model.TVShow.KidsTvShowData
@@ -35,4 +36,8 @@ interface OnItemListener{
     fun onTopRatedCLicked(dataTvSHowRated: DataTvSHowRated, position: Int)
     fun onKidsTvShow(kidsTvShowData: KidsTvShowData, position: Int)
     fun onThrillerTV(thrillerTvData: ThrillerTvData,position: Int)
+}
+
+interface SearchClickListener{
+    fun onSearchItemClicked(searchResult: SearchResult,position: Int)
 }

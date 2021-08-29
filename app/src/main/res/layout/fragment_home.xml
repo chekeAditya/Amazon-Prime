@@ -99,13 +99,12 @@
         <TextView
             style="@style/tvRecommendedMovies"
             android:id="@+id/tvPopularShows1"
-            android:text="@string/popular_shows"/>
+            android:text="@string/watch_in_your_language"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvPopularShows"
+            android:id="@+id/rvWatchYourLanguage"
             style="@style/RecyclerViewPopularMovies"
             android:orientation="horizontal"/>
-
     </LinearLayout>
 
 </ScrollView>

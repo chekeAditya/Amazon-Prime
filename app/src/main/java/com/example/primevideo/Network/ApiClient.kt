@@ -5,6 +5,7 @@ import com.example.primevideo.Model.Kids.kidsandfamily.AmazonOriginalKids
 import com.example.primevideo.Model.Kids.kidsandfamily.IndianToonsModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
+import com.example.primevideo.Model.LanguageApiHomeFragment.LanuguageResponeModel
 import com.example.primevideo.Model.Perfect.PerfectResponseModel
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
 import com.example.primevideo.Model.SearchFragmentModel.SearchModelFindFragment
@@ -80,4 +81,8 @@ interface ApiClient {
         //Thriller tv :-https://run.mocky.io/v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d
         @GET("v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d")
         fun getThrillerTvShow(): Call<ThrillerTvModel>
+
+        //Language api in home Fragment:- https://run.mocky.io/v3/85d9c74b-bbcb-4d10-81d1-779fad27b275
+        @GET("v3/85d9c74b-bbcb-4d10-81d1-779fad27b275")
+        fun getLanguageImage(): Call<LanuguageResponeModel>
 }

@@ -27,7 +27,6 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:textColor="@color/cyan"
                     android:id="@+id/etSearchMovie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -40,19 +39,21 @@
                     android:drawablePadding="20dp"
                     android:hint="@string/search"
                     android:padding="10dp"
+                    android:textColor="@color/cyan"
                     android:textColorHint="@color/white" />
                 <Button
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
                     android:layout_margin="30dp"
-                    android:id="@+id/btnSearchMovie"
+                    android:id="@+id/btnSearchByMic"
                     android:background="@drawable/ic_baseline_mic_24"/>
             </RelativeLayout>
 
 
             <TextView
                 style="@style/HeadingFindFragment"
+                android:id="@+id/btnBrowse"
                 android:textSize="18sp"
                 android:text="@string/browse_by" />
 

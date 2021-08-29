@@ -23,5 +23,4 @@ class SearchMovieAdapter(var searchMovieList: List<SearchResult>) :
     override fun getItemCount(): Int {
         return searchMovieList.size
     }
-
 }
