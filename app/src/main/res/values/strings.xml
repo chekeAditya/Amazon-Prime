@@ -76,5 +76,7 @@
     <string name="watch_in_your_language">Watch in Your Language</string>
     <string name="mirzapur">Mirzapur</string>
     <string name="the_good_doctor">The Good Doctor</string>
+    <string name="search_by_moods">Search By Moods</string>
+    <string name="comedy">Comedy</string>
 
 </resources>

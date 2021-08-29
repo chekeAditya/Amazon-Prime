@@ -90,8 +90,10 @@ dependencies {
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 
 
+    //Youtube Video
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 
-
+    //Shimmer Effect
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 }

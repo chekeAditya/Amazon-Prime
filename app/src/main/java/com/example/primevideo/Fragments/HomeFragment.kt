@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isGone
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.*
 import com.example.primevideo.Model.*
@@ -89,7 +92,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),OnHomeListener,OnItemMovie
     }
 
     private fun setAdapter() {
-        var linearLayoutManager =
+        val linearLayoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)
         rvPopularMovies.adapter = popularMoviesAdapter
@@ -97,7 +100,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),OnHomeListener,OnItemMovie
     }
 
     private fun PopularShowApiCall() {
-        var apiClient = Network.getInstance().create(ApiClient::class.java)
+        val apiClient = Network.getInstance().create(ApiClient::class.java)
         apiClient.getPerfectShow().enqueue(object : Callback<PerfectResponseModel> {
             override fun onResponse(call: Call<PerfectResponseModel>, response: Response<PerfectResponseModel>) {
                 response.body()?.run {

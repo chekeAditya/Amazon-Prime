@@ -73,7 +73,7 @@ interface ApiClient {
         @GET("v3/d113146a-d7a9-440a-ba31-c3239203ebc9")
         fun getKidsTvShow(): Call<KidaTvShowModel>
 
-        //search option :- https://api.themoviedb.org/3/search/movie?apiKey=2147294b386ecadcb05cd19bcbbdddb9&movieName=mimi
+        //search option :- https://api.themoviedb.org/3/search/movie?api_key=2147294b386ecadcb05cd19bcbbdddb9&query=mimi
         @GET("3/search/movie")
         fun getSearchedMovie(@Query("api_key") api_key: String, @Query("query") query: String):Call<SearchModelFindFragment>
 
