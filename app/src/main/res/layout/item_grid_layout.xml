@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/dark_blue_grey"
-    android:id="@+id/GridL"
+    android:id="@+id/fcContainner"
     tools:context=".Fragments.FindView.DramaGridLayout">
 
     <TextView
@@ -31,4 +31,4 @@
 
 
 
-</LinearLayout>
+</RelativeLayout>

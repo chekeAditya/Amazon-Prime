@@ -38,6 +38,10 @@ interface OnItemListener{
     fun onThrillerTV(thrillerTvData: ThrillerTvData,position: Int)
 }
 
+interface onItemHomeClick{
+
+}
+
 interface SearchClickListener{
     fun onSearchItemClicked(searchResult: SearchResult,position: Int)
 }

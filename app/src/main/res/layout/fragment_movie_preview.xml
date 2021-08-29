@@ -194,6 +194,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
+                android:id="@+id/moviePreviewLangauage"
                 android:fontFamily="sans-serif"
                 android:text="@string/language_hindi_english"
                 android:textColor="@color/white"

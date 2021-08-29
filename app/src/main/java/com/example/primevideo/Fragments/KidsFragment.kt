@@ -237,7 +237,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
     override fun onkidsTvclick(dataX: DataX, position: Int) {
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
+        fragmenTransaction.replace(R.id.kidsFragment, MoviePreviewFragment())
         fragmenTransaction.addToBackStack(null)
         fragmenTransaction.commit()
 
@@ -257,7 +257,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
+        fragmenTransaction.replace(R.id.kidsFragment, MoviePreviewFragment())
         fragmenTransaction.addToBackStack(null)
         fragmenTransaction.commit()
 
@@ -277,7 +277,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
     override fun onAmazonOriginal(amazonOriginalKid: AmazonOriginalKid, position: Int) {
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
+        fragmenTransaction.replace(R.id.kidsFragment, MoviePreviewFragment())
         fragmenTransaction.addToBackStack(null)
         fragmenTransaction.commit()
 
@@ -297,7 +297,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.add(R.id.kidsFragment, MoviePreviewFragment())
+        fragmenTransaction.replace(R.id.kidsFragment, MoviePreviewFragment())
         fragmenTransaction.addToBackStack(null)
         fragmenTransaction.commit()
 

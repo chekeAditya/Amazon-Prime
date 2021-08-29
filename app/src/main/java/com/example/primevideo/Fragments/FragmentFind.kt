@@ -22,6 +22,7 @@ import com.example.primevideo.Model.SearchFragmentModel.SearchModelFindFragment
 import com.example.primevideo.Model.SearchFragmentModel.SearchResult
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
+import com.example.primevideo.Network.SearchClickListener
 import com.example.primevideo.R
 import gen._base._base_java__rjava_resources.srcjar.R.id.text
 import kotlinx.android.synthetic.main.fragment_display_search_gird.*
@@ -31,7 +32,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class FragmentFind : Fragment(R.layout.fragment_find) {
+class FragmentFind : Fragment(R.layout.fragment_find) , SearchClickListener {
 
     private lateinit var listOfSearchResult: List<SearchResult>
     private val RQ_SPEECH_REC = 102
@@ -102,11 +103,30 @@ class FragmentFind : Fragment(R.layout.fragment_find) {
 
     private fun setSearchAdapter() {
         val gridLayoutManager = GridLayoutManager(context, 2)
-        val searchMovieAdapter = SearchMovieAdapter(listOfSearchResult)
+        val searchMovieAdapter = SearchMovieAdapter(listOfSearchResult,this)
         rvDisplaySearchMovies.adapter = searchMovieAdapter
         rvDisplaySearchMovies.layoutManager = gridLayoutManager
     }
 
+    override fun onSearchItemClicked(searchResult: SearchResult, position: Int) {
+
+        val fragmentManager = requireActivity().supportFragmentManager
+        val fragmenTransaction = fragmentManager.beginTransaction()
+        fragmenTransaction.replace(R.id.container, MoviePreviewFragment())
+        fragmenTransaction.addToBackStack(null)
+        fragmenTransaction.commit()
+
+        Toast.makeText(activity, "Working", Toast.LENGTH_SHORT).show()
+        val bundle = Bundle()
+        bundle.putString("movieimage","https://image.tmdb.org/t/p/w500"+listOfSearchResult[position].posterPath)
+        bundle.putString("moviename",listOfSearchResult[position].title)
+        bundle.putString("movielanguage",listOfSearchResult[position].originalLanguage)
+        bundle.putString("moviedescription",listOfSearchResult[position].overview)
+        parentFragmentManager.setFragmentResult("Findmvoie", bundle)
+
+
+
+    }
     private fun Mainbutton(view: View) {
         MainMovie.setOnClickListener {
             val fragmentManager = requireActivity().supportFragmentManager
@@ -174,7 +194,7 @@ class FragmentFind : Fragment(R.layout.fragment_find) {
 
             val fragmentManager = requireActivity().supportFragmentManager
             val fragmenTransaction = fragmentManager.beginTransaction()
-            fragmenTransaction.add(R.id.container, DramaGridLayout())
+            fragmenTransaction.replace(R.id.container, DramaGridLayout())
             fragmenTransaction.addToBackStack(null)
             fragmenTransaction.commit()
             val bundle = Bundle();
@@ -221,6 +241,7 @@ class FragmentFind : Fragment(R.layout.fragment_find) {
         }
 
     }
+
 }
 
 

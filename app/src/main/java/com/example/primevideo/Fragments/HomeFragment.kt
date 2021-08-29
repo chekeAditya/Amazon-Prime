@@ -20,6 +20,7 @@ import com.example.primevideo.Model.Shows.Shows
 import com.example.primevideo.Model.Shows.ShowsItem
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
+import com.example.primevideo.Network.onItemHomeClick
 import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -27,7 +28,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment(R.layout.fragment_home),onItemHomeClick{
 
     private lateinit var listOfPopularMovies: List<ResultModel>
     private lateinit var listOfLanguageData: List<LanguageData>
