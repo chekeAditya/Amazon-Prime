@@ -128,7 +128,7 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
             Toast.makeText(context, "Added to the Watchlist", Toast.LENGTH_SHORT).show()
         }
         lyt_download.setOnClickListener {
-            Toast.makeText(context, "Available Very Soon", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Movie Added To The Downloads", Toast.LENGTH_SHORT).show()
         }
     }
 
