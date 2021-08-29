@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue_grey"
+    android:orientation="vertical"
+    tools:context=".Fragments.SearchFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/etSearchMovie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rectangle_bg_transparent"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawablePadding="20dp"
+        android:hint="@string/search"
+        android:padding="10dp"
+        android:textColor="@color/cyan"
+        android:textColorHint="@color/white" />
+
+        <Button
+            android:id="@+id/btnSearchMovie"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/ic_baseline_mic_24" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rvDisplaySearchMovies"/>
+
+</LinearLayout>

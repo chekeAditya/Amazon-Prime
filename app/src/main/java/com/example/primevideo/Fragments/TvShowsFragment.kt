@@ -168,6 +168,7 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
         fragmenTransaction.commit()
 
         val bundle = Bundle()
+        bundle.putString("movieUrl",dramaTvShow.movieTrailerLink)
         bundle.putString("movieImage", dramaTvShow.image)
         bundle.putString("movieName", dramaTvShow.movieName)
         bundle.putString("moviedescription", dramaTvShow.description)
@@ -189,6 +190,7 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
         fragmenTransaction.commit()
 
         val bundle = Bundle()
+        bundle.putString("movieUrl",dataTvSHowRated.movieTrailerLink)
         bundle.putString("movieImage", dataTvSHowRated.image)
         bundle.putString("movieName", dataTvSHowRated.movieName)
         bundle.putString("moviedescription", dataTvSHowRated.description)
@@ -208,6 +210,7 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
         fragmenTransaction.commit()
 
         val bundle = Bundle()
+        bundle.putString("movieUrl",kidsTvShowData.movieTrailerLink)
         bundle.putString("movieImage",kidsTvShowData.image)
         bundle.putString("movieName", kidsTvShowData.movieName)
         bundle.putString("moviedescription", kidsTvShowData.description)
@@ -227,6 +230,7 @@ class TvShowsFragment : Fragment(R.layout.fragment_tv_shows), OnItemListener {
         fragmenTransaction.commit()
 
         val bundle = Bundle()
+        bundle.putString("movieUrl",thrillerTvData.movieTrailerLink)
         bundle.putString("movieImage",thrillerTvData.image)
         bundle.putString("movieName", thrillerTvData.movieName)
         bundle.putString("moviedescription", thrillerTvData.description)

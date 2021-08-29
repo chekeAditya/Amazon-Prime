@@ -55,6 +55,7 @@
         android:paddingEnd="10dp"
         android:textColorHint="#a9a9a9"
         tools:ignore="TextFields" />
+
     <EditText
         android:id="@+id/etCreatePassword"
         android:layout_width="match_parent"
@@ -63,13 +64,14 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:autofillHints="password"
         android:background="@drawable/rectangle"
         android:hint="@string/create_a_password"
+        android:inputType="textPassword"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        android:textColorHint="#a9a9a9"
-        android:autofillHints="password"
-        android:inputType="textPassword" />
+        android:textColorHint="#a9a9a9" />
+
 
     <CheckBox
         android:id="@+id/etCheckBox"
@@ -77,19 +79,19 @@
         android:layout_height="35dp"
         android:layout_below="@+id/etCreatePassword"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-         />
+        android:layout_marginTop="10dp" />
+
     <TextView
-        android:layout_marginStart="20dp"
-        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etCreatePassword"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
         android:layout_toEndOf="@id/etCheckBox"
         android:text="@string/show_password"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
     <Button
         android:id="@+id/btnCOntinue"
         android:text="Continue"

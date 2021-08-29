@@ -7,6 +7,8 @@ import com.example.primevideo.Model.Kids.kidsandfamily.DataX
 import com.example.primevideo.Model.Kids.kidsandfamily.IndianToon
 import com.example.primevideo.Model.Perfect.PerfectResponseModel
 import com.example.primevideo.Model.Perfect.PerfectResult
+import com.example.primevideo.Model.RomanceData
+import com.example.primevideo.Model.SearchFragmentModel.SearchResult
 import com.example.primevideo.Model.TVShow.DataTvSHowRated
 import com.example.primevideo.Model.TVShow.DramaTvShow
 import com.example.primevideo.Model.TVShow.KidsTvShowData
@@ -39,4 +41,12 @@ interface OnItemListener{
 interface OnHomeListener{
     fun onPopular(popularMovie: ResultModel, position: Int)
     fun onPerfect(perfectMovie: PerfectResult, position: Int)
+}
+
+interface onItemHomeClick{
+
+}
+
+interface SearchClickListener{
+    fun onSearchItemClicked(searchResult: SearchResult,position: Int)
 }

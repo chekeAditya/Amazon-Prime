@@ -1,5 +1,6 @@
 package com.example.primevideo.Fragments.FindView
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -8,10 +9,13 @@ import androidx.fragment.app.FragmentResultListener
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.primevideo.Activity.LogInActivity
 import com.example.primevideo.Adapters.ActionMovieAdapter
 import com.example.primevideo.Adapters.DramaMovieAdapter
 import com.example.primevideo.Adapters.RomanceMovieAdapter
+import com.example.primevideo.Fragments.CreateAccount
 import com.example.primevideo.Fragments.MoviePreviewFragment
+import com.example.primevideo.Fragments.MoviesFragment
 import com.example.primevideo.Model.*
 import com.example.primevideo.Network.ApiClient
 import com.example.primevideo.Network.Network
@@ -160,15 +164,18 @@ class DramaGridLayout: Fragment(R.layout.item_grid_layout), OnItemMovieClick {
 
 
     override fun onDramaClick(drama: DramaDataList, position: Int) {
+
         val fragmentManager = requireActivity().supportFragmentManager
-        val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.add(R.id.GridL, MoviePreviewFragment())
-        fragmenTransaction.addToBackStack(null)
-        fragmenTransaction.commit()
+        val fragmnentTranscation  = fragmentManager.beginTransaction()
+        fragmnentTranscation.replace(R.id.fcContainner,MoviePreviewFragment())
+        fragmnentTranscation.addToBackStack(null)
+        fragmnentTranscation.commit()
+
+
 
         val bundle = Bundle();
         bundle.putString("DramaImage", drama.image)
-        bundle.putString("movieUrl",drama.movieTrailerLink)
+        bundle.putString("DramaUrl",drama.movieTrailerLink)
         bundle.putString("DramaName", drama.movieName)
         bundle.putString("Dramadescription", drama.description)
         bundle.putString("Dramatime",
@@ -176,44 +183,42 @@ class DramaGridLayout: Fragment(R.layout.item_grid_layout), OnItemMovieClick {
         bundle.putString("Dramarating", drama.rating)
         bundle.putString("DramaDirectorImage", drama.directorImage)
         bundle.putString("DramaDirectorName", drama.director)
-        parentFragmentManager.setFragmentResult("Dramaname", bundle)
+        parentFragmentManager.setFragmentResult("DramaExtended", bundle)
     }
 
     override fun onActionClick(action: ActionMovieListResponse, position: Int) {
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.add(R.id.GridL, MoviePreviewFragment())
+        fragmenTransaction.add(R.id.fcContainner, MoviePreviewFragment())
         fragmenTransaction.addToBackStack(null)
         fragmenTransaction.commit()
 
         val bundle = Bundle();
-        bundle.putString("ActionImage", action.image)
-        bundle.putString("movieUrl",action.movieTrailerLink)
-
-        bundle.putString("ActionName", action.movieName)
-        bundle.putString("Actiondescription", action.description)
-        bundle.putString("ActionDirectorName", action.director)
-        parentFragmentManager.setFragmentResult("Actionname", bundle)
+        bundle.putString("DramaImage", action.image)
+        bundle.putString("DramaUrl",action.movieTrailerLink)
+        bundle.putString("DramaName", action.movieName)
+        bundle.putString("Dramadescription", action.description)
+        bundle.putString("DramaDirectorName", action.director)
+        parentFragmentManager.setFragmentResult("DramaExtended", bundle)
     }
 
     override fun onRomanceClick(romance: RomanceData, position: Int) {
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmenTransaction = fragmentManager.beginTransaction()
-        fragmenTransaction.add(R.id.GridL, MoviePreviewFragment())
+        fragmenTransaction.replace(R.id.fcContainner, MoviePreviewFragment())
         fragmenTransaction.addToBackStack(null)
         fragmenTransaction.commit()
 
         val bundle = Bundle();
-        bundle.putString("romanceImage", romance.image)
-        bundle.putString("movieUrl",romance.movieTrailerLink)
-
-        bundle.putString("romanceName", romance.movieName)
-        bundle.putString("romancedescription", romance.description)
-        bundle.putString("romancetime",
+        bundle.putString("DramaImage", romance.image)
+        bundle.putString("DramaUrl",romance.movieTrailerLink)
+        bundle.putString("DramaName", romance.movieName)
+        bundle.putString("Dramadescription", romance.description)
+        bundle.putString("Dramatime",
             romance.timing + "    " + romance.year)
-        bundle.putString("romancerating", romance.rating)
-        bundle.putString("romanceDirectorImage", romance.directorImage)
-        bundle.putString("romanceDirectorName", romance.director)
-        parentFragmentManager.setFragmentResult("Rname", bundle)
+        bundle.putString("Dramarating", romance.rating)
+        bundle.putString("DramaDirectorImage", romance.directorImage)
+        bundle.putString("DramaDirectorName", romance.director)
+        parentFragmentManager.setFragmentResult("DramaExtended", bundle)
     }
 }
