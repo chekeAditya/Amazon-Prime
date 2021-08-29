@@ -168,8 +168,7 @@ class DramaGridLayout: Fragment(R.layout.item_grid_layout), OnItemMovieClick {
 
         val bundle = Bundle();
         bundle.putString("DramaImage", drama.image)
-        bundle.putString("DramaUrl",drama.movieTrailerLink)
-        Toast.makeText(context, "movieLink${drama.movieTrailerLink}", Toast.LENGTH_LONG).show()
+        bundle.putString("movieUrl",drama.movieTrailerLink)
         bundle.putString("DramaName", drama.movieName)
         bundle.putString("Dramadescription", drama.description)
         bundle.putString("Dramatime",
@@ -189,8 +188,8 @@ class DramaGridLayout: Fragment(R.layout.item_grid_layout), OnItemMovieClick {
 
         val bundle = Bundle();
         bundle.putString("ActionImage", action.image)
-        bundle.putString("ActionUrl",action.movieTrailerLink)
-        Toast.makeText(context, "ActionLink${action.movieTrailerLink}", Toast.LENGTH_LONG).show()
+        bundle.putString("movieUrl",action.movieTrailerLink)
+
         bundle.putString("ActionName", action.movieName)
         bundle.putString("Actiondescription", action.description)
         bundle.putString("ActionDirectorName", action.director)
@@ -206,8 +205,8 @@ class DramaGridLayout: Fragment(R.layout.item_grid_layout), OnItemMovieClick {
 
         val bundle = Bundle();
         bundle.putString("romanceImage", romance.image)
-        bundle.putString("romanceUrl",romance.movieTrailerLink)
-        Toast.makeText(context, "romanceLink${romance.movieTrailerLink}", Toast.LENGTH_LONG).show()
+        bundle.putString("movieUrl",romance.movieTrailerLink)
+
         bundle.putString("romanceName", romance.movieName)
         bundle.putString("romancedescription", romance.description)
         bundle.putString("romancetime",
@@ -215,6 +214,6 @@ class DramaGridLayout: Fragment(R.layout.item_grid_layout), OnItemMovieClick {
         bundle.putString("romancerating", romance.rating)
         bundle.putString("romanceDirectorImage", romance.directorImage)
         bundle.putString("romanceDirectorName", romance.director)
-        parentFragmentManager.setFragmentResult("romancename", bundle)
+        parentFragmentManager.setFragmentResult("Rname", bundle)
     }
 }

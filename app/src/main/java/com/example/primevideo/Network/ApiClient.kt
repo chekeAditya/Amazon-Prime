@@ -80,4 +80,17 @@ interface ApiClient {
         //Thriller tv :-https://run.mocky.io/v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d
         @GET("v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d")
         fun getThrillerTvShow(): Call<ThrillerTvModel>
+
+
+        //Thriller tv :-https://run.mocky.io/v3/2bc3e766-9fbe-4a26-b356-22bf4beae2bd
+        @GET("v3/2bc3e766-9fbe-4a26-b356-22bf4beae2bd")
+        fun LatestActionMovie(): Call<MovieApi>
+
+        //Thriller tv :-https://run.mocky.io/v3/be692d30-2b67-4430-a6d3-257902a92cf3
+        @GET("v3/be692d30-2b67-4430-a6d3-257902a92cf3")
+        fun LatestComedyMovie(): Call<ResponseComedy>
+
+
+
+
 }

@@ -152,10 +152,11 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
         fragmenTransaction.add(R.id.fragmentMovies, MoviePreviewFragment())
         fragmenTransaction.addToBackStack(null)
         fragmenTransaction.commit()
+        Toast.makeText(context,"clickable",Toast.LENGTH_LONG).show()
 
         val bundle = Bundle();
         bundle.putString("DramaImage", drama.image)
-        bundle.putString("DramaUrl",drama.movieTrailerLink)
+        bundle.putString("movieUrl",drama.movieTrailerLink)
         bundle.putString("DramaName", drama.movieName)
         bundle.putString("Dramadescription", drama.description)
         bundle.putString("Dramatime",
@@ -175,7 +176,7 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
 
         val bundle = Bundle();
         bundle.putString("ActionImage", action.image)
-        bundle.putString("ActionUrl",action.movieTrailerLink)
+        bundle.putString("movieUrl",action.movieTrailerLink)
         bundle.putString("ActionName", action.movieName)
         bundle.putString("Actiondescription", action.description)
         bundle.putString("ActionDirectorName", action.director)
@@ -191,8 +192,8 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
 
         val bundle = Bundle();
         bundle.putString("romanceImage", romance.image)
-        bundle.putString("romanceUrl",romance.movieTrailerLink)
-        Toast.makeText(context, "romanceLink${romance.movieTrailerLink}", Toast.LENGTH_LONG).show()
+        bundle.putString("movieUrl",romance.movieTrailerLink)
+       // Toast.makeText(context, "romanceLink${romance.movieTrailerLink}", Toast.LENGTH_LONG).show()
         bundle.putString("romanceName", romance.movieName)
         bundle.putString("romancedescription", romance.description)
         bundle.putString("romancetime",

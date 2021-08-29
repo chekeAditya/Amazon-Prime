@@ -1,12 +1,12 @@
 package com.example.primevideo.Network
 
-import com.example.primevideo.Model.ActionMovieListResponse
-import com.example.primevideo.Model.DramaDataList
+import com.example.primevideo.Model.*
 import com.example.primevideo.Model.Kids.kidsandfamily.AmazonOriginalKid
 import com.example.primevideo.Model.Kids.kidsandfamily.Data
 import com.example.primevideo.Model.Kids.kidsandfamily.DataX
 import com.example.primevideo.Model.Kids.kidsandfamily.IndianToon
-import com.example.primevideo.Model.RomanceData
+import com.example.primevideo.Model.Perfect.PerfectResponseModel
+import com.example.primevideo.Model.Perfect.PerfectResult
 import com.example.primevideo.Model.TVShow.DataTvSHowRated
 import com.example.primevideo.Model.TVShow.DramaTvShow
 import com.example.primevideo.Model.TVShow.KidsTvShowData
@@ -35,4 +35,8 @@ interface OnItemListener{
     fun onTopRatedCLicked(dataTvSHowRated: DataTvSHowRated, position: Int)
     fun onKidsTvShow(kidsTvShowData: KidsTvShowData, position: Int)
     fun onThrillerTV(thrillerTvData: ThrillerTvData,position: Int)
+}
+interface OnHomeListener{
+    fun onPopular(popularMovie: ResultModel, position: Int)
+    fun onPerfect(perfectMovie: PerfectResult, position: Int)
 }

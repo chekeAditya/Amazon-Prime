@@ -13,10 +13,17 @@ import com.bumptech.glide.Glide
 import com.example.primevideo.R
 import kotlinx.android.synthetic.main.fragment_movie_preview.*
 import com.example.primevideo.Activity.YoutubeVideoPlayActivity
+import com.example.primevideo.Model.TVShow.DataTvSHowRated
+import com.example.primevideo.Model.TVShow.DramaTvShow
+import com.example.primevideo.Model.TVShow.KidsTvShowData
+import com.example.primevideo.Model.TVShow.ThrillerTvData
+import com.example.primevideo.Network.OnItemListener
 import org.w3c.dom.Text
 
 
 class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
+
+
 
     override
     fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -26,16 +33,50 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
         dramaDataFragment()
         ActionDataFragment()
         RomanceDataFragment()
+        popularMovie()
+        perfectMovie()
 
     }
+
+    private fun perfectMovie() {
+        parentFragmentManager.setFragmentResultListener(
+            "Perfectname",
+            this,
+            FragmentResultListener() { s: String, bundle: Bundle ->
+
+                val data1 = bundle.getString("PerfectImage")
+                Glide.with(ivImagePreviewLayout).load(data1).into(ivImagePreviewLayout)
+                val moviename1 = bundle.getString("PerfectName")
+                MovieName.setText(moviename1)
+                val moviedescription1 = bundle.getString("Perfectdescription")
+                movieDescriptionPreviewLayout.setText(moviedescription1)
+            })
+    }
+
+    private fun popularMovie() {
+        parentFragmentManager.setFragmentResultListener(
+            "Popularname",
+            this,
+            FragmentResultListener() { s: String, bundle: Bundle ->
+
+                val data1 = bundle.getString("PopularImage")
+                Glide.with(ivImagePreviewLayout).load(data1).into(ivImagePreviewLayout)
+                val moviename1 = bundle.getString("PopularName")
+                MovieName.setText(moviename1)
+                val moviedescription1 = bundle.getString("Populardescription")
+                movieDescriptionPreviewLayout.setText(moviedescription1)
+            })
+    }
+
 
     private fun onClickButton() {
         lyt_watchlist.setOnClickListener {
             Toast.makeText(context, "Added to the Watchlist", Toast.LENGTH_SHORT).show()
         }
-        lyt_download.setOnClickListener {
-            Toast.makeText(context, "Available Very Soon", Toast.LENGTH_SHORT).show()
+        lyt_download.setOnClickListener{
+            Toast.makeText(context, "Added to the Watchlist", Toast.LENGTH_SHORT).show()
         }
+
     }
 
     private fun receivingOperation() {
@@ -81,7 +122,7 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
 
     private fun RomanceDataFragment() {
         parentFragmentManager.setFragmentResultListener(
-            "romancename",
+            "Rname",
             this,
             FragmentResultListener() { s: String, bundle: Bundle ->
 
@@ -99,11 +140,11 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
                 Glide.with(ivDirectorImage).load(directorImage).into(ivDirectorImage)
                 val directorName1 = bundle.getString("romanceDirectorName")
                 tvDirectorName.text = directorName1
-                val movieUrl1 = bundle.getString("romanceUrl")
+                val movieUrl = bundle.getString("movieUrl")
 
                 lyt_play.setOnClickListener {
                     val intent = Intent(context, YoutubeVideoPlayActivity::class.java)
-                    intent.putExtra("romanceUrl", movieUrl1)
+                    intent.putExtra("movieUrl", movieUrl)
                     startActivity(intent)
                 }
             })
@@ -129,11 +170,11 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
 //                Glide.with(ivDirectorImage).load(directorImage).into(ivDirectorImage)
                 val directorName1 = bundle.getString("ActionDirectorName")
                 tvDirectorName.text = directorName1
-                val movieUrl1 = bundle.getString("ActionUrl")
+                val movieUrl = bundle.getString("movieUrl")
 
                 lyt_play.setOnClickListener {
                     val intent = Intent(context, YoutubeVideoPlayActivity::class.java)
-                    intent.putExtra("ActionUrl", movieUrl1)
+                    intent.putExtra("movieUrl", movieUrl)
                     startActivity(intent)
                 }
             })
@@ -159,13 +200,15 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
                 Glide.with(ivDirectorImage).load(directorImage1).into(ivDirectorImage)
                 val directorName1 = bundle.getString("DramaDirectorName")
                 tvDirectorName.text = directorName1
-                val movieUrl1 = bundle.getString("DramaUrl")
+                val movieUrl = bundle.getString("movieUrl")
 
                 lyt_play.setOnClickListener {
                     val intent = Intent(context, YoutubeVideoPlayActivity::class.java)
-                    intent.putExtra("DramaUrl", movieUrl1)
+                    intent.putExtra("movieUrl", movieUrl)
                     startActivity(intent)
                 }
             })
     }
+
+
 }

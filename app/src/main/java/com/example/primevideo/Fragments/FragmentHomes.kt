@@ -29,4 +29,9 @@ class FragmentHomes : Fragment(R.layout.fragment_homes) {
         viewPager.adapter = viewPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
     }
+
+
+
+
+
 }
