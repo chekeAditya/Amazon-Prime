@@ -192,7 +192,6 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
         val bundle = Bundle();
         bundle.putString("romanceImage", romance.image)
         bundle.putString("movieUrl",romance.movieTrailerLink)
-        Toast.makeText(context, "romanceLink${romance.movieTrailerLink}", Toast.LENGTH_LONG).show()
         bundle.putString("romanceName", romance.movieName)
         bundle.putString("romancedescription", romance.description)
         bundle.putString("romancetime",

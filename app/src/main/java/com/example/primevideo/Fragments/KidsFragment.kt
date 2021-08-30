@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isGone
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.primevideo.Adapters.*
@@ -19,6 +22,7 @@ import com.example.primevideo.R
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.android.synthetic.main.fragment_home.imageSlider
 import kotlinx.android.synthetic.main.fragment_kids.*
+import kotlinx.android.synthetic.main.fragment_sign_in.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,7 +47,9 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
 
 
-        tvkidsandfamily.setOnClickListener{
+
+
+        tvkidsandfamily.setOnClickListener {
             val fragmentManager = requireActivity().supportFragmentManager
             val fragmenTransaction = fragmentManager.beginTransaction()
             fragmenTransaction.replace(R.id.kidsFragment, kidsandexpand())
@@ -117,21 +123,28 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
     }
 
     private fun kidsTv() {
+
+        kidsprogressbar.isVisible
+
         var apiClient3 = Network.getInstance().create(ApiClient::class.java)
         apiClient3.getkidsandfamilyTv().enqueue(
-            object : Callback<kidsandfamilyTv>{
+            object : Callback<kidsandfamilyTv> {
+
+
                 override fun onResponse(
                     call: Call<kidsandfamilyTv>,
                     response: Response<kidsandfamilyTv>,
-                ) {
+
+                    ) {
+
                     response.body()?.run {
                         dataX = data
                         setTVARecyler()
+
                     }
                 }
 
                 override fun onFailure(call: Call<kidsandfamilyTv>, t: Throwable) {
-                    TODO("Not yet implemented")
                 }
 
             }
@@ -179,8 +192,6 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         rvkidsandfamily.adapter = kidsandfamilyAdaptor
         rvkidsandfamily.layoutManager = linearLayoutManager
     }
-
-
 
 
     private fun imageSliderView() {
@@ -244,7 +255,8 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
         val bundle = Bundle();
         bundle.putString("movieImage", dataX.image)
         bundle.putString("movieName", dataX.movieName)
-        bundle.putString("moviedescription",dataX.description)
+        bundle.putString("movieUrl", dataX.movieTrailerLink)
+        bundle.putString("moviedescription", dataX.description)
         bundle.putString("movietime",
             dataX.timing + "    " + dataX.year)
         bundle.putString("movierating", dataX.rating)
@@ -263,7 +275,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
         val bundle = Bundle();
         bundle.putString("movieImage", indianToon.image)
-        bundle.putString("movieUrl",indianToon.movieTrailerLink)
+        bundle.putString("movieUrl", indianToon.movieTrailerLink)
         bundle.putString("movieName", indianToon.movieName)
         bundle.putString("moviedescription", indianToon.description)
         bundle.putString("movietime",
@@ -283,6 +295,7 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
         val bundle = Bundle();
         bundle.putString("movieImage", amazonOriginalKid.image)
+        bundle.putString("movieUrl", amazonOriginalKid.movieTrailerLink)
         bundle.putString("movieName", amazonOriginalKid.movieName)
         bundle.putString("moviedescription", amazonOriginalKid.description)
         bundle.putString("movietime",
