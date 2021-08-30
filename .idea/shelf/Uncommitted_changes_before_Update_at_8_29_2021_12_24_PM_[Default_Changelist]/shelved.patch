@@ -1,0 +1,473 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.primevideo\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\"/>\r\n    <uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@drawable/app_logo\"\r\n        android:label=\"@string/app_name\"\r\n        android:requestLegacyExternalStorage=\"true\"\r\n        android:roundIcon=\"@mipmap/ic_launcher\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.PrimeVideo\">\r\n        <activity\r\n            android:name=\".Activity.SeetingActivity\"\r\n            android:exported=\"true\" />\r\n\r\n        <activity\r\n            android:name=\".Activity.YoutubeVideoPlayActivity\"\r\n            android:exported=\"true\" />\r\n        <activity\r\n            android:name=\".Activity.LogInActivity\"\r\n            android:exported=\"true\" >\r\n\r\n        </activity>\r\n        <activity\r\n            android:name=\".Activity.MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n\r\n        <meta-data\r\n            android:name=\"preloaded_fonts\"\r\n            android:resource=\"@array/preloaded_fonts\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 73e6d6b30aaa07272789a390d5357482173e4109)
++++ b/app/src/main/AndroidManifest.xml	(date 1630219487231)
+@@ -2,9 +2,6 @@
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     package="com.example.primevideo">
+ 
+-    <uses-permission android:name="android.permission.INTERNET"/>
+-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+-
+     <application
+         android:allowBackup="true"
+         android:icon="@drawable/app_logo"
+@@ -13,31 +10,36 @@
+         android:roundIcon="@mipmap/ic_launcher"
+         android:supportsRtl="true"
+         android:theme="@style/Theme.PrimeVideo">
++        <activity
++            android:name=".Activity.SplashScreen"
++            android:exported="true">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
+         <activity
+             android:name=".Activity.SeetingActivity"
+             android:exported="true" />
+-
+         <activity
+             android:name=".Activity.YoutubeVideoPlayActivity"
+             android:exported="true" />
+         <activity
+             android:name=".Activity.LogInActivity"
+-            android:exported="true" >
+-
+-        </activity>
++            android:exported="true"/>
+         <activity
+             android:name=".Activity.MainActivity"
+             android:exported="true">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+ 
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+         </activity>
+ 
+         <meta-data
+             android:name="preloaded_fonts"
+             android:resource="@array/preloaded_fonts" />
+     </application>
++    <uses-permission android:name="android.permission.RECORD_AUDIO" />
++
++    <uses-permission android:name="android.permission.INTERNET" />
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/src/main/java/com/example/primevideo/Network/ApiClient.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.primevideo.Network\r\n\r\nimport com.example.primevideo.Model.*\r\nimport com.example.primevideo.Model.Kids.kidsandfamily.AmazonOriginalKids\r\nimport com.example.primevideo.Model.Kids.kidsandfamily.IndianToonsModel\r\nimport com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel\r\nimport com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv\r\nimport com.example.primevideo.Model.LanguageApiHomeFragment.LanuguageResponeModel\r\nimport com.example.primevideo.Model.Perfect.PerfectResponseModel\r\nimport com.example.primevideo.Model.PopularShows.PopularShowsModelItem\r\nimport com.example.primevideo.Model.SearchFragmentModel.SearchModelFindFragment\r\nimport com.example.primevideo.Model.TVShow.KidaTvShowModel\r\nimport com.example.primevideo.Model.TVShow.ThrillerTvModel\r\nimport com.example.primevideo.Model.TVShow.TopRatedTvSHow\r\nimport com.example.primevideo.Model.TVShow.TvDramaModel\r\nimport retrofit2.Call\r\nimport retrofit2.http.GET\r\nimport retrofit2.http.Query\r\n\r\ninterface ApiClient {\r\n    //kids :- https://run.mocky.io/v3/97294d57-7c7b-4069-9033-bfc3797eceb5\r\n    @GET(\"v3/97294d57-7c7b-4069-9033-bfc3797eceb5\")\r\n    fun getPerfectShow(): Call<PerfectResponseModel>\r\n\r\n        //    Popular Movies :- https://run.mocky.io/v3/4d8c2d78-30e1-409c-a015-99b4e7dcc85e\r\n        @GET(\"v3/4d8c2d78-30e1-409c-a015-99b4e7dcc85e\")\r\n        fun getPopularMovie2(): Call<PopularMoviesModel>\r\n\r\n        //kids :- https://run.mocky.io/v3/97294d57-7c7b-4069-9033-bfc3797eceb5\r\n        @GET(\"v3/97294d57-7c7b-4069-9033-bfc3797eceb5\")\r\n        fun getKidsPickYou(): Call<KidsPickYouModel>\r\n\r\n        //Popular Shows :- https://run.mocky.io/v3/de4c3f24-d9f7-4dcc-af8a-ce4a348b3b13\r\n        @GET(\"v3/de4c3f24-d9f7-4dcc-af8a-ce4a348b3b13\")\r\n        fun getPopularShows(): Call<List<PopularShowsModelItem>>\r\n\r\n        ///https://run.mocky.io/v3/0b4b8e78-ff2f-4b8b-8bd3-a5f7c9bdd300\r\n        @GET(\"v3/0b4b8e78-ff2f-4b8b-8bd3-a5f7c9bdd300\")\r\n        fun getTOPMovies(): Call<DramaResponseDTO>\r\n\r\n        //https://run.mocky.io/v3/b09a7c22-c951-4ae3-988a-955f15102589\r\n        @GET(\"v3/b09a7c22-c951-4ae3-988a-955f15102589\")\r\n        fun getLatestMovies(): Call<List<ActionMovieListResponse>>\r\n\r\n        //https://run.mocky.io/v3/5b7ee441-85e8-4cc8-95dc-da056caccdcd\r\n        @GET(\"v3/5b7ee441-85e8-4cc8-95dc-da056caccdcd\")\r\n        fun getRomanticMovies(): Call<RomanceResponseDTO>\r\n\r\n        //kids and family :- https://run.mocky.io/v3/3331e1e3-cd07-4aad-a476-29954de2eec6\r\n        @GET(\"v3/3331e1e3-cd07-4aad-a476-29954de2eec6\")\r\n        fun getkidsandfamily(): Call<kidsandfamilyModel>\r\n\r\n        //Drama Tv Show :-https://run.mocky.io/v3/508e5537-aabb-4d07-a1c4-e04c9c777cd0\r\n        @GET(\"v3/508e5537-aabb-4d07-a1c4-e04c9c777cd0\")\r\n        fun getDramaTvShow(): Call<TvDramaModel>\r\n\r\n        //kids and family :- https://run.mocky.io/v3/dd8c9ec3-6151-44d0-8b2d-55315e2bbc68\r\n        @GET(\"v3/dd8c9ec3-6151-44d0-8b2d-55315e2bbc68\")\r\n        fun getkidsandfamilyTv(): Call<kidsandfamilyTv>\r\n\r\n        //https://run.mocky.io/v3/922bacd0-b2bc-4905-a9f6-cd25bfea412a\r\n        @GET(\"v3/922bacd0-b2bc-4905-a9f6-cd25bfea412a\")\r\n        fun getTopRatedTvShows(): Call<TopRatedTvSHow>\r\n\r\n        //kids and family :- https://run.mocky.io/v3/0404dd7e-c1ba-4669-b14b-3331f46741ec\r\n        @GET(\"v3/0404dd7e-c1ba-4669-b14b-3331f46741ec\")\r\n        fun getInidanToons(): Call<IndianToonsModel>\r\n\r\n        //kids and family :- https://run.mocky.io/v3/e36a25b3-e17e-4363-bc50-893f8db4528a\r\n        @GET(\"v3/e36a25b3-e17e-4363-bc50-893f8db4528a\")\r\n        fun getAmazonorginal(): Call<AmazonOriginalKids>\r\n\r\n        //kids tv show:- https://run.mocky.io/v3/d113146a-d7a9-440a-ba31-c3239203ebc9\r\n        @GET(\"v3/d113146a-d7a9-440a-ba31-c3239203ebc9\")\r\n        fun getKidsTvShow(): Call<KidaTvShowModel>\r\n\r\n        //search option :- https://api.themoviedb.org/3/search/movie?apiKey=2147294b386ecadcb05cd19bcbbdddb9&movieName=mimi\r\n        @GET(\"3/search/movie\")\r\n        fun getSearchedMovie(@Query(\"api_key\") api_key: String, @Query(\"query\") query: String):Call<SearchModelFindFragment>\r\n\r\n        //Thriller tv :-https://run.mocky.io/v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d\r\n        @GET(\"v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d\")\r\n        fun getThrillerTvShow(): Call<ThrillerTvModel>\r\n\r\n        //Language api in home Fragment:- https://run.mocky.io/v3/85d9c74b-bbcb-4d10-81d1-779fad27b275\r\n        @GET(\"v3/85d9c74b-bbcb-4d10-81d1-779fad27b275\")\r\n        fun getLanguageImage(): Call<LanuguageResponeModel>\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Network/ApiClient.kt b/app/src/main/java/com/example/primevideo/Network/ApiClient.kt
+--- a/app/src/main/java/com/example/primevideo/Network/ApiClient.kt	(revision 73e6d6b30aaa07272789a390d5357482173e4109)
++++ b/app/src/main/java/com/example/primevideo/Network/ApiClient.kt	(date 1630219501668)
+@@ -74,7 +74,7 @@
+         @GET("v3/d113146a-d7a9-440a-ba31-c3239203ebc9")
+         fun getKidsTvShow(): Call<KidaTvShowModel>
+ 
+-        //search option :- https://api.themoviedb.org/3/search/movie?apiKey=2147294b386ecadcb05cd19bcbbdddb9&movieName=mimi
++        //search option :- https://api.themoviedb.org/3/search/movie?api_key=2147294b386ecadcb05cd19bcbbdddb9&query=mimi
+         @GET("3/search/movie")
+         fun getSearchedMovie(@Query("api_key") api_key: String, @Query("query") query: String):Call<SearchModelFindFragment>
+ 
+Index: app/src/main/res/layout/fragment_create_account.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"#2e2e2e\"\r\n    tools:context=\".Fragments.CreateAccount\">\r\n    <ImageView\r\n        android:layout_alignParentTop=\"true\"\r\n        android:id=\"@+id/ivLogo\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:src=\"@drawable/ic_amazon\"\r\n        tools:ignore=\"ContentDescription\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/tvSignIn\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@+id/ivLogo\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:text=\"@string/sign_up_with_your_mobile_number\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"20sp\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/etName\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@+id/tvSignIn\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:layout_marginTop=\"30dp\"\r\n        android:layout_marginEnd=\"20dp\"\r\n        android:background=\"@drawable/rectangle\"\r\n        android:hint=\"@string/name\"\r\n        android:paddingStart=\"10dp\"\r\n        android:paddingEnd=\"10dp\"\r\n        android:textColorHint=\"#a9a9a9\"\r\n        android:autofillHints=\"username\"\r\n        android:inputType=\"textPersonName\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/etNumberOrEmail\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@+id/etName\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginEnd=\"20dp\"\r\n        android:autofillHints=\"emailAddress\"\r\n        android:background=\"@drawable/rectangle\"\r\n        android:hint=\"@string/mobile_number_or_email\"\r\n        android:paddingStart=\"10dp\"\r\n        android:paddingEnd=\"10dp\"\r\n        android:textColorHint=\"#a9a9a9\"\r\n        tools:ignore=\"TextFields\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/etCreatePassword\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@+id/etNumberOrEmail\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginEnd=\"20dp\"\r\n        android:autofillHints=\"password\"\r\n        android:background=\"@drawable/rectangle\"\r\n        android:hint=\"@string/create_a_password\"\r\n        android:inputType=\"textPassword\"\r\n        android:paddingStart=\"10dp\"\r\n        android:paddingEnd=\"10dp\"\r\n        android:textColorHint=\"#a9a9a9\" />\r\n\r\n\r\n    <CheckBox\r\n        android:id=\"@+id/etCheckBox\"\r\n        android:layout_width=\"34dp\"\r\n        android:layout_height=\"35dp\"\r\n        android:layout_below=\"@+id/etCreatePassword\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:layout_marginTop=\"10dp\" />\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@+id/etCreatePassword\"\r\n        android:layout_marginStart=\"5dp\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:layout_toEndOf=\"@id/etCheckBox\"\r\n        android:text=\"@string/show_password\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"20sp\"\r\n        android:textStyle=\"bold\" />\r\n    <Button\r\n        android:id=\"@+id/btnCOntinue\"\r\n        android:text=\"Continue\"\r\n        android:layout_margin=\"20dp\"\r\n        android:layout_below=\"@id/etCheckBox\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:background=\"#ffc252\"\r\n        tools:ignore=\"HardcodedText\" />\r\n    <TextView\r\n        android:id=\"@+id/tvAlreadyAccount\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@id/btnCOntinue\"\r\n        android:layout_marginStart=\"10dp\"\r\n        android:layout_marginTop=\"10dp\"\r\n        android:layout_marginEnd=\"10dp\"\r\n        android:layout_marginBottom=\"20dp\"\r\n        android:gravity=\"center\"\r\n        android:textColor=\"#0072bb\"\r\n        android:text=\"@string/already_have_an_account\"\r\n        android:textSize=\"15sp\" />\r\n    <TextView\r\n        android:id=\"@+id/tvRates\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@+id/tvAlreadyAccount\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:text=\"@string/message_and_data_charges_may_apply\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"15sp\" />\r\n    <TextView\r\n        android:id=\"@+id/tvTerms\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_below=\"@id/tvRates\"\r\n        android:layout_marginStart=\"10dp\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginEnd=\"10dp\"\r\n        android:layout_marginBottom=\"10dp\"\r\n        android:text=\"@string/by_continuing_you_agree_to_amazon_s_conditions_of_n_use_and_privacy_notice\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"15sp\" />\r\n    <ProgressBar\r\n        android:indeterminate=\"true\"\r\n        android:layout_centerInParent=\"true\"\r\n        android:id=\"@+id/progressbar1\"\r\n        android:visibility=\"gone\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"180dp\"\r\n        android:layout_marginTop=\"300dp\"/>\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_create_account.xml b/app/src/main/res/layout/fragment_create_account.xml
+--- a/app/src/main/res/layout/fragment_create_account.xml	(revision 73e6d6b30aaa07272789a390d5357482173e4109)
++++ b/app/src/main/res/layout/fragment_create_account.xml	(date 1630219487259)
+@@ -32,13 +32,13 @@
+         android:layout_marginStart="20dp"
+         android:layout_marginTop="30dp"
+         android:layout_marginEnd="20dp"
++        android:autofillHints="username"
+         android:background="@drawable/rectangle"
+         android:hint="@string/name"
++        android:inputType="textPersonName"
+         android:paddingStart="10dp"
+         android:paddingEnd="10dp"
+-        android:textColorHint="#a9a9a9"
+-        android:autofillHints="username"
+-        android:inputType="textPersonName" />
++        android:textColorHint="#a9a9a9" />
+ 
+     <EditText
+         android:id="@+id/etNumberOrEmail"
+Index: app/src/main/java/com/example/primevideo/Fragments/HomeFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.primevideo.Fragments\r\n\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.View\r\nimport android.widget.HorizontalScrollView\r\nimport android.widget.Toast\r\nimport androidx.recyclerview.widget.LinearLayoutManager\r\nimport com.example.primevideo.Adapters.ImageAdapter\r\nimport com.example.primevideo.Adapters.MySliderImageAdapter\r\nimport com.example.primevideo.Adapters.PopularMoviesAdapter\r\nimport com.example.primevideo.Adapters.PopularSeasonAdapter\r\nimport com.example.primevideo.Model.LanguageApiHomeFragment.LanguageData\r\nimport com.example.primevideo.Model.LanguageApiHomeFragment.LanuguageResponeModel\r\nimport com.example.primevideo.Model.Perfect.PerfectResponseModel\r\nimport com.example.primevideo.Model.Perfect.PerfectResult\r\nimport com.example.primevideo.Model.PopularMoviesModel\r\nimport com.example.primevideo.Model.ResultModel\r\nimport com.example.primevideo.Model.Shows.Shows\r\nimport com.example.primevideo.Model.Shows.ShowsItem\r\nimport com.example.primevideo.Network.ApiClient\r\nimport com.example.primevideo.Network.Network\r\nimport com.example.primevideo.Network.onItemHomeClick\r\nimport com.example.primevideo.R\r\nimport com.smarteist.autoimageslider.SliderView\r\nimport kotlinx.android.synthetic.main.fragment_home.*\r\nimport retrofit2.Call\r\nimport retrofit2.Callback\r\nimport retrofit2.Response\r\n\r\nclass HomeFragment : Fragment(R.layout.fragment_home),onItemHomeClick{\r\n\r\n    private lateinit var listOfPopularMovies: List<ResultModel>\r\n    private lateinit var listOfLanguageData: List<LanguageData>\r\n    private lateinit var listOfPerfectItem: List<PerfectResult>\r\n\r\n    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {\r\n        super.onViewCreated(view, savedInstanceState)\r\n        imageSliderView()\r\n        PopularMovieApiCall()\r\n        PopularShowApiCall()\r\n        LanguageApiCall()\r\n    }\r\n\r\n    private fun imageSliderView() {\r\n\r\n        val imageList: ArrayList<String> = ArrayList()\r\n        imageList.add(\"https://www.linkpicture.com/q/1_935.jpg\")\r\n        imageList.add(\"https://www.linkpicture.com/q/2_479.jpg\")\r\n        imageList.add(\"https://www.linkpicture.com/q/3_308.jpg\")\r\n        imageList.add(\"https://www.linkpicture.com/q/4_278.jpg\")\r\n        imageList.add(\"https://www.linkpicture.com/q/5_287.jpg\")\r\n        imageList.add(\"https://www.linkpicture.com/q/6_233.jpg\")\r\n        imageList.add(\"https://www.linkpicture.com/q/7_211.jpg\")\r\n        imageList.add(\"https://www.linkpicture.com/q/8_175.jpg\")\r\n        imageList.add(\"https://www.linkpicture.com/q/9_136.jpg\")\r\n        setImageInSlider(imageList, imageSlider = imageSlider)\r\n    }\r\n\r\n    private fun setImageInSlider(images: ArrayList<String>, imageSlider: SliderView) {\r\n        val adapter = MySliderImageAdapter()\r\n        adapter.renewItems(images)\r\n        imageSlider.setSliderAdapter(adapter)\r\n        imageSlider.isAutoCycle = true\r\n        imageSlider.startAutoCycle()\r\n    }\r\n\r\n    private fun PopularMovieApiCall() {\r\n        var apiClient = Network.getInstance().create(ApiClient::class.java)\r\n        apiClient.getPopularMovie2()\r\n            .enqueue(object : Callback<PopularMoviesModel> {\r\n                override fun onResponse(\r\n                    call: Call<PopularMoviesModel>,\r\n                    response: Response<PopularMoviesModel>\r\n                ) {\r\n                    response.body()?.run {\r\n                        listOfPopularMovies = resultModels\r\n                        setAdapter()\r\n                    }\r\n                }\r\n\r\n                override fun onFailure(call: Call<PopularMoviesModel>, t: Throwable) {\r\n                    Toast.makeText(context, \"Failure\" + t.message, Toast.LENGTH_SHORT).show()\r\n                }\r\n\r\n            })\r\n    }\r\n\r\n    private fun setAdapter() {\r\n        var linearLayoutManager =\r\n            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)\r\n        val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)\r\n        rvPopularMovies.adapter = popularMoviesAdapter\r\n        rvPopularMovies.layoutManager = linearLayoutManager\r\n    }\r\n\r\n    private fun PopularShowApiCall() {\r\n        var apiClient = Network.getInstance().create(ApiClient::class.java)\r\n        apiClient.getPerfectShow().enqueue(object : Callback<PerfectResponseModel> {\r\n            override fun onResponse(\r\n                call: Call<PerfectResponseModel>,\r\n                response: Response<PerfectResponseModel>\r\n            ) {\r\n                response.body()?.run {\r\n                    listOfPerfectItem = perfectResults\r\n                    setAdapterPopularShows()\r\n                }\r\n            }\r\n\r\n            override fun onFailure(call: Call<PerfectResponseModel>, t: Throwable) {\r\n                Toast.makeText(\r\n                    context,\r\n                    \"Failure in popular show api call\" + t.message,\r\n                    Toast.LENGTH_SHORT\r\n                ).show()\r\n            }\r\n        })\r\n    }\r\n\r\n    private fun setAdapterPopularShows() {\r\n        val linearLayoutManager1 =\r\n            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)\r\n        val popularSeasonAdapter = PopularSeasonAdapter(listOfPerfectItem)\r\n        rvPopularSeason.adapter = popularSeasonAdapter\r\n        rvPopularSeason.layoutManager = linearLayoutManager1\r\n    }\r\n\r\n\r\n    private fun LanguageApiCall() {\r\n        val apiClient = Network.getInstance().create(ApiClient::class.java)\r\n        apiClient.getLanguageImage().enqueue(object : Callback<LanuguageResponeModel> {\r\n            override fun onResponse(\r\n                call: Call<LanuguageResponeModel>,\r\n                response: Response<LanuguageResponeModel>\r\n            ) {\r\n                response.body()?.run {\r\n                    listOfLanguageData = languageData\r\n                    setAdapterLanguageImage()\r\n\r\n                }\r\n            }\r\n\r\n            override fun onFailure(call: Call<LanuguageResponeModel>, t: Throwable) {\r\n                Toast.makeText(context, \"Language Api Fragment Error\", Toast.LENGTH_SHORT).show()\r\n            }\r\n\r\n        })\r\n    }\r\n\r\n    private fun setAdapterLanguageImage() {\r\n        val linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)\r\n        val imageAdapter = ImageAdapter(listOfLanguageData)\r\n        rvWatchYourLanguage.adapter = imageAdapter\r\n        rvWatchYourLanguage.layoutManager = linearLayoutManager\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Fragments/HomeFragment.kt b/app/src/main/java/com/example/primevideo/Fragments/HomeFragment.kt
+--- a/app/src/main/java/com/example/primevideo/Fragments/HomeFragment.kt	(revision 73e6d6b30aaa07272789a390d5357482173e4109)
++++ b/app/src/main/java/com/example/primevideo/Fragments/HomeFragment.kt	(date 1630219487278)
+@@ -5,6 +5,9 @@
+ import android.view.View
+ import android.widget.HorizontalScrollView
+ import android.widget.Toast
++import androidx.core.view.isGone
++import androidx.core.view.isInvisible
++import androidx.core.view.isVisible
+ import androidx.recyclerview.widget.LinearLayoutManager
+ import com.example.primevideo.Adapters.ImageAdapter
+ import com.example.primevideo.Adapters.MySliderImageAdapter
+@@ -43,7 +46,6 @@
+     }
+ 
+     private fun imageSliderView() {
+-
+         val imageList: ArrayList<String> = ArrayList()
+         imageList.add("https://www.linkpicture.com/q/1_935.jpg")
+         imageList.add("https://www.linkpicture.com/q/2_479.jpg")
+@@ -66,6 +68,7 @@
+     }
+ 
+     private fun PopularMovieApiCall() {
++        progressbarHomePopularMovies.isVisible
+         var apiClient = Network.getInstance().create(ApiClient::class.java)
+         apiClient.getPopularMovie2()
+             .enqueue(object : Callback<PopularMoviesModel> {
+@@ -74,6 +77,7 @@
+                     response: Response<PopularMoviesModel>
+                 ) {
+                     response.body()?.run {
++                        progressbarHomePopularMovies.isGone
+                         listOfPopularMovies = resultModels
+                         setAdapter()
+                     }
+@@ -87,7 +91,7 @@
+     }
+ 
+     private fun setAdapter() {
+-        var linearLayoutManager =
++        val linearLayoutManager =
+             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+         val popularMoviesAdapter = PopularMoviesAdapter(listOfPopularMovies)
+         rvPopularMovies.adapter = popularMoviesAdapter
+@@ -95,7 +99,7 @@
+     }
+ 
+     private fun PopularShowApiCall() {
+-        var apiClient = Network.getInstance().create(ApiClient::class.java)
++        val apiClient = Network.getInstance().create(ApiClient::class.java)
+         apiClient.getPerfectShow().enqueue(object : Callback<PerfectResponseModel> {
+             override fun onResponse(
+                 call: Call<PerfectResponseModel>,
+@@ -143,7 +147,6 @@
+             override fun onFailure(call: Call<LanuguageResponeModel>, t: Throwable) {
+                 Toast.makeText(context, "Language Api Fragment Error", Toast.LENGTH_SHORT).show()
+             }
+-
+         })
+     }
+ 
+Index: app/src/main/res/layout/item_shimmer.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_shimmer.xml b/app/src/main/res/layout/item_shimmer.xml
+new file mode 100644
+--- /dev/null	(date 1630219501640)
++++ b/app/src/main/res/layout/item_shimmer.xml	(date 1630219501640)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="wrap_content"
++    android:layout_height="wrap_content"
++    android:padding="4dp"
++    android:layout_margin="4dp"
++    android:gravity="center_horizontal"
++    android:orientation="vertical">
++
++    <ImageView
++        android:layout_width="200dp"
++        android:layout_height="200dp"
++        android:background="#E7E7E7"
++        android:layout_margin="2dp"/>
++
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/primevideo/Activity/SplashScreen.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/primevideo/Activity/SplashScreen.kt b/app/src/main/java/com/example/primevideo/Activity/SplashScreen.kt
+new file mode 100644
+--- /dev/null	(date 1630219501595)
++++ b/app/src/main/java/com/example/primevideo/Activity/SplashScreen.kt	(date 1630219501595)
+@@ -0,0 +1,23 @@
++package com.example.primevideo.Activity
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.os.Handler
++import com.example.primevideo.R
++
++import android.content.Intent
++
++
++class SplashScreen : AppCompatActivity() {
++    var handler: Handler? = null
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_splash_screen)
++        handler = Handler()
++        handler!!.postDelayed({
++            val intent = Intent(this@SplashScreen, LogInActivity::class.java)
++            startActivity(intent)
++            finish()
++        }, 2000)
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Prime Video</string>\r\n    <string name=\"download\">Download</string>\r\n    <string name=\"no_videos_downloaded\">No videos Downloaded</string>\r\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\r\n    <string name=\"sign_up_with_your_mobile_number\">Sign up with your mobile number</string>\r\n    <string name=\"name\">Name</string>\r\n    <string name=\"mobile_number_or_email\">Mobile number or Email</string>\r\n    <string name=\"create_a_password\">Create a password</string>\r\n    <string name=\"show_passwords\">ShowPassword</string>\r\n    <string name=\"already_have_an_account\">Already have an account?</string>\r\n    <string name=\"message_and_data_charges_may_apply\">Message and Data charges may apply</string>\r\n    <string name=\"by_continuing_you_agree_to_amazon_s_conditions_of_n_use_and_privacy_notice\">By continuing,you agree to Amazon\\'s Conditions of \\n Use and Privacy NOtice.</string>\r\n    <string name=\"downloads\">downloads</string>\r\n    <string name=\"downloadss\">Downloads</string>\r\n    <string name=\"popular_movies\">Popular Movies</string>\r\n    <string name=\"movieDesc\">Toofan is based on a story idea by Farhan Akhtar and Anjum Rajabali\\'s screenplay. The early portions of the Amazon Prime Video release are fleet and fun, if deeply familiar. Aziz\\'s encounter with Ananya leads to an old-fashioned romance, filled with idealism, tenderness and Shankar-Ehsaan-Loy songs</string>\r\n    <string name=\"popular_season\">Popular Season</string>\r\n    <string name=\"sign_ins\">Sign-In</string>\r\n    <string name=\"email_phone_for_mobile_accounts\">Email(phone for mobile Accounts</string>\r\n    <string name=\"amazon_password\">Amazon Password</string>\r\n    <string name=\"show_password\">Show Password</string>\r\n    <string name=\"sign_in\">Sign-In</string>\r\n    <string name=\"longpara\">By continuing,you agree to Amazon\\'s Conditions of \\n Use and Privacy NOtice.</string>\r\n    <string name=\"new_to_amazon\">New to Amazon?</string>\r\n    <string name=\"create_a_new_amazon_account\">Create a new Amazon account</string>\r\n    <string name=\"popular_shows\">Popular Shows</string>\r\n    <string name=\"top_movies\">Top movies</string>\r\n    <string name=\"top_rated\">Top Rated</string>\r\n    <string name=\"prime\">prime</string>\r\n    <string name=\"included_with_prime\">included with Prime</string>\r\n    <string name=\"watch_now\">Watch Now</string>\r\n    <string name=\"watchlist\">Watchlist</string>\r\n    <string name=\"director_name\">Director Name</string>\r\n    <string name=\"more_options\">More Options</string>\r\n    <string name=\"share\">Share</string>\r\n    <string name=\"fight_club\">Fight Club</string>\r\n    <string name=\"trailer\">Trailer</string>\r\n    <string name=\"language_hindi_english\">Language: Hindi,English</string>\r\n    <string name=\"_2019_164min_14\">2019 164min 14+</string>\r\n    <string name=\"imdb_8_4\">IMDb 8.4</string>\r\n    <string name=\"related_movies\">Related Movies</string>\r\n    <string name=\"video_id\">0m4BNIPB7WU</string>\r\n    <string name=\"indian_toons\">Indian Toons</string>\r\n    <string name=\"search\">Search</string>\r\n    <string name=\"browse_by\">Browse by</string>\r\n    <string name=\"movies\">Movies</string>\r\n    <string name=\"amazon_originals\">Amazon Originals</string>\r\n    <string name=\"tv\">TV</string>\r\n    <string name=\"kids\">Kids</string>\r\n    <string name=\"genres\">Genres</string>\r\n    <string name=\"searched_movies\">Searched Movies</string>\r\n    <string name=\"you_don_t_have_any_watchlist\">You don\\'t have any watchlist</string>\r\n    <string name=\"login_name\">Login Name</string>\r\n    <string name=\"aditya\">Aditya</string>\r\n    <string name=\"settings\">Settings</string>\r\n    <string name=\"stream_amp_download\"><![CDATA[Stream & download]]></string>\r\n    <string name=\"manage_internet_or_wifi\">Manage internet or Wifi</string>\r\n    <string name=\"parental_control\">Parental Control</string>\r\n    <string name=\"control_what_you_can_watch\">Control what you can watch</string>\r\n    <string name=\"registered_device\">Registered Device</string>\r\n    <string name=\"see_all_registered_device\">See all Registered device</string>\r\n    <string name=\"clear_search_history\">Clear Search History</string>\r\n    <string name=\"notifications\">Notifications</string>\r\n    <string name=\"on\">On</string>\r\n    <string name=\"auto_play\">Auto Play</string>\r\n    <string name=\"play_the_next_episode_automatically\">play the next episode automatically</string>\r\n    <string name=\"language\">Language</string>\r\n    <string name=\"english\">English</string>\r\n    <string name=\"drama_tv_shows\">Drama Tv Shows</string>\r\n    <string name=\"tv_shows_you_will_like\">Tv Shows You Will Like</string>\r\n    <string name=\"kids_and_family_tv_show\">Kids And Family Tv Show</string>\r\n    <string name=\"thriller_shows\">Thriller shows</string>\r\n    <string name=\"action_and_adventure\">Action and Adventure</string>\r\n    <string name=\"perfect_movies\">Perfect Movies</string>\r\n    <string name=\"watch_in_your_language\">Watch in Your Language</string>\r\n    <string name=\"mirzapur\">Mirzapur</string>\r\n    <string name=\"the_good_doctor\">The Good Doctor</string>\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 73e6d6b30aaa07272789a390d5357482173e4109)
++++ b/app/src/main/res/values/strings.xml	(date 1630219501501)
+@@ -76,5 +76,6 @@
+     <string name="watch_in_your_language">Watch in Your Language</string>
+     <string name="mirzapur">Mirzapur</string>
+     <string name="the_good_doctor">The Good Doctor</string>
++    <string name="search_by_moods">Search By Moods</string>
+ 
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_splash_screen.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_splash_screen.xml b/app/src/main/res/layout/activity_splash_screen.xml
+new file mode 100644
+--- /dev/null	(date 1630219501707)
++++ b/app/src/main/res/layout/activity_splash_screen.xml	(date 1630219501707)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/black"
++    tools:context=".Activity.SplashScreen">
++
++    <ImageView
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:src="@drawable/prime_hori"
++        android:layout_gravity="center"/>
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_home.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:background=\"@color/dark_blue_grey\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".Fragments.HomeFragment\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:orientation=\"vertical\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n    <com.smarteist.autoimageslider.SliderView\r\n        android:id=\"@+id/imageSlider\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"200dp\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:sliderAnimationDuration=\"600\"\r\n        app:sliderAutoCycleDirection=\"back_and_forth\"\r\n        app:sliderIndicatorAnimationDuration=\"600\"\r\n        app:sliderIndicatorEnabled=\"true\"\r\n        app:sliderIndicatorGravity=\"center_horizontal|bottom\"\r\n        app:sliderIndicatorMargin=\"15dp\"\r\n        app:sliderIndicatorOrientation=\"horizontal\"\r\n        app:sliderIndicatorPadding=\"3dp\"\r\n        app:sliderIndicatorRadius=\"2dp\"\r\n        app:sliderIndicatorSelectedColor=\"#5A5A5A\"\r\n        app:sliderIndicatorUnselectedColor=\"#FFF\"\r\n        app:sliderScrollTimeInSec=\"1\" />\r\n\r\n    <TextView\r\n        style=\"@style/tvRecommendedMovies\"\r\n        android:id=\"@+id/tvPopularMovies\"\r\n        android:text=\"@string/popular_movies\"/>\r\n\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:id=\"@+id/rvPopularMovies\"\r\n        android:orientation=\"horizontal\"\r\n        style=\"@style/RecyclerViewPopularMovies\"/>\r\n\r\n        <HorizontalScrollView\r\n            android:scrollbars=\"none\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginStart=\"10dp\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\">\r\n            <LinearLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:orientation=\"horizontal\"\r\n                android:layout_height=\"match_parent\">\r\n                <ImageView\r\n                    android:layout_margin=\"5dp\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:src=\"@drawable/tvimgone\"/>\r\n                <ImageView\r\n                    android:layout_margin=\"5dp\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:src=\"@drawable/tvsimgtwo\"\r\n                    tools:ignore=\"ContentDescription\" />\r\n                <ImageView\r\n                    android:layout_margin=\"5dp\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:src=\"@drawable/tvimgthree\"/>\r\n                <ImageView\r\n                    android:layout_margin=\"5dp\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:src=\"@drawable/tvimgfour\"/>\r\n                <ImageView\r\n                    android:layout_margin=\"5dp\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:src=\"@drawable/tvimgfive\"/>\r\n                <ImageView\r\n                    android:layout_margin=\"5dp\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:src=\"@drawable/tvimgsix\"/>\r\n            </LinearLayout>\r\n        </HorizontalScrollView>\r\n\r\n\r\n    <TextView\r\n        style=\"@style/tvRecommendedMovies\"\r\n        android:id=\"@+id/tvPopularShows\"\r\n        android:text=\"@string/perfect_movies\"/>\r\n\r\n        <androidx.recyclerview.widget.RecyclerView\r\n            android:id=\"@+id/rvPopularSeason\"\r\n            style=\"@style/RecyclerViewPopularMovies\"\r\n            android:orientation=\"horizontal\"/>\r\n\r\n\r\n        <TextView\r\n            style=\"@style/tvRecommendedMovies\"\r\n            android:id=\"@+id/tvPopularShows1\"\r\n            android:text=\"@string/watch_in_your_language\"/>\r\n\r\n        <androidx.recyclerview.widget.RecyclerView\r\n            android:id=\"@+id/rvWatchYourLanguage\"\r\n            style=\"@style/RecyclerViewPopularMovies\"\r\n            android:orientation=\"horizontal\"/>\r\n    </LinearLayout>\r\n\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_home.xml b/app/src/main/res/layout/fragment_home.xml
+--- a/app/src/main/res/layout/fragment_home.xml	(revision 73e6d6b30aaa07272789a390d5357482173e4109)
++++ b/app/src/main/res/layout/fragment_home.xml	(date 1630219501620)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+@@ -40,6 +40,56 @@
+         android:orientation="horizontal"
+         style="@style/RecyclerViewPopularMovies"/>
+ 
++
++        <TextView
++            style="@style/tvRecommendedMovies"
++            android:id="@+id/tvPopularShows1"
++            android:text="@string/watch_in_your_language"/>
++
++        <androidx.recyclerview.widget.RecyclerView
++            android:id="@+id/rvWatchYourLanguage"
++            style="@style/RecyclerViewPopularMovies"
++            android:orientation="horizontal"/>
++
++    <TextView
++        style="@style/tvRecommendedMovies"
++        android:id="@+id/tvPopularShows"
++        android:text="@string/perfect_movies"/>
++
++
++        <ProgressBar
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:visibility="visible"
++            android:id="@+id/progressbarHomePopularMovies"/>
++
++<!--        <com.facebook.shimmer.ShimmerFrameLayout-->
++<!--            android:layout_width="match_parent"-->
++<!--            android:layout_height="wrap_content"-->
++<!--            android:id="@+id/shimmer_layoutHome">-->
++
++<!--            <include-->
++<!--                layout="@layout/itemlayout_popular_movies"/>-->
++
++            <androidx.recyclerview.widget.RecyclerView
++                android:id="@+id/rvPopularSeason"
++                style="@style/RecyclerViewPopularMovies"
++                android:orientation="horizontal"/>
++
++<!--        </com.facebook.shimmer.ShimmerFrameLayout>-->
++
++
++        <ProgressBar
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:id="@+id/progressbarHome"
++            android:visibility="gone"/>
++
++        <TextView
++            style="@style/tvRecommendedMovies"
++            android:id="@+id/tvSearchByMoods"
++            android:text="@string/search_by_moods"/>
++
+         <HorizontalScrollView
+             android:scrollbars="none"
+             android:layout_marginTop="10dp"
+@@ -84,27 +134,6 @@
+             </LinearLayout>
+         </HorizontalScrollView>
+ 
+-
+-    <TextView
+-        style="@style/tvRecommendedMovies"
+-        android:id="@+id/tvPopularShows"
+-        android:text="@string/perfect_movies"/>
+-
+-        <androidx.recyclerview.widget.RecyclerView
+-            android:id="@+id/rvPopularSeason"
+-            style="@style/RecyclerViewPopularMovies"
+-            android:orientation="horizontal"/>
+-
+-
+-        <TextView
+-            style="@style/tvRecommendedMovies"
+-            android:id="@+id/tvPopularShows1"
+-            android:text="@string/watch_in_your_language"/>
+-
+-        <androidx.recyclerview.widget.RecyclerView
+-            android:id="@+id/rvWatchYourLanguage"
+-            style="@style/RecyclerViewPopularMovies"
+-            android:orientation="horizontal"/>
+     </LinearLayout>
+ 
+-</ScrollView>
+\ No newline at end of file
++</androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n    id 'kotlin-android-extensions'\r\n    id 'kotlin-android'\r\n    id 'com.google.gms.google-services'\r\n}\r\n\r\nandroid {\r\n    compileSdk 30\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.primevideo\"\r\n        minSdk 21\r\n        targetSdk 30\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n    kotlinOptions {\r\n        jvmTarget = '1.8'\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.core:core-ktx:1.6.0'\r\n    implementation 'androidx.appcompat:appcompat:1.3.1'\r\n    implementation 'com.google.android.material:material:1.4.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'\r\n    implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'\r\n    implementation platform('com.google.firebase:firebase-bom:28.4.0')\r\n    implementation 'com.google.firebase:firebase-analytics-ktx'\r\n    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'\r\n    implementation 'androidx.legacy:legacy-support-v4:1.0.0'\r\n    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'\r\n    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'\r\n    implementation 'androidx.navigation:navigation-runtime-ktx:2.3.5'\r\n    implementation 'org.chromium.net:cronet-embedded:92.4515.131'\r\n    implementation files('../.idea/libs/YouTubeAndroidPlayerApi.jar')\r\n    testImplementation 'junit:junit:4.+'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n    implementation 'com.google.android.gms:play-services-auth:19.2.0'\r\n    def nav_version = \"2.3.5\"\r\n    implementation \"androidx.navigation:navigation-fragment-ktx:$nav_version\"\r\n    implementation \"androidx.navigation:navigation-ui-ktx:$nav_version\"\r\n    //Glide\r\n    implementation 'com.github.bumptech.glide:glide:4.12.0'\r\n    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'\r\n    //Notification Badge\r\n    implementation 'com.nex3z:notification-badge:1.0.4'\r\n    //EventBus\r\n    implementation 'org.greenrobot:eventbus:3.2.0'\r\n\r\n    //slider\r\n    implementation 'com.github.smarteist:autoimageslider:1.4.0'\r\n    implementation 'com.squareup.picasso:picasso:2.71828'\r\n\r\n    //retrofit\r\n    implementation 'com.squareup.retrofit2:retrofit:2.9.0'\r\n    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'\r\n    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'\r\n    implementation 'com.google.android.material:material:1.4.0'\r\n\r\n\r\n    //Glide\r\n    implementation 'com.github.bumptech.glide:glide:4.12.0'\r\n    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'\r\n    //Notification Badge\r\n    implementation 'com.nex3z:notification-badge:1.0.4'\r\n    //EventBus\r\n    implementation 'org.greenrobot:eventbus:3.2.0'\r\n\r\n    //slider\r\n    implementation 'com.github.smarteist:autoimageslider:1.4.0'\r\n    implementation 'com.squareup.picasso:picasso:2.71828'\r\n    //VideoPlayer\r\n    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'\r\n\r\n\r\n    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'\r\n    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 73e6d6b30aaa07272789a390d5357482173e4109)
++++ b/app/build.gradle	(date 1630219501693)
+@@ -90,8 +90,10 @@
+     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+ 
+ 
++    //Youtube Video
+     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+ 
+-
+-}
+\ No newline at end of file
++    //Shimmer Effect
++    implementation 'com.facebook.shimmer:shimmer:0.5.0'
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.23692307692307693\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/activity_main.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_find.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_home.xml\" value=\"0.26481481481481484\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_homes.xml\" value=\"0.2604166666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_kids.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_movies.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Android Development/Amazon Prime CLone/app/src/main/res/menu/menu.xml\" value=\"0.26481481481481484\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/drawable/rectangle_bg_transparent.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_display_search_gird.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_find.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_search_movie.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_sign_in.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/fragment_video_view.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/item_grid_layout.xml\" value=\"0.26296296296296295\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/item_layout_top_movie.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/item_romance_movie_design.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/itemlayout_popular_movies.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/Amazon Clone2/app/src/main/res/layout/itemlayout_popular_show.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/drawable-v24/gradient.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/drawable-v24/ic_baseline_keyboard_arrow_down_24.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/drawable/border_ic.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/font/allerta.xml\" value=\"0.3\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/activity_log_in.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/activity_main.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/activity_seeting.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/activity_youtube_video_play.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_create_account.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_display_search_gird.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_find.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_home.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_homes.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_kids.xml\" value=\"0.26666666666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_kidsandexpand.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_movie_preview.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_movies.xml\" value=\"0.26666666666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_sign_in.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.26666666666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_video_view.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/ic_baseline_keyboard_arrow_down_24.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_grid_layout.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_latestmovie_design.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_layout_top_movie.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_romance_movie_design.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/itemlayout_popular_movies.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/itemlayout_popular_show.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/menu/menu.xml\" value=\"0.27447916666666666\" />\r\n        <entry key=\"..\\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml\" value=\"0.28615384615384615\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_find_replace_24.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/drawable/ic_baseline_mic_none_24.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/activity_main.xml\" value=\"0.24592391304347827\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_find.xml\" value=\"0.12\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_home.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_homes.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_kids.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/fragment_movies.xml\" value=\"0.16077898550724637\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.16077898550724637\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/layout/item_topmovie_recycler.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/hp/Desktop/AmazonPrime2/app/src/main/res/menu/menu.xml\" value=\"0.10462962962962963\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.23333333333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable/ic_amazon.xml\" value=\"0.23333333333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml\" value=\"0.26615384615384613\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml\" value=\"0.26615384615384613\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable/ic_baseline_home_24.xml\" value=\"0.23333333333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable/ic_baseline_person_pin_24.xml\" value=\"0.23333333333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml\" value=\"0.26615384615384613\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable/ic_baseline_search_24.xml\" value=\"0.23333333333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.23333333333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/drawable/rectangle.xml\" value=\"0.23333333333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/activity_log_in.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/activity_main.xml\" value=\"0.19074074074074074\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/activity_youtube_video_play.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_create_account.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_find.xml\" value=\"0.13020833333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_home.xml\" value=\"0.2332955832389581\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_homes.xml\" value=\"0.13020833333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_kids.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_movie_preview.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.13020833333333334\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_sign_in.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.2\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/fragment_video_view.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/item_topmovie_recycler.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/Amazon-Prime/app/src/main/res/layout/itemlayout_popular_movies.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/PrimeVideoUnit3/app/src/main/res/layout/activity_log_in.xml\" value=\"0.16\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/PrimeVideoUnit3/app/src/main/res/layout/fragment_create_account.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/PrimeVideoUnit3/app/src/main/res/layout/fragment_sign_in.xml\" value=\"0.13020833333333334\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/PrimeVideoUnit3/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.19537037037037036\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/Projects/FinalClone/app/src/main/res/drawable/recmirza.xml\" value=\"0.23796296296296296\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/Projects/FinalClone/app/src/main/res/drawable/rectangle.xml\" value=\"0.23796296296296296\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/Projects/FinalClone/app/src/main/res/layout/fragment_create_account.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/Projects/FinalClone/app/src/main/res/layout/fragment_display_search_gird.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/Projects/FinalClone/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/Projects/FinalClone/app/src/main/res/layout/fragment_movie_preview.xml\" value=\"0.25416666666666665\" />\r\n        <entry key=\"..\\:/Users/parde/AndroidStudioProjects/Projects/FinalClone/app/src/main/res/layout/fragment_sign_in.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/drawable/border_ic.xml\" value=\"0.2755208333333333\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/activity_log_in.xml\" value=\"0.176\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/activity_seeting.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_home.xml\" value=\"0.23278985507246377\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_kids.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_movie_preview.xml\" value=\"0.3549536707056308\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_movies.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_sign_in.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/fragment_tv_shows.xml\" value=\"0.23278985507246377\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/item_topmovie_recycler.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/itemlayout_popular_movies.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/itemlayout_popular_show.xml\" value=\"0.23731884057971014\" />\r\n        <entry key=\"..\\:/unit-3-Projects/AmazonNewClone/app/src/main/res/layout/fragment_find.xml\" value=\"0.1793478260869565\" />\r\n        <entry key=\"..\\:/unit-3-Projects/AmazonNewClone/app/src/main/res/layout/fragment_home.xml\" value=\"0.21693840579710144\" />\r\n        <entry key=\"..\\:/unit-3-Projects/AmazonNewClone/app/src/main/res/layout/fragment_movie_preview.xml\" value=\"0.1793478260869565\" />\r\n        <entry key=\"..\\:/unit-3-Projects/AmazonNewClone/app/src/main/res/layout/item_grid_layout.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/NewAmazonClone/app/src/main/res/layout/fragment_find.xml\" value=\"0.21693840579710144\" />\r\n        <entry key=\"..\\:/unit-3-Projects/NewAmazonClone/app/src/main/res/layout/fragment_kids.xml\" value=\"0.1793478260869565\" />\r\n        <entry key=\"..\\:/unit-3-Projects/NewAmazonClone/app/src/main/res/layout/fragment_movie_preview.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/unit-3-Projects/NewAmazonClone/app/src/main/res/layout/fragment_movies.xml\" value=\"0.13385416666666666\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml\" value=\"0.2755208333333333\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml\" value=\"0.2755208333333333\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/activity_main.xml\" value=\"0.1793478260869565\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_downloads.xml\" value=\"0.15081521739130435\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_find.xml\" value=\"0.15760869565217392\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_home.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_homes.xml\" value=\"0.25271739130434784\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_kids.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/fragment_my_stuff.xml\" value=\"0.24456521739130435\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/layout/item_layout_slider.xml\" value=\"0.259375\" />\r\n        <entry key=\"..\\:/unit-3-Projects/Prime Video/app/src/main/res/menu/menu.xml\" value=\"0.259375\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 73e6d6b30aaa07272789a390d5357482173e4109)
++++ b/.idea/misc.xml	(date 1630219501736)
+@@ -38,26 +38,31 @@
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/activity_log_in.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/activity_seeting.xml" value="0.27447916666666666" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/activity_splash_screen.xml" value="0.21041666666666667" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/activity_youtube_video_play.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_create_account.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_display_search_gird.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_downloads.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_find.xml" value="0.22447916666666667" />
+-        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_home.xml" value="0.27447916666666666" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_home.xml" value="0.24588364434687157" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_homes.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_kids.xml" value="0.26666666666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_kidsandexpand.xml" value="0.27447916666666666" />
+-        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_movie_preview.xml" value="0.27447916666666666" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_movie_preview.xml" value="0.2" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_movies.xml" value="0.26666666666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_my_stuff.xml" value="0.27447916666666666" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_search.xml" value="0.22447916666666667" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_sign_in.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_tv_shows.xml" value="0.26666666666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/fragment_video_view.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/ic_baseline_keyboard_arrow_down_24.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_grid_layout.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_latestmovie_design.xml" value="0.27447916666666666" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_layout_language.xml" value="0.26666666666666666" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_layout_slider.xml" value="0.22447916666666667" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_layout_top_movie.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_romance_movie_design.xml" value="0.27447916666666666" />
++        <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/item_shimmer.xml" value="0.22447916666666667" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/itemlayout_popular_movies.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/layout/itemlayout_popular_show.xml" value="0.27447916666666666" />
+         <entry key="..\:/Users/aditya cheke/OneDrive/Desktop/amazon prime clone 3/app/src/main/res/menu/menu.xml" value="0.27447916666666666" />
+@@ -124,10 +129,6 @@
+         <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/item_topmovie_recycler.xml" value="0.23731884057971014" />
+         <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/itemlayout_popular_movies.xml" value="0.23731884057971014" />
+         <entry key="..\:/unit-3-Projects/Amazon Prime Video Clone/app/src/main/res/layout/itemlayout_popular_show.xml" value="0.23731884057971014" />
+-        <entry key="..\:/unit-3-Projects/AmazonNewClone/app/src/main/res/layout/fragment_find.xml" value="0.1793478260869565" />
+-        <entry key="..\:/unit-3-Projects/AmazonNewClone/app/src/main/res/layout/fragment_home.xml" value="0.21693840579710144" />
+-        <entry key="..\:/unit-3-Projects/AmazonNewClone/app/src/main/res/layout/fragment_movie_preview.xml" value="0.1793478260869565" />
+-        <entry key="..\:/unit-3-Projects/AmazonNewClone/app/src/main/res/layout/item_grid_layout.xml" value="0.259375" />
+         <entry key="..\:/unit-3-Projects/NewAmazonClone/app/src/main/res/layout/fragment_find.xml" value="0.21693840579710144" />
+         <entry key="..\:/unit-3-Projects/NewAmazonClone/app/src/main/res/layout/fragment_kids.xml" value="0.1793478260869565" />
+         <entry key="..\:/unit-3-Projects/NewAmazonClone/app/src/main/res/layout/fragment_movie_preview.xml" value="0.264" />

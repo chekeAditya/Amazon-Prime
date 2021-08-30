@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/downloadFragment"
     android:background="@drawable/gradient"
     tools:context=".Fragments.FragmentDownloads">
 
 
     <TextView
+        android:textStyle="bold"
         android:id="@+id/tvDownloads"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,13 +21,82 @@
         android:textSize="20sp"
         />
 
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:layout_below="@id/tvDownloads"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/recmirza">
+
+        <ImageView
+            android:id="@+id/movieIv"
+            android:layout_width="183dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@drawable/gooddoc" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="90dp"
+            android:fontFamily="@font/allerta"
+            android:text="@string/the_good_doctor"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="125dp"
+            android:fontFamily="@font/allerta"
+            android:text="2021  135min"
+            android:textColor="#abcdef"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvprime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTime"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="170dp"
+            android:fontFamily="@font/allerta"
+            android:text="@string/prime"
+            android:textColor="#00aae4"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00aae4"
+        android:fontFamily="@font/allerta"
+        android:padding="10dp"
+        android:text="Remove"
+        android:textColor="@color/white" />
+
     <ImageView
+        android:visibility="gone"
+        android:id="@+id/emptyBox"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/download_bg_img_removebg"/>
-
-
-
+        android:src="@drawable/download_bg_img_removebg" />
 </RelativeLayout>
 

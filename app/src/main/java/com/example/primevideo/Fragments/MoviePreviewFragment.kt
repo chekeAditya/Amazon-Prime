@@ -13,10 +13,17 @@ import com.bumptech.glide.Glide
 import com.example.primevideo.R
 import kotlinx.android.synthetic.main.fragment_movie_preview.*
 import com.example.primevideo.Activity.YoutubeVideoPlayActivity
+import com.example.primevideo.Model.TVShow.DataTvSHowRated
+import com.example.primevideo.Model.TVShow.DramaTvShow
+import com.example.primevideo.Model.TVShow.KidsTvShowData
+import com.example.primevideo.Model.TVShow.ThrillerTvData
+import com.example.primevideo.Network.OnItemListener
 import org.w3c.dom.Text
 
 
 class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
+
+
 
     override
     fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -26,110 +33,50 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
         dramaDataFragment()
         ActionDataFragment()
         RomanceDataFragment()
-        ActionFindFragment()
-        voiceSearchfindfragment()
-        DramaExtendedFragment()
+        popularMovie()
+        perfectMovie()
+
     }
 
-    private fun DramaExtendedFragment() {
-
+    private fun perfectMovie() {
         parentFragmentManager.setFragmentResultListener(
-            "DramaExtended",
+            "Perfectname",
             this,
             FragmentResultListener() { s: String, bundle: Bundle ->
 
-                val data = bundle.getString("DramaImage")
-                Glide.with(ivImagePreviewLayout).load(data).into(ivImagePreviewLayout)
-                val moviename = bundle.getString("DramaName")
-                MovieName.text = moviename
-                val moviedescription = bundle.getString("Dramadescription")
-                movieDescriptionPreviewLayout.setText(moviedescription)
-                val movietime = bundle.getString("Dramatime")
-                year_mat.text = movietime
-                val movierating = bundle.getString("Dramarating")
-                movierating.also { rating.text = it }
-                val directorImage = bundle.getString("DramaDirectorImage")
-                Glide.with(ivDirectorImage).load(directorImage).into(ivDirectorImage)
-                val directorName = bundle.getString("DramaDirectorName")
-                tvDirectorName.text = directorName
-                val movieUrl = bundle.getString("DramaUrl")
-
-
-                lyt_play.setOnClickListener {
-                    val intent = Intent(context, YoutubeVideoPlayActivity::class.java)
-                    intent.putExtra("movieUrl", movieUrl)
-                    startActivity(intent)
-                }
-
-                lyt_sharAll.setOnClickListener {
-                    val intent = Intent()
-                    intent.action = Intent.ACTION_SEND
-                    intent.putExtra(Intent.EXTRA_TEXT,"Party Time")
-                    intent.putExtra(Intent.EXTRA_TEXT, "https://www.youtube.com/watch?v=$movieUrl")
-                    intent.type = "text/plain"
-                    startActivity(Intent.createChooser(intent,"Share With Whom You want to watch : "))
-                }
-
+                val data1 = bundle.getString("PerfectImage")
+                Glide.with(ivImagePreviewLayout).load(data1).into(ivImagePreviewLayout)
+                val moviename1 = bundle.getString("PerfectName")
+                MovieName.setText(moviename1)
+                val moviedescription1 = bundle.getString("Perfectdescription")
+                movieDescriptionPreviewLayout.setText(moviedescription1)
             })
     }
 
-    private fun voiceSearchfindfragment() {
+    private fun popularMovie() {
         parentFragmentManager.setFragmentResultListener(
-            "Findmvoie",
-            this,
-            FragmentResultListener(){ s:String , bundle: Bundle ->
-
-                val data = bundle.getString("movieimage")
-                Glide.with(ivImagePreviewLayout).load(data).into(ivImagePreviewLayout)
-                val moviename = bundle.getString("moviename")
-                MovieName.text = moviename
-                val moviedescription = bundle.getString("moviedescription")
-                movieDescriptionPreviewLayout.text = moviedescription
-                val movieLang = bundle.getString("movielanguage")
-                moviePreviewLangauage.text = movieLang
-            }
-        )
-    }
-
-    private fun ActionFindFragment() {
-        parentFragmentManager.setFragmentResultListener(
-            "ActionnameFind",
+            "Popularname",
             this,
             FragmentResultListener() { s: String, bundle: Bundle ->
 
-                val data = bundle.getString("movieImage")
-                Glide.with(ivImagePreviewLayout).load(data).into(ivImagePreviewLayout)
-                val moviename = bundle.getString("movieName")
-                MovieName.text = moviename
-                val moviedescription = bundle.getString("moviedescription")
-                movieDescriptionPreviewLayout.setText(moviedescription)
-                val movietime = bundle.getString("movietime")
-                year_mat.text = movietime
-                val movierating = bundle.getString("movierating")
-                movierating.also { rating.text = it }
-                val directorImage = bundle.getString("DirectorImage")
-                Glide.with(ivDirectorImage).load(directorImage).into(ivDirectorImage)
-                val directorName = bundle.getString("DirectorName")
-                tvDirectorName.text = directorName
-                val movieUrl = bundle.getString("movieUrl")
-
-
-                lyt_play.setOnClickListener {
-                    val intent = Intent(context, YoutubeVideoPlayActivity::class.java)
-                    intent.putExtra("movieUrl", movieUrl)
-                    startActivity(intent)
-                }
-
+                val data1 = bundle.getString("PopularImage")
+                Glide.with(ivImagePreviewLayout).load(data1).into(ivImagePreviewLayout)
+                val moviename1 = bundle.getString("PopularName")
+                MovieName.setText(moviename1)
+                val moviedescription1 = bundle.getString("Populardescription")
+                movieDescriptionPreviewLayout.setText(moviedescription1)
             })
     }
+
 
     private fun onClickButton() {
         lyt_watchlist.setOnClickListener {
             Toast.makeText(context, "Added to the Watchlist", Toast.LENGTH_SHORT).show()
         }
-        lyt_download.setOnClickListener {
-            Toast.makeText(context, "Available Very Soon", Toast.LENGTH_SHORT).show()
+        lyt_download.setOnClickListener{
+            Toast.makeText(context, "Added to the Watchlist", Toast.LENGTH_SHORT).show()
         }
+
     }
 
     private fun receivingOperation() {
@@ -175,7 +122,7 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
 
     private fun RomanceDataFragment() {
         parentFragmentManager.setFragmentResultListener(
-            "romancename",
+            "Rname",
             this,
             FragmentResultListener() { s: String, bundle: Bundle ->
 
@@ -223,11 +170,11 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
 //                Glide.with(ivDirectorImage).load(directorImage).into(ivDirectorImage)
                 val directorName1 = bundle.getString("ActionDirectorName")
                 tvDirectorName.text = directorName1
-                val movieUrl1 = bundle.getString("ActionUrl")
+                val movieUrl = bundle.getString("movieUrl")
 
                 lyt_play.setOnClickListener {
                     val intent = Intent(context, YoutubeVideoPlayActivity::class.java)
-                    intent.putExtra("ActionUrl", movieUrl1)
+                    intent.putExtra("movieUrl", movieUrl)
                     startActivity(intent)
                 }
             })
@@ -253,13 +200,15 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
                 Glide.with(ivDirectorImage).load(directorImage1).into(ivDirectorImage)
                 val directorName1 = bundle.getString("DramaDirectorName")
                 tvDirectorName.text = directorName1
-                val movieUrl1 = bundle.getString("DramaUrl")
+                val movieUrl = bundle.getString("movieUrl")
 
                 lyt_play.setOnClickListener {
                     val intent = Intent(context, YoutubeVideoPlayActivity::class.java)
-                    intent.putExtra("DramaUrl", movieUrl1)
+                    intent.putExtra("movieUrl", movieUrl)
                     startActivity(intent)
                 }
             })
     }
+
+
 }

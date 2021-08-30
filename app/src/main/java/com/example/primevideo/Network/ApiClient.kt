@@ -5,7 +5,6 @@ import com.example.primevideo.Model.Kids.kidsandfamily.AmazonOriginalKids
 import com.example.primevideo.Model.Kids.kidsandfamily.IndianToonsModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyModel
 import com.example.primevideo.Model.Kids.kidsandfamily.kidsandfamilyTv
-import com.example.primevideo.Model.LanguageApiHomeFragment.LanuguageResponeModel
 import com.example.primevideo.Model.Perfect.PerfectResponseModel
 import com.example.primevideo.Model.PopularShows.PopularShowsModelItem
 import com.example.primevideo.Model.SearchFragmentModel.SearchModelFindFragment
@@ -74,7 +73,7 @@ interface ApiClient {
         @GET("v3/d113146a-d7a9-440a-ba31-c3239203ebc9")
         fun getKidsTvShow(): Call<KidaTvShowModel>
 
-        //search option :- https://api.themoviedb.org/3/search/movie?apiKey=2147294b386ecadcb05cd19bcbbdddb9&movieName=mimi
+        //search option :- https://api.themoviedb.org/3/search/movie?api_key=2147294b386ecadcb05cd19bcbbdddb9&query=mimi
         @GET("3/search/movie")
         fun getSearchedMovie(@Query("api_key") api_key: String, @Query("query") query: String):Call<SearchModelFindFragment>
 
@@ -82,7 +81,16 @@ interface ApiClient {
         @GET("v3/709a1e5e-9ca2-4c72-b21d-cb0873119d5d")
         fun getThrillerTvShow(): Call<ThrillerTvModel>
 
-        //Language api in home Fragment:- https://run.mocky.io/v3/85d9c74b-bbcb-4d10-81d1-779fad27b275
-        @GET("v3/85d9c74b-bbcb-4d10-81d1-779fad27b275")
-        fun getLanguageImage(): Call<LanuguageResponeModel>
+
+        //Thriller tv :-https://run.mocky.io/v3/2bc3e766-9fbe-4a26-b356-22bf4beae2bd
+        @GET("v3/2bc3e766-9fbe-4a26-b356-22bf4beae2bd")
+        fun LatestActionMovie(): Call<MovieApi>
+
+        //Thriller tv :-https://run.mocky.io/v3/be692d30-2b67-4430-a6d3-257902a92cf3
+        @GET("v3/be692d30-2b67-4430-a6d3-257902a92cf3")
+        fun LatestComedyMovie(): Call<ResponseComedy>
+
+
+
+
 }

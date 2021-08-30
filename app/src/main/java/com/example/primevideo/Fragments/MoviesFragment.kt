@@ -155,7 +155,7 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
 
         val bundle = Bundle();
         bundle.putString("DramaImage", drama.image)
-        bundle.putString("DramaUrl",drama.movieTrailerLink)
+        bundle.putString("movieUrl",drama.movieTrailerLink)
         bundle.putString("DramaName", drama.movieName)
         bundle.putString("Dramadescription", drama.description)
         bundle.putString("Dramatime",
@@ -175,7 +175,7 @@ class MoviesFragment : Fragment(R.layout.fragment_movies),OnItemMovieClick {
 
         val bundle = Bundle();
         bundle.putString("ActionImage", action.image)
-        bundle.putString("movie",action.movieTrailerLink)
+        bundle.putString("movieUrl",action.movieTrailerLink)
         bundle.putString("ActionName", action.movieName)
         bundle.putString("Actiondescription", action.description)
         bundle.putString("ActionDirectorName", action.director)

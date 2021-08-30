@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/dark_blue_grey"
     android:layout_height="match_parent"
+    android:id="@+id/fragHome"
     tools:context=".Fragments.HomeFragment">
 
     <LinearLayout
@@ -12,83 +13,49 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
-    <com.smarteist.autoimageslider.SliderView
-        android:id="@+id/imageSlider"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:sliderAnimationDuration="600"
-        app:sliderAutoCycleDirection="back_and_forth"
-        app:sliderIndicatorAnimationDuration="600"
-        app:sliderIndicatorEnabled="true"
-        app:sliderIndicatorGravity="center_horizontal|bottom"
-        app:sliderIndicatorMargin="15dp"
-        app:sliderIndicatorOrientation="horizontal"
-        app:sliderIndicatorPadding="3dp"
-        app:sliderIndicatorRadius="2dp"
-        app:sliderIndicatorSelectedColor="#5A5A5A"
-        app:sliderIndicatorUnselectedColor="#FFF"
-        app:sliderScrollTimeInSec="1" />
-
-    <TextView
-        style="@style/tvRecommendedMovies"
-        android:id="@+id/tvPopularMovies"
-        android:text="@string/popular_movies"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPopularMovies"
-        android:orientation="horizontal"
-        style="@style/RecyclerViewPopularMovies"/>
-
-        <HorizontalScrollView
-            android:scrollbars="none"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:layout_margin="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/tvimgone"/>
-                <ImageView
-                    android:layout_margin="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/tvsimgtwo"
-                    tools:ignore="ContentDescription" />
-                <ImageView
-                    android:layout_margin="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/tvimgthree"/>
-                <ImageView
-                    android:layout_margin="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/tvimgfour"/>
-                <ImageView
-                    android:layout_margin="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/tvimgfive"/>
-                <ImageView
-                    android:layout_margin="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/tvimgsix"/>
-            </LinearLayout>
-        </HorizontalScrollView>
+            android:layout_height="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#FFF"
+            app:sliderScrollTimeInSec="1" />
+
+        <TextView
+            style="@style/tvRecommendedMovies"
+            android:id="@+id/tvPopularMovies"
+            android:text="@string/popular_movies"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPopularMovies"
+            android:orientation="horizontal"
+            style="@style/RecyclerViewPopularMovies"/>
 
 
-    <TextView
-        style="@style/tvRecommendedMovies"
-        android:id="@+id/tvPopularShows"
-        android:text="@string/perfect_movies"/>
+<!--        <TextView-->
+<!--            style="@style/tvRecommendedMovies"-->
+<!--            android:id="@+id/tvPopularShows1"-->
+<!--            android:text="@string/watch_in_your_language"/>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWatchYourLanguage"
+            style="@style/RecyclerViewPopularMovies"
+            android:orientation="horizontal"/>
+
+        <TextView
+            style="@style/tvRecommendedMovies"
+            android:id="@+id/tvPopularShows"
+            android:text="@string/perfect_movies"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvPopularSeason"
@@ -96,15 +63,100 @@
             android:orientation="horizontal"/>
 
 
+    <TextView
+        style="@style/tvRecommendedMovies"
+        android:id="@+id/tvSearchByMoods"
+        android:text="@string/search_by_moods"/>
+
+    <HorizontalScrollView
+        android:scrollbars="none"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tvimgone"/>
+            <ImageView
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tvsimgtwo"
+                tools:ignore="ContentDescription" />
+            <ImageView
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tvimgthree"/>
+            <ImageView
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tvimgfour"/>
+            <ImageView
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tvimgfive"/>
+            <ImageView
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tvimgsix"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
         <TextView
             style="@style/tvRecommendedMovies"
-            android:id="@+id/tvPopularShows1"
-            android:text="@string/watch_in_your_language"/>
+            android:text="Latest Movie"
+            android:id="@+id/MLatest"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvWatchYourLanguage"
-            style="@style/RecyclerViewPopularMovies"
-            android:orientation="horizontal"/>
-    </LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/Latestrecycler"
+            />
 
-</ScrollView>
+
+        <TextView
+            style="@style/tvRecommendedMovies"
+            android:text="@string/comedy"
+            android:id="@+id/MComedy"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/Comedyrecycler"
+            />
+
+
+        <TextView
+            style="@style/tvRecommendedMovies"
+            android:text="Upcomming "
+            android:id="@+id/MMystry"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/Mystryrecycler"
+            />
+
+
+
+
+</LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
