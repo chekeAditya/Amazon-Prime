@@ -116,13 +116,12 @@ class FragmentFind : Fragment(R.layout.fragment_find) , SearchClickListener {
         fragmenTransaction.addToBackStack(null)
         fragmenTransaction.commit()
 
-        Toast.makeText(activity, "Working", Toast.LENGTH_SHORT).show()
         val bundle = Bundle()
         bundle.putString("movieimage","https://image.tmdb.org/t/p/w500"+listOfSearchResult[position].posterPath)
         bundle.putString("moviename",listOfSearchResult[position].title)
         bundle.putString("movielanguage",listOfSearchResult[position].originalLanguage)
         bundle.putString("moviedescription",listOfSearchResult[position].overview)
-        parentFragmentManager.setFragmentResult("Findmvoie", bundle)
+        parentFragmentManager.setFragmentResult("FindMovie", bundle)
 
 
 

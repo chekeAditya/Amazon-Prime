@@ -35,7 +35,26 @@ class MoviePreviewFragment : Fragment(R.layout.fragment_movie_preview) {
         RomanceDataFragment()
         popularMovie()
         perfectMovie()
+        findsection()
 
+    }
+
+    private fun findsection() {
+
+        parentFragmentManager.setFragmentResultListener(
+            "FindMovie",
+        this,
+            FragmentResultListener(){  s: String, bundle: Bundle ->
+
+                val data = bundle.getString("movieimage")
+                Glide.with(ivImagePreviewLayout).load(data).into(ivImagePreviewLayout)
+                val moviename = bundle.getString("movieName")
+                MovieName.text = moviename
+                val moviedescription = bundle.getString("moviedescription")
+                movieDescriptionPreviewLayout.setText(moviedescription)
+
+            }
+        )
     }
 
     private fun perfectMovie() {
