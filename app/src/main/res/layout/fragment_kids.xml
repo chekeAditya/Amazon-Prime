@@ -76,14 +76,7 @@
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
-            <ProgressBar
-                android:layout_width="wrap_content"
-                android:id="@+id/kidsprogressbar"
-                android:layout_centerInParent="true"
-                android:layout_height="wrap_content"
-                android:visibility="visible"
-                android:layout_below="@+id/tvkidsandfamilytv"
-                />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvkidsandfamilytv"
                 style="@style/RecyclerViewPopularMovies"

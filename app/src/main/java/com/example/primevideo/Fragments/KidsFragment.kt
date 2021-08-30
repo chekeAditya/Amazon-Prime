@@ -124,7 +124,6 @@ class KidsFragment : Fragment(R.layout.fragment_kids), OnItemClickListener {
 
     private fun kidsTv() {
 
-        kidsprogressbar.isVisible
 
         var apiClient3 = Network.getInstance().create(ApiClient::class.java)
         apiClient3.getkidsandfamilyTv().enqueue(
