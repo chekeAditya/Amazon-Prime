@@ -104,5 +104,3 @@ Open Android Studio. Go to File > New > Project From Version Control. Copy the l
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
-
-# Lessons Learnt📚
