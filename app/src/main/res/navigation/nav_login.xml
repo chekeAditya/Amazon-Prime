@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.primevideo.Fragments.SignInFragment"
+        android:name="com.applicationprime.primevideo.Fragments.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/createAccount"
-        android:name="com.example.primevideo.Fragments.CreateAccount"
+        android:name="com.applicationprime.primevideo.Fragments.CreateAccount"
         android:label="fragment_create_account"
         tools:layout="@layout/fragment_create_account" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.primevideo.Activity.MainActivity"
+        android:name="com.applicationprime.primevideo.Activity.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
 </navigation>
