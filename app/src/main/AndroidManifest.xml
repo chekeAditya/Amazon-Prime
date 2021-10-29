@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.primevideo">
+    package="com.applicationprime.primevideo">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimeVideo">
         <activity
-            android:name=".Activity.SplashScreen"
+            android:name="com.applicationprime.primevideo.Activity.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,16 +20,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.SeetingActivity"
+            android:name="com.applicationprime.primevideo.Activity.SeetingActivity"
             android:exported="true" />
         <activity
-            android:name=".Activity.YoutubeVideoPlayActivity"
+            android:name="com.applicationprime.primevideo.Activity.YoutubeVideoPlayActivity"
             android:exported="true" />
         <activity
-            android:name=".Activity.LogInActivity"
+            android:name="com.applicationprime.primevideo.Activity.LogInActivity"
             android:exported="true"/>
         <activity
-            android:name=".Activity.MainActivity"
+            android:name="com.applicationprime.primevideo.Activity.MainActivity"
             android:exported="true">
 
         </activity>
